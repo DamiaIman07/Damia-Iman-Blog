@@ -1,111 +1,230 @@
-/* Gaya Asas Laman Web */
+/* ==========================================
+   CSS UNTUK PORTFOLIO & BLOG DAMIA IMAN 
+   ========================================== */
+
+/* 1. Pemilihan Font & Warna Asas (Light Mode) */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
+    font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.7;
     margin: 0;
     padding: 0;
-    background-color: #f4f7f6;
-    color: #333;
-    transition: background-color 0.3s, color 0.3s;
+    background-color: #f8fafc;
+    color: #1e293b;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
+/* 2. Rekaan Header / Banner Atas */
 header {
-    background-color: #2c3e50;
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
     color: #ffffff;
-    padding: 20px;
+    padding: 40px 20px;
     text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-    margin: 0 0 10px 0;
+    margin: 0 0 15px 0;
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
 }
 
+/* 3. Menu Navigasi Moden */
 nav a {
-    color: #fff;
+    color: #e2e8f0;
     text-decoration: none;
-    font-weight: bold;
-    margin: 0 10px;
+    font-weight: 500;
+    margin: 0 15px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
 }
 
 nav a:hover {
-    color: #1abc9c;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
-#dark-mode-toggle {
-    background-color: #1abc9c;
-    color: white;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    margin-left: 10px;
-}
-
-#dark-mode-toggle:hover {
-    background-color: #16a085;
-}
-
+/* 4. Rekaan Kotak Kandungan Utama (Kesan Kad Minimalis) */
 main {
-    max-width: 800px;
-    margin: 30px auto;
-    padding: 20px;
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 35px;
     background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    transition: background-color 0.3s, color 0.3s;
+    border-radius: 16px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #2c3e50;
-    color: white;
-    margin-top: 40px;
+main h2 {
+    color: #1e3a8a;
+    font-size: 1.6rem;
+    border-left: 4px solid #3b82f6;
+    padding-left: 12px;
+    margin-top: 0;
 }
 
-/* Gaya Form Contact */
+/* 5. Gaya Pembahagi Garis */
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #e2e8f0;
+    margin: 25px 0;
+}
+
+/* 6. Rekaan Artikel di Halaman Blog */
+article {
+    padding: 10px 0;
+}
+
+article h2 {
+    border-left: none;
+    padding-left: 0;
+    margin-bottom: 5px;
+}
+
+article small {
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* 7. Rekaan Borang Hubungi */
 input[type="text"], input[type="email"], textarea {
     width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 12px 16px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
     box-sizing: border-box;
+    font-family: inherit;
+    background-color: #f8fafc;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    background-color: #ffffff;
 }
 
 button[type="submit"] {
-    background-color: #2c3e50;
+    background-color: #1e3a8a;
     color: white;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
+    font-weight: 600;
+    transition: all 0.2s ease;
 }
 
 button[type="submit"]:hover {
-    background-color: #34495e;
+    background-color: #1d4ed8;
+    transform: translateY(-1px);
 }
 
-/* Gaya Warna Apabila Dark Mode Aktif */
+/* 8. Rekaan Kaki Laman Web (Footer) */
+footer {
+    text-align: center;
+    padding: 35px 20px;
+    background-color: #0f172a;
+    color: #94a3b8;
+    margin-top: 60px;
+}
+
+footer p {
+    margin: 0 0 15px 0;
+}
+
+/* 9. Gaya Butang Dark Mode Pintar di Footer */
+#dark-mode-toggle {
+    background-color: #334155;
+    color: #f8fafc;
+    border: 1px solid #475569;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+#dark-mode-toggle:hover {
+    background-color: #475569;
+    transform: scale(1.05);
+}
+
+/* ==========================================
+   10. KESAN PENGGAYAAN BAGI DARK MODE ACTIVE 
+   ========================================== */
 body.dark-mode {
-    background-color: #1a1a1a;
-    color: #f4f7f6;
+    background-color: #0f172a;
+    color: #cbd5e1;
 }
 
 body.dark-mode main {
-    background-color: #2d2d2d;
-    color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    background-color: #1e293b;
+    color: #f1f5f9;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
 }
 
-body.dark-mode header, body.dark-mode footer {
-    background-color: #111111;
+body.dark-mode main h2 {
+    color: #3b82f6;
+    border-left-color: #3b82f6;
+}
+
+body.dark-mode header {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    border-bottom: 1px solid #334155;
+}
+
+body.dark-mode footer {
+    background-color: #020617;
+    border-top: 1px solid #1e293b;
 }
 
 body.dark-mode input, body.dark-mode textarea {
-    background-color: #444444;
-    color: white;
-    border: 1px solid #555555;
+    background-color: #1e293b;
+    border-color: #475569;
+    color: #ffffff;
+}
+
+body.dark-mode input:focus, body.dark-mode textarea:focus {
+    background-color: #0f172a;
+    border-color: #3b82f6;
+}
+
+body.dark-mode #dark-mode-toggle {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    border-color: #ffffff;
+}
+
+body.dark-mode hr {
+    background-color: #334155;
+}
+
+/* ==========================================
+   11. RESPONSIVE FOR MOBILE
+   ========================================== */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.6rem;
+    }
+    
+    nav a {
+        display: inline-block;
+        margin: 5px;
+        font-size: 14px;
+        padding: 4px 8px;
+    }
+    
+    main {
+        margin: 20px 15px;
+        padding: 20px;
+    }
 }
