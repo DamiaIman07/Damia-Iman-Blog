@@ -1,8 +1,4 @@
-/* ==========================================
-   CSS UNTUK PORTFOLIO & BLOG DAMIA IMAN 
-   ========================================== */
-
-/* 1. Pemilihan Font & Warna Asas (Light Mode) */
+/* Pemilihan Font & Warna Asas (Light Mode) */
 body {
     font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.7;
@@ -13,7 +9,7 @@ body {
     transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* 2. Rekaan Header / Banner Atas */
+/* Rekaan Header / Banner Atas Gradasi Biru Moden */
 header {
     background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
     color: #ffffff;
@@ -29,7 +25,7 @@ header h1 {
     letter-spacing: -0.025em;
 }
 
-/* 3. Menu Navigasi Moden */
+/* Menu Navigasi Moden */
 nav a {
     color: #e2e8f0;
     text-decoration: none;
@@ -45,14 +41,14 @@ nav a:hover {
     background-color: rgba(255, 255, 255, 0.15);
 }
 
-/* 4. Rekaan Kotak Kandungan Utama (Kesan Kad Minimalis) */
+/* Rekaan Kotak Kandungan Utama (Kad Minimalis) */
 main {
     max-width: 850px;
     margin: 40px auto;
     padding: 35px;
     background: #ffffff;
     border-radius: 16px;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
     transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
@@ -64,7 +60,6 @@ main h2 {
     margin-top: 0;
 }
 
-/* 5. Gaya Pembahagi Garis */
 hr {
     border: 0;
     height: 1px;
@@ -72,7 +67,6 @@ hr {
     margin: 25px 0;
 }
 
-/* 6. Rekaan Artikel di Halaman Blog */
 article {
     padding: 10px 0;
 }
@@ -88,7 +82,7 @@ article small {
     font-weight: 500;
 }
 
-/* 7. Rekaan Borang Hubungi */
+/* Rekaan Borang Hubungi (Contact Form) */
 input[type="text"], input[type="email"], textarea {
     width: 100%;
     padding: 12px 16px;
@@ -126,7 +120,7 @@ button[type="submit"]:hover {
     transform: translateY(-1px);
 }
 
-/* 8. Rekaan Kaki Laman Web (Footer) */
+/* Rekaan Kaki Laman Web (Footer) Gelap Arang */
 footer {
     text-align: center;
     padding: 35px 20px;
@@ -139,7 +133,7 @@ footer p {
     margin: 0 0 15px 0;
 }
 
-/* 9. Gaya Butang Dark Mode Pintar di Footer */
+/* Gaya Butang Dark Mode Berbentuk Pill */
 #dark-mode-toggle {
     background-color: #334155;
     color: #f8fafc;
@@ -158,9 +152,7 @@ footer p {
     transform: scale(1.05);
 }
 
-/* ==========================================
-   10. KESAN PENGGAYAAN BAGI DARK MODE ACTIVE 
-   ========================================== */
+/* GAYA WARNA APABILA DARK MODE AKTIF */
 body.dark-mode {
     background-color: #0f172a;
     color: #cbd5e1;
@@ -208,23 +200,9 @@ body.dark-mode hr {
     background-color: #334155;
 }
 
-/* ==========================================
-   11. RESPONSIVE FOR MOBILE
-   ========================================== */
+/* REKA BENTUK RESPONSIF MOBIL */
 @media (max-width: 600px) {
-    header h1 {
-        font-size: 1.6rem;
-    }
-    
-    nav a {
-        display: inline-block;
-        margin: 5px;
-        font-size: 14px;
-        padding: 4px 8px;
-    }
-    
-    main {
-        margin: 20px 15px;
-        padding: 20px;
-    }
+    header h1 { font-size: 1.6rem; }
+    nav a { display: inline-block; margin: 5px; font-size: 14px; padding: 4px 8px; }
+    main { margin: 20px 15px; padding: 20px; }
 }

@@ -1,12 +1,12 @@
 const darkModeToggle = document.getElementById('dark-mode-toggle');
 
-// Semak memori pelayar web untuk status mod sebelum ini
+// Memeriksa tetapan memori pelayar browser sebelum ini
 if (localStorage.getItem('theme') === 'dark') {
     document.body.classList.add('dark-mode');
     if (darkModeToggle) darkModeToggle.textContent = '☀️ Light Mode';
 }
 
-// Fungsi menukar mod secara kekal merentasi semua halaman
+// Fungsi utama penukaran mod gelap secara menyeluruh dan kekal
 if (darkModeToggle) {
     darkModeToggle.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
