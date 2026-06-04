@@ -1,53 +1,57 @@
-<!DOCTYPE html>
-<html lang="ms">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<!-- SECTION: CONTACT -->
+<section>
+    <h2>Contact Me</h2>
 
-    <!-- NAVIGASI -->
-    <header>
-        <nav>
-            <div class="logo">My<span>Portfolio</span></div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
-            </ul>
-            <button id="theme-toggle">🌙 Dark Mode</button>
-        </nav>
-    </header>
+    <div class="contact-card">
 
-    <!-- SECTION: CONTACT -->
-    <section>
-        <h2>Contact Me</h2>
-        <div class="contact-card">
-            <form id="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
-                <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" placeholder="Your name" required>
-                </div>
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" placeholder="Your email" required>
-                </div>
-                <div class="form-group">
-                    <label>Message</label>
-                    <textarea placeholder="Write your message here..." rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-full">Send Message</button>
-            </form>
+        <div class="social-links">
+
+            <a href="mailto:damiaiman00@gmail.com" target="_blank">
+                📧 Email: damiaiman00@gmail.com
+            </a>
+
+            <a href="https://github.com/DamiaIman07" target="_blank">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+                GitHub: DamiaIman07
+            </a>
+
+            <a href="https://www.linkedin.com/" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+                LinkedIn: Damia Iman
+            </a>
+
+            <a href="https://instagram.com/miayusriii_" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+                Instagram: @miayusriii_
+            </a>
+
+            <a href="https://tiktok.com/@miaiman_" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok">
+                TikTok: @miaiman_
+            </a>
+
         </div>
-    </section>
 
-    <footer>
-        <p>&copy; 2026 Hak Cipta Terpelihara | Dibina untuk CSD34203.</p>
-    </footer>
+        <hr>
 
-    <script src="script.js"></script>
-</body>
-</html>
+        <form id="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" placeholder="Your name" required>
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="Your email" required>
+            </div>
+
+            <div class="form-group">
+                <label>Message</label>
+                <textarea placeholder="Write your message here..." rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-full">Send Message</button>
+        </form>
+
+    </div>
+</section>
