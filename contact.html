@@ -1,57 +1,69 @@
-<!-- SECTION: CONTACT -->
-<section>
-    <h2>Contact Me</h2>
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me - Media Informatika</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <div class="contact-card">
+    <header>
+        <nav>
+            <div class="logo">Media <span>Informatika</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><button id="theme-toggle">Toggle Mode</button></li>
+            </ul>
+        </nav>
+    </header>
 
-        <div class="social-links">
+    <main>
+        <section id="contact">
+            <h2>Contact Me</h2>
+            
+            <div class="contact-card">
+                <h3>Let's Connect!</h3>
+                <p>Ada sebarang projek atau soalan? Jom borak atau hubungi saya terus melalui media sosial di bawah.</p>
+                
+                <div class="social-links">
+                    <a href="https://instagram.com" target="_blank">
+                        <img src="instagram.png" alt="Instagram">
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://github.com" target="_blank">
+                        <img src="github.png" alt="GitHub">
+                        <span>GitHub</span>
+                    </a>
+                </div>
 
-            <a href="mailto:damiaiman00@gmail.com" target="_blank">
-                📧 Email: damiaiman00@gmail.com
-            </a>
-
-            <a href="https://github.com/DamiaIman07" target="_blank">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
-                GitHub: DamiaIman07
-            </a>
-
-            <a href="https://www.linkedin.com/" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
-                LinkedIn: Damia Iman
-            </a>
-
-            <a href="https://instagram.com/miayusriii_" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
-                Instagram: @miayusriii_
-            </a>
-
-            <a href="https://tiktok.com/@miaiman_" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok">
-                TikTok: @miaiman_
-            </a>
-
-        </div>
-
-        <hr>
-
-        <form id="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
-            <div class="form-group">
-                <label>Name</label>
-                <input type="text" placeholder="Your name" required>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Nama</label>
+                        <input type="text" id="name" placeholder="Masukkan nama awak" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mesej</label>
+                        <textarea id="message" placeholder="Tulis mesej di sini..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-full">Hantar Mesej</button>
+                </form>
             </div>
+        </section>
+    </main>
 
-            <div class="form-group">
-                <label>Email</label>
-                <input type="email" placeholder="Your email" required>
-            </div>
+    <footer>
+        <p>&copy; 2026 Media Informatika. Hak Cipta Terpelihara.</p>
+    </footer>
 
-            <div class="form-group">
-                <label>Message</label>
-                <textarea placeholder="Write your message here..." rows="5" required></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-full">Send Message</button>
-        </form>
-
-    </div>
-</section>
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
+</body>
+</html>
