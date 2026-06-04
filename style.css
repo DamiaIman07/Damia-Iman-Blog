@@ -121,13 +121,12 @@ section {
 }
 
 /* ==========================================================================
-   HERO SECTION (PAPARAN DESKTOP ASAL)
+   HERO SECTION 
    ========================================================================== */
 .hero-section {
     text-align: center;
     padding: 160px 20px; 
     
-    /* Overlay gelap supaya imej background.png jenis lutsinar kelihatan jelas */
     background: linear-gradient(rgba(15, 10, 28, 0.82), rgba(15, 10, 28, 0.9)), 
                 url('background.png') no-repeat center center;
     
@@ -205,6 +204,38 @@ section {
     font-weight: 800;
     color: var(--primary-color);
 }
+
+/* --------------------------------------------------------------------------
+   BAHAGIAN SOCIAL LINKS (YANG BARU DITAMBAH)
+   -------------------------------------------------------------------------- */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--text-main); /* Menggunakan variable tulisan supaya sokong dark mode */
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    transform: translateX(5px);
+    color: var(--primary-color); /* Beri kesan warna ungu kreatif bila di-hover */
+}
+
+.social-links img {
+    width: 30px;
+    height: 30px;
+}
+
+/* -------------------------------------------------------------------------- */
 
 .blog-container {
     display: flex;
@@ -407,7 +438,7 @@ body.dark-mode #theme-toggle {
 }
 
 /* ==========================================================================
-   KAWALAN DIBAIKI KHAS UNTUK SKRIN RESPONSIF MOBILE PULA
+   KAWALAN RESPONSIF MOBILE
    ========================================================================== */
 @media (max-width: 768px) {
     nav {
@@ -426,12 +457,11 @@ body.dark-mode #theme-toggle {
     }
 
     .hero-section {
-        padding: 100px 15px; /* Mengurangkan ketinggian kotak hero pada phone */
-        background-position: center center; /* Memastikan imej sentiasa berpusat */
-        background-size: 100% 100%; /* Memaksa keseluruhan saiz imej muat sepenuhnya tanpa terpotong */
+        padding: 100px 15px; 
+        background-position: center center; 
+        background-size: 100% 100%; 
     }
 
-    /* Kemas kini untuk mod gelap pada skrin mobile */
     body.dark-mode .hero-section {
         background-size: 100% 100%;
     }
