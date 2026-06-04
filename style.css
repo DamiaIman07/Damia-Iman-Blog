@@ -121,13 +121,13 @@ section {
 }
 
 /* ==========================================================================
-   HERO SECTION (KEMAS KINI LAPISAN GELAP UNTUK LIGHT MODE)
+   HERO SECTION (PAPARAN DESKTOP ASAL)
    ========================================================================== */
 .hero-section {
     text-align: center;
     padding: 160px 20px; 
     
-    /* Diubah kepada warna gelap (rgba 15, 10, 28) supaya gambar PNG putih tidak tenggelam */
+    /* Overlay gelap supaya imej background.png jenis lutsinar kelihatan jelas */
     background: linear-gradient(rgba(15, 10, 28, 0.82), rgba(15, 10, 28, 0.9)), 
                 url('background.png') no-repeat center center;
     
@@ -140,7 +140,6 @@ section {
     box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.6); 
 }
 
-/* Memaksa warna teks dalam hero section kekal cerah di atas background gelap */
 .hero-section h1 {
     font-size: 3.2rem;
     line-height: 1.15;
@@ -342,21 +341,6 @@ footer {
     border-top: 1px solid rgba(124, 58, 237, 0.1);
 }
 
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        gap: 20px;
-    }
-    .about-container {
-        flex-direction: column;
-        text-align: center;
-        padding: 30px 20px;
-    }
-    .hero-section h1 {
-        font-size: 2.3rem;
-    }
-}
-
 /* ==========================================================================
    MOD GELAP CYBERPUNK OBSIDIAN
    ========================================================================== */
@@ -378,7 +362,6 @@ body.dark-mode header {
 
 body.dark-mode .hero-section {
     border-color: rgba(167, 139, 250, 0.15);
-    /* Menggunakan background.png dengan lapisan overlay yang sedikit lebih gelap */
     background: linear-gradient(rgba(6, 4, 13, 0.83), rgba(6, 4, 13, 0.95)), 
                 url('background.png') no-repeat center center;
     background-size: cover;
@@ -421,4 +404,35 @@ body.dark-mode #theme-toggle {
     background: rgba(167, 139, 250, 0.15);
     color: var(--primary-color);
     border-color: rgba(167, 139, 250, 0.2);
+}
+
+/* ==========================================================================
+   KAWALAN DIBAIKI KHAS UNTUK SKRIN RESPONSIF MOBILE PULA
+   ========================================================================== */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.3rem;
+    }
+
+    .hero-section {
+        padding: 100px 15px; /* Mengurangkan ketinggian kotak hero pada phone */
+        background-position: center center; /* Memastikan imej sentiasa berpusat */
+        background-size: 100% 100%; /* Memaksa keseluruhan saiz imej muat sepenuhnya tanpa terpotong */
+    }
+
+    /* Kemas kini untuk mod gelap pada skrin mobile */
+    body.dark-mode .hero-section {
+        background-size: 100% 100%;
+    }
 }
