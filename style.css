@@ -1,184 +1,310 @@
-/* ==========================================
-   CSS REKA BENTUK KAD TERAPUNG PREMIUM
-   ========================================== */
+/* ==========================================================================
+   PREMIUM MINIMALIST PORTFOLIO THEME (Inspired by Modern Card UI Layouts)
+   ========================================================================== */
+
+:root {
+    --bg-primary: #f8fafc;
+    --bg-card: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --primary-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    --border-color: #e2e8f0;
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+}
 
 body {
-    font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
-    line-height: 1.7;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-main);
     margin: 0;
     padding: 0;
-    background-color: #edeef2; /* Warna latar belakang luar kelabu lembut bersih */
-    color: #1e293b;
-    transition: background-color 0.4s, color 0.4s;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-header {
-    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-    color: #ffffff;
-    padding: 40px 20px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+/* 1. STYLED NAVIGATION BAR */
+.navbar {
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 15px 0;
+    box-shadow: var(--shadow-sm);
 }
 
-header h1 {
-    margin: 0 0 15px 0;
-    font-size: 2.2rem;
-    font-weight: 700;
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
 }
 
-nav a {
-    color: #e2e8f0;
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links a {
+    color: var(--text-muted);
     text-decoration: none;
     font-weight: 500;
-    margin: 0 10px;
-    padding: 6px 14px;
+    margin-left: 20px;
+    padding: 8px 16px;
     border-radius: 20px;
-    transition: all 0.3s;
+    transition: all 0.2s ease;
 }
 
-nav a:hover, nav a.active {
-    color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.2);
+.nav-links a:hover, .nav-links a.active {
+    color: #3b82f6;
+    background-color: rgba(59, 130, 246, 0.08);
 }
 
-/* Susunan Grid untuk Kad Portfolio (Meniru Gaya Pautan Contoh) */
-.portfolio-container {
+/* 2. HERO PROFILE SECTION */
+.hero-section {
+    background: var(--bg-card);
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hero-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.hero-image-wrapper {
+    margin-bottom: 20px;
+}
+
+.hero-avatar {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #ffffff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.hero-title {
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin: 10px 0;
+    letter-spacing: -0.03em;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: #3b82f6;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.hero-tagline {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin: 0 auto;
+}
+
+/* 3. MAIN CONTENT AND GRID SPACING */
+.main-content {
     max-width: 1100px;
-    margin: 50px auto;
+    margin: 40px auto;
     padding: 0 20px;
+}
+
+.content-section {
+    margin-bottom: 50px;
+}
+
+.section-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+/* SKILLS TAGS DESIGN */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-tag {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    box-shadow: var(--shadow-sm);
+}
+
+/* 4. PREMIUM CARDS GRID (SAMA SEPERTI LINK CONTOH) */
+.cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Susun kad bersebelahan */
-    gap: 30px; /* Jarak antara kad */
-    box-sizing: border-box;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
 }
 
-/* Khas untuk komponen halaman penuh (About & Contact) */
-.full-width-card {
-    grid-column: 1 / -1;
-}
-
-/* Gaya Asas Setiap Kad */
-.card {
-    background: #ffffff;
-    padding: 30px;
+.portfolio-card {
+    background-color: var(--bg-card);
     border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06); /* Kesan bayang tebal moden */
-    transition: all 0.3s ease;
-    border-top: 5px solid #3b82f6; /* Jalur warna atas kad */
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
 }
 
-/* KESAN INTERAKTIF: Kad terangkat ke atas apabila diletakkan tetikus (Hover) */
-.card:hover {
+/* KESAN INTERAKTIF TERAPUNG (HOVER EFFECT) */
+.portfolio-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.12);
 }
 
-.card h2 {
-    color: #1e3a8a;
-    margin-top: 0;
-    font-size: 1.4rem;
+.card-image-area {
+    width: 100%;
+    height: 210px;
+    background-color: #f1f5f9;
+    overflow: hidden;
 }
 
-.card ul {
-    padding-left: 20px;
+.card-image-area img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.card li {
+.card-body {
+    padding: 25px;
+}
+
+.card-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 12px;
+    letter-spacing: 0.05em;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.badge-blue { background-color: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+.badge-green { background-color: rgba(16, 185, 129, 0.1); color: #10b981; }
+.badge-orange { background-color: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+
+.card-body h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.3rem;
+    color: var(--text-main);
+}
+
+.card-body p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+/* OTHER CARD COMPONENTS */
+.profile-card-full, .contact-card, .blog-item-card {
+    background-color: var(--bg-card);
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    margin-bottom: 25px;
+}
+
+.blog-date {
+    font-size: 0.85rem;
+    color: #3b82f6;
+    font-weight: 600;
+}
+
+/* FORM STYLING */
+.styled-form {
+    margin-top: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
     margin-bottom: 8px;
+    font-size: 0.95rem;
 }
 
-/* Variasi Warna Jalur Atas Kad */
-.intro-card { border-top-color: #3b82f6; }
-.skill-card { border-top-color: #10b981; }
-.goal-card  { border-top-color: #f59e0b; }
-.blog-card  { border-top-color: #8b5cf6; }
-
-/* Gaya Borang */
-input[type="text"], input[type="email"], textarea {
+.form-group input, .form-group textarea {
     width: 100%;
     padding: 12px 16px;
-    margin-top: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #cbd5e1;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-primary);
+    color: var(--text-main);
     border-radius: 8px;
     box-sizing: border-box;
     font-family: inherit;
-    background-color: #f8fafc;
 }
 
-button[type="submit"] {
-    background-color: #1e3a8a;
+.submit-btn {
+    background: var(--primary-gradient);
     color: white;
-    padding: 12px 24px;
     border: none;
+    padding: 14px 28px;
+    font-weight: 600;
     border-radius: 8px;
     cursor: pointer;
-    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
-/* Kaki Laman Web */
-footer {
+/* FOOTER AND TOGGLE BUTTON */
+.site-footer {
     text-align: center;
-    padding: 35px 20px;
-    background-color: #0f172a;
-    color: #94a3b8;
+    padding: 40px 20px;
+    background-color: var(--bg-card);
+    border-top: 1px solid var(--border-color);
     margin-top: 60px;
 }
 
-footer p {
-    margin: 0 0 15px 0;
-}
-
-#dark-mode-toggle {
-    background-color: #334155;
-    color: #f8fafc;
-    border: 1px solid #475569;
+.toggle-btn {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
     padding: 10px 24px;
     border-radius: 30px;
-    cursor: pointer;
     font-weight: 600;
-    transition: all 0.3s;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
-/* ==========================================
-   GAYA UNTUK DARK MODE ACTIVE 
-   ========================================== */
+/* ==========================================================================
+   5. COMPREHENSIVE DARK MODE CONFIGURATION (VARIABLES RESET)
+   ========================================================================== */
 body.dark-mode {
-    background-color: #0f172a;
-    color: #cbd5e1;
+    --bg-primary: #0f172a;
+    --bg-card: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border-color: #334155;
 }
 
-body.dark-mode .card {
-    background-color: #1e293b;
-    color: #f1f5f9;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+body.dark-mode .nav-links a:hover, body.dark-mode .nav-links a.active {
+    background-color: rgba(59, 130, 246, 0.2);
+    color: #60a5fa;
 }
 
-body.dark-mode .card h2 {
-    color: #3b82f6;
-}
-
-body.dark-mode header {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-}
-
-body.dark-mode footer {
-    background-color: #020617;
-}
-
-body.dark-mode input, body.dark-mode textarea {
-    background-color: #1e293b;
-    border-color: #475569;
-    color: #ffffff;
-}
-
-body.dark-mode #dark-mode-toggle {
-    background-color: #f1f5f9;
-    color: #0f172a;
-}
-
-/* Reka Bentuk Responsif Mudah Alih */
-@media (max-width: 600px) {
-    header h1 { font-size: 1.6rem; }
-    .portfolio-container { margin: 20px auto; gap: 20px; }
+/* RESPONSIVE DESIGN */
+@media (max-width: 650px) {
+    .nav-container { flex-direction: column; gap: 15px; }
+    .nav-links a { margin: 0 5px; padding: 6px 12px; }
+    .hero-title { font-size: 2rem; }
 }

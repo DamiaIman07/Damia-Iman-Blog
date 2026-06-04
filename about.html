@@ -3,32 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Damia Iman</title>
+    <title>About Me | Damia Iman</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>Mengenai Saya</h1>
-        <nav>
-            <a href="index.html">Home</a> | 
-            <a href="about.html" class="active">About Me</a> | 
-            <a href="blog.html">Blog</a> | 
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
-
-    <main class="portfolio-container">
-        <div class="card full-width-card">
-            <h2>Latar Belakang & Pendidikan</h2>
-            <p>Kini saya sedang melanjutkan pengajian di **Fakulti Informatika dan Komputer (FIK), Universiti Sultan Zainal Abidin (UniSZA)** dalam bidang Pembangunan Perisian.</p>
-            <p>Sebagai seorang digital designer dan artist, saya memfokuskan kepakaran saya dalam pembinaan model 3D, animasi, reka bentuk logo, serta kempen advokasi digital.</p>
+    <nav class="navbar">
+        <div class="nav-container">
+            <span class="nav-logo">Damia.</span>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html" class="active">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </div>
         </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="content-section">
+            <div class="profile-card-full">
+                <h2>About Me 👩‍💻</h2>
+                <p>Saya merupakan penuntut ijazah sarjana muda di **Fakulti Informatika dan Komputer (FIK), Universiti Sultan Zainal Abidin (UniSZA)**.</p>
+                <p>Melalui gabungan latar belakang sains komputer dan minat mendalam terhadap seni visual, saya fokus menghasilkan ekosistem digital yang bukan sahaja berfungsi dengan baik dari segi kod, malah estetik dari pandangan mata.</p>
+                <hr>
+                <h3>Akademik & Pengajian</h3>
+                <p>Laman portfolio ini dibangunkan secara rasmi bagi memenuhi keperluan penilaian individu kursus **CSD 34203 Special Topics in Software Development**.</p>
+            </div>
+        </section>
     </main>
 
-    <footer>
+    <footer class="site-footer">
         <p>&copy; 2026 Damia Iman. All Rights Reserved.</p>
-        <button id="dark-mode-toggle">🌙 Dark Mode</button>
+        <button id="dark-mode-toggle" class="toggle-btn">🌙 Change Theme</button>
     </footer>
 
     <script src="script.js"></script>

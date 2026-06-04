@@ -3,42 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Damia Iman</title>
+    <title>Blog Updates | Damia Iman</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>Artikel & Perkongsian</h1>
-        <nav>
-            <a href="index.html">Home</a> | 
-            <a href="about.html">About Me</a> | 
-            <a href="blog.html" class="active">Blog</a> | 
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
-
-    <main class="portfolio-container">
-        
-        <!-- Artikel 1 -->
-        <div class="card blog-card">
-            <h2>Post 1: Dunia 3D Modeling & Animasi 🪐</h2>
-            <p><small>Diterbitkan pada: Jun 2026</small></p>
-            <p>Proses membina watak 3D memerlukan ketelitian yang tinggi, bermula daripada lakaran posisi T-pose hinggalah fasa rigging dan animasi pergerakan. Antara projek yang pernah saya bangunkan termasuklah maskot acara paragliding dan animasi bertemakan pengurusan bilik.</p>
+    <nav class="navbar">
+        <div class="nav-container">
+            <span class="nav-logo">Damia.</span>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="contact.html">Contact</a>
+            </div>
         </div>
+    </nav>
 
-        <!-- Artikel 2 -->
-        <div class="card blog-card">
-            <h2>Post 2: Seni Kesedaran Alam Sekitar 💧</h2>
-            <p><small>Diterbitkan pada: Jun 2026</small></p>
-            <p>Melalui tugasan universiti sebelum ini, saya telah mereka bentuk beberapa poster digital kesedaran alam sekitar yang memfokuskan kepada isu pembaziran air. Reka bentuk yang minimalis mampu menyampaikan impak mesej yang besar kepada masyarakat.</p>
-        </div>
+    <main class="main-content">
+        <section class="content-section">
+            <h2 class="section-title">📝 My Articles & Updates</h2>
+            <div class="blog-list">
+                
+                <article class="blog-item-card">
+                    <h3>Exploring 3D Spaces with Unity & Blender</h3>
+                    <p class="blog-date">June 2026</p>
+                    <p>Membina aset digital memerlukan kesabaran yang tinggi. Dari peringkat lakaran asas geometri hinggalah proses memasukkan tekstur bahan, kepuasan utama adalah apabila model tersebut berjaya dianimasikan tanpa ralat.</p>
+                </article>
 
+                <article class="blog-item-card">
+                    <h3>Design as a Tool for Environmental Awareness</h3>
+                    <p class="blog-date">May 2026</p>
+                    <p>Bagaimana poster digital mampu mengubah pemikiran masyarakat? Melalui penggunaan visual berimpak tinggi, mesej penjimatan air dan pemuliharaan alam sekitar dapat disampaikan dengan lebih efektif dan ringkas.</p>
+                </article>
+
+            </div>
+        </section>
     </main>
 
-    <footer>
+    <footer class="site-footer">
         <p>&copy; 2026 Damia Iman. All Rights Reserved.</p>
-        <button id="dark-mode-toggle">🌙 Dark Mode</button>
+        <button id="dark-mode-toggle" class="toggle-btn">🌙 Change Theme</button>
     </footer>
 
     <script src="script.js"></script>

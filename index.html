@@ -3,53 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Damia Iman Portfolio & Blog</title>
+    <title>Damia Iman | Personal Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>Selamat Datang ke Blog Damia</h1>
-        <nav>
-            <a href="index.html" class="active">Home</a> | 
-            <a href="about.html">About Me</a> | 
-            <a href="blog.html">Blog</a> | 
-            <a href="contact.html">Contact</a>
-        </nav>
+    <!-- 1. BAHAGIAN NAVIGATION BAR (MENU ATAS) -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <span class="nav-logo">Damia.</span>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. BAHAGIAN HERO PROFILE (MENIRU PAUTAN CONTOH) -->
+    <header class="hero-section">
+        <div class="hero-container">
+            <div class="hero-image-wrapper">
+                <img src="profile.jpg" alt="Damia Iman Profile" class="hero-avatar" onerror="this.src='https://via.placeholder.com/150'">
+            </div>
+            <h1 class="hero-title">Damia Iman</h1>
+            <p class="hero-subtitle">Student at Faculty of Informatics and Computer (FIK), UniSZA</p>
+            <p class="hero-tagline">Digital Designer & 3D Artist specializing in Creative Media & Software Development.</p>
+        </div>
     </header>
 
-    <!-- Kontainer utama yang menyusun kad-kad bersebelahan -->
-    <main class="portfolio-container">
+    <!-- 3. KANDUNGAN UTAMA (SUSUNAN KAD PORTFOLIO) -->
+    <main class="main-content">
         
-        <!-- Kad 1: Pengenalan Diri -->
-        <div class="card intro-card">
-            <h2>Hai, Saya Damia Iman! 👋</h2>
-            <p>Saya merupakan seorang pelajar di Fakulti Informatika dan Komputer (FIK), UniSZA.</p>
-            <p>Ini adalah laman portfolio dan blog peribadi saya yang dibina untuk projek individu kursus CSD 34203. Laman ini berfungsi sebagai platform digital untuk memaparkan hasil kerja saya.</p>
-        </div>
+        <!-- SEKSYEN KEMAHIRAN (SKILLS TAGS) -->
+        <section class="content-section">
+            <h2 class="section-title">🎨 What I Do (Core Skills)</h2>
+            <div class="skills-grid">
+                <div class="skill-tag">3D Modeling & Animation</div>
+                <div class="skill-tag">Brand Identity & Logo Design</div>
+                <div class="skill-tag">UI/UX Layout Design</div>
+                <div class="skill-tag">Environmental Graphic Advocacy</div>
+            </div>
+        </section>
 
-        <!-- Kad 2: Bidang Minat / Kepakaran -->
-        <div class="card skill-card">
-            <h2>Kreativiti & Reka Bentuk 🎨</h2>
-            <p>Saya sangat meminati dunia reka bentuk digital terutamanya dalam bidang:</p>
-            <ul>
-                <li>3D Modeling & Animation (Unity & Blender)</li>
-                <li>Brand Identity & Logo Design</li>
-                <li>Digital Illustration & Mascot Design</li>
-            </ul>
-        </div>
+        <!-- SEKSYEN GALERI PROJEK (CARDS GRID) -->
+        <section class="content-section">
+            <h2 class="section-title">📁 Portfolio & Project Evidence</h2>
+            <div class="cards-grid">
+                
+                <!-- Kad Projek 1 -->
+                <div class="portfolio-card">
+                    <div class="card-image-area">
+                        <img src="projek-paragliding.jpg" alt="Paragliding Mascot" onerror="this.src='https://via.placeholder.com/400x220/3b82f6/ffffff?text=3D+Paragliding+Mascot'">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-badge badge-blue">3D Modeling</span>
+                        <h3>3D Paragliding Mascot</h3>
+                        <p>Pembangunan karakter maskot dalam format T-pose khas untuk acara sukan paragliding.</p>
+                    </div>
+                </div>
 
-        <!-- Kad 3: Matlamat Portfolio -->
-        <div class="card goal-card">
-            <h2>Matlamat Projek 🚀</h2>
-            <p>Laman web ini dibina untuk memaparkan perkembangan tugasan pembangunan perisian, dokumentasi seni visual kreatif, dan ekspresi akademik saya sepanjang pengajian di universiti.</p>
-        </div>
+                <!-- Kad Projek 2 -->
+                <div class="portfolio-card">
+                    <div class="card-image-area">
+                        <img src="projek-animasi.jpg" alt="Room Cleaning Animation" onerror="this.src='https://via.placeholder.com/400x220/10b981/ffffff?text=3D+Room+Animation'">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-badge badge-green">Animation</span>
+                        <h3>3D Room Cleaning Animation</h3>
+                        <p>Simulasi animasi pendek bertemakan pengurusan kekemasan bilik menggunakan Unity dan Blender.</p>
+                    </div>
+                </div>
+
+                <!-- Kad Projek 3 -->
+                <div class="portfolio-card">
+                    <div class="card-image-area">
+                        <img src="projek-poster.jpg" alt="Water Awareness Poster" onerror="this.src='https://via.placeholder.com/400x220/f59e0b/ffffff?text=Environmental+Poster'">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-badge badge-orange">Graphic Design</span>
+                        <h3>Water Conservation Campaign</h3>
+                        <p>Siri reka bentuk poster kesedaran alam sekitar bagi menentang pembaziran air melalui gaya ilustrasi minimalis.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
 
     </main>
 
-    <footer>
-        <p>&copy; 2026 Damia Iman. All Rights Reserved.</p>
-        <button id="dark-mode-toggle">🌙 Dark Mode</button>
+    <!-- 4. FOOTER DENGAN TOGGLE DARK MODE -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Damia Iman. Built for CSD 34203 Project.</p>
+        <button id="dark-mode-toggle" class="toggle-btn">🌙 Change Theme</button>
     </footer>
 
     <script src="script.js"></script>
