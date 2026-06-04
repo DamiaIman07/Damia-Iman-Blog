@@ -2,12 +2,12 @@
    GAYA ASAS (LIGHT MODE - MODEN & ESTETIK)
    ========================================================================== */
 :root {
-    --primary-color: #4f46e5;      /* Indigo Indigo */
-    --accent-color: #06b6d4;       /* Cyan Cerah */
-    --bg-light: #f8fafc;           /* Putih Lembut */
-    --text-main: #1e293b;          /* Kelabu Gelap */
-    --text-muted: #64748b;         /* Kelabu Redup */
-    --card-bg: #ffffff;            /* Putih Bersih */
+    --primary-color: #4f46e5;      
+    --accent-color: #06b6d4;       
+    --bg-light: #f8fafc;           
+    --text-main: #1e293b;          
+    --text-muted: #64748b;         
+    --card-bg: #ffffff;            
 }
 
 body {
@@ -29,7 +29,6 @@ h2 {
     font-weight: 700;
 }
 
-/* Garisan bawah tajuk (Decoration Line) */
 h2::after {
     content: '';
     display: block;
@@ -42,7 +41,7 @@ h2::after {
 
 header {
     background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(10px); /* Efek kaca kabus meluncur */
+    backdrop-filter: blur(10px); 
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
     position: sticky;
     top: 0;
@@ -94,7 +93,6 @@ section {
     margin: auto;
 }
 
-/* HERO SECTION DECORATION */
 .hero-section {
     text-align: center;
     padding: 120px 20px;
@@ -124,7 +122,6 @@ section {
     margin: 0 auto 30px auto;
 }
 
-/* ABOUT SECTION & PROFILE IMAGE STYLE */
 .about-container {
     display: flex;
     align-items: center;
@@ -151,6 +148,11 @@ section {
     object-fit: cover;
     border-radius: 50%;
     background-color: #cbd5e1;
+    display: block;
+}
+
+.about-text {
+    flex-grow: 1;
 }
 
 .about-text h3 {
@@ -159,7 +161,6 @@ section {
     color: var(--primary-color);
 }
 
-/* BLOG SECTION DECORATION */
 .blog-container {
     display: flex;
     flex-direction: column;
@@ -205,7 +206,6 @@ section {
     margin-bottom: 15px;
 }
 
-/* CONTACT SECTION & FORM */
 .contact-card {
     background: var(--card-bg);
     padding: 40px;
@@ -239,7 +239,6 @@ input:focus, textarea:focus {
     border-color: var(--primary-color);
 }
 
-/* BUTTONS STYLE */
 .btn {
     display: inline-block;
     background: linear-gradient(135deg, var(--primary-color), #4338ca);
@@ -263,7 +262,6 @@ input:focus, textarea:focus {
     width: 100%;
 }
 
-/* THEME TOGGLE BUTTON */
 #theme-toggle {
     background: #e2e8f0;
     color: #334155;
@@ -285,7 +283,6 @@ footer {
     font-size: 0.9rem;
 }
 
-/* RESPONSIVE LAYOUT (MOBILE PHONE) */
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
@@ -301,15 +298,15 @@ footer {
 }
 
 /* ==========================================================================
-   GAYA MOD GELAP PREMIUM (DARK MODE - OBSIDIAN DEEP)
+   GAYA MOD GELAP PREMIUM (DARK MODE)
    ========================================================================== */
 body.dark-mode {
-    --bg-light: #0b0f19;       /* Hitam Obsidian */
-    --text-main: #f1f5f9;      /* Putih Sutera */
-    --text-muted: #94a3b8;     /* Kelabu Redup */
-    --card-bg: #131c2e;        /* Biru Dongker Gelap */
-    --primary-color: #6366f1;  /* Indigo Lebih Terang */
-    --accent-color: #22d3ee;   /* Cyan Neon */
+    --bg-light: #0b0f19;       
+    --text-main: #f1f5f9;      
+    --text-muted: #94a3b8;     
+    --card-bg: #131c2e;        
+    --primary-color: #6366f1;  
+    --accent-color: #22d3ee;   
 }
 
 body.dark-mode header {
