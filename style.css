@@ -162,7 +162,7 @@ section {
 }
 
 /* ==========================================================================
-   BAHAGIAN KANDUNGAN (ABOUT, BLOG, CONTACT)
+   BAHAGIAN KANDUNGAN (ABOUT, BLOG)
    ========================================================================== */
 .about-container {
     display: flex;
@@ -204,38 +204,6 @@ section {
     font-weight: 800;
     color: var(--primary-color);
 }
-
-/* --------------------------------------------------------------------------
-   BAHAGIAN SOCIAL LINKS (YANG BARU DITAMBAH)
-   -------------------------------------------------------------------------- */
-.social-links {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: 25px;
-}
-
-.social-links a {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-    color: var(--text-main); /* Menggunakan variable tulisan supaya sokong dark mode */
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-.social-links a:hover {
-    transform: translateX(5px);
-    color: var(--primary-color); /* Beri kesan warna ungu kreatif bila di-hover */
-}
-
-.social-links img {
-    width: 30px;
-    height: 30px;
-}
-
-/* -------------------------------------------------------------------------- */
 
 .blog-container {
     display: flex;
@@ -284,43 +252,130 @@ section {
     margin-bottom: 15px;
 }
 
+/* ==========================================================================
+   BAHAGIAN CONTACT PAGE YANG TELAH DIBAIKI (PREMIUM & MODEN)
+   ========================================================================== */
 .contact-card {
     background: var(--card-bg);
-    padding: 45px;
-    border-radius: 24px;
-    box-shadow: 0 10px 40px rgba(124, 58, 237, 0.03);
-    border: 1px solid rgba(124, 58, 237, 0.06);
+    padding: 40px;
+    border-radius: 28px;
+    box-shadow: 0 15px 50px rgba(124, 58, 237, 0.05);
+    border: 1px solid rgba(124, 58, 237, 0.08);
+    
+    /* Guna CSS Grid supaya pecah 2 bahagian kiri & kanan */
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 50px;
+    align-items: start;
+}
+
+/* Kolom Kiri: Info Hubungi & Media Sosial */
+.contact-info-side {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-info-side h3 {
+    margin-top: 0;
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+}
+
+.contact-info-side p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 35px;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 12px 16px;
+    border-radius: 14px;
+    background: rgba(124, 58, 237, 0.03);
+    border: 1px solid rgba(124, 58, 237, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-links a:hover {
+    transform: translateX(8px);
+    color: white;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.25);
+    border-color: transparent;
+}
+
+.social-links img {
+    width: 26px;
+    height: 26px;
+    transition: filter 0.3s;
+}
+
+.social-links a:hover img {
+    filter: brightness(0) invert(1); /* Tukar ikon jadi putih masa hover */
+}
+
+/* Kolom Kanan: Borang Mesej */
+.contact-form-side {
+    background: rgba(124, 58, 237, 0.02);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(124, 58, 237, 0.05);
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    margin-bottom: 22px;
+    margin-bottom: 20px;
 }
 
 .form-group label {
     font-weight: 700;
     font-size: 0.9rem;
     color: var(--text-main);
+    letter-spacing: 0.3px;
 }
 
 input, textarea {
-    padding: 14px;
-    border: 1px solid #e5e7eb;
+    padding: 14px 16px;
+    border: 1px solid rgba(124, 58, 237, 0.15);
     border-radius: 12px;
     font-size: 0.95rem;
-    background-color: #f9fafb;
-    transition: all 0.2s;
+    background-color: var(--card-bg);
+    color: var(--text-main);
+    font-family: inherit;
+    transition: all 0.25s ease;
 }
 
 input:focus, textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.15);
-    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.12);
+    background-color: var(--card-bg);
 }
 
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Butang Hantar */
 .btn {
     display: inline-block;
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
@@ -346,6 +401,9 @@ input:focus, textarea:focus {
     box-sizing: border-box;
 }
 
+/* ==========================================================================
+   BUTANG TEMA & FOOTER
+   ========================================================================== */
 #theme-toggle {
     background: rgba(124, 58, 237, 0.08);
     color: var(--primary-color);
@@ -416,19 +474,29 @@ body.dark-mode .blog-tag {
     background: linear-gradient(90deg, rgba(167, 139, 250, 0.15), rgba(244, 114, 182, 0.15));
 }
 
+/* Penyesuaian Contact di Mod Gelap */
 body.dark-mode .contact-card {
     border-color: rgba(167, 139, 250, 0.1);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .contact-form-side {
+    background: rgba(167, 139, 250, 0.02);
+    border-color: rgba(167, 139, 250, 0.05);
+}
+
+body.dark-mode .social-links a {
+    background: rgba(167, 139, 250, 0.03);
+    border-color: rgba(167, 139, 250, 0.05);
 }
 
 body.dark-mode input, body.dark-mode textarea {
-    background-color: #06040d;
     border-color: rgba(167, 139, 250, 0.2);
-    color: white;
 }
 
 body.dark-mode input:focus, body.dark-mode textarea:focus {
     border-color: var(--accent-color);
-    box-shadow: 0 0 0 4px rgba(244, 114, 182, 0.25);
+    box-shadow: 0 0 0 4px rgba(244, 114, 182, 0.2);
 }
 
 body.dark-mode #theme-toggle {
@@ -438,7 +506,7 @@ body.dark-mode #theme-toggle {
 }
 
 /* ==========================================================================
-   KAWALAN RESPONSIF MOBILE
+   KAWALAN RESPONSIF MOBILE (TERMASUK KEMAS KINI CONTACT CARD)
    ========================================================================== */
 @media (max-width: 768px) {
     nav {
@@ -464,5 +532,16 @@ body.dark-mode #theme-toggle {
 
     body.dark-mode .hero-section {
         background-size: 100% 100%;
+    }
+
+    /* Diubah dari 2 kolom desktop kepada 1 kolom menegak penuh untuk skrin telefon */
+    .contact-card {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 30px 20px;
+    }
+
+    .contact-info-side p {
+        margin-bottom: 25px;
     }
 }
