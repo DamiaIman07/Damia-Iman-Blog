@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hubungi Saya | Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVIGASI -->
+    <header>
+        <nav>
+            <div class="logo">My<span>Portfolio</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <button id="theme-toggle">🌙 Dark Mode</button>
+        </nav>
+    </header>
+
+    <!-- SECTION: CONTACT -->
+    <section>
+        <h2>Hubungi Saya</h2>
+        <div class="contact-card">
+            <form id="contact-form" onsubmit="event.preventDefault(); alert('Mesej berjaya dihantar!');">
+                <div class="form-group">
+                    <label>Nama</label>
+                    <input type="text" placeholder="Nama anda" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="Email anda" required>
+                </div>
+                <div class="form-group">
+                    <label>Mesej</label>
+                    <textarea placeholder="Tulis mesej anda di sini..." rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-full">Hantar Mesej</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Hak Cipta Terpelihara | Dibina untuk CSD34203.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

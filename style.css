@@ -17,7 +17,7 @@ body {
     padding: 0;
     color: var(--text-main);
     background-color: var(--bg-light);
-    /* Corak Grid Digital untuk Pelajar Media */
+    /* Corak Grid Digital */
     background-image: linear-gradient(var(--grid-color) 1px, transparent 1px),
                       linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
     background-size: 24px 24px;
@@ -35,7 +35,6 @@ h2 {
     letter-spacing: -0.5px;
 }
 
-/* Garisan bawah tajuk gaya seni digital */
 h2::after {
     content: '';
     display: block;
@@ -95,11 +94,11 @@ nav {
     transition: color 0.2s;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--primary-color);
 }
 
-/* Kesan garisan bawah menu bila di-hover */
 .nav-links a::after {
     content: '';
     position: absolute;
@@ -110,7 +109,8 @@ nav {
     background-color: var(--primary-color);
     transition: width 0.3s ease;
 }
-.nav-links a:hover::after {
+.nav-links a:hover::after,
+.nav-links a.active::after {
     width: 100%;
 }
 
@@ -120,7 +120,6 @@ section {
     margin: auto;
 }
 
-/* HERO SECTION AMBIENT GLOW */
 .hero-section {
     text-align: center;
     padding: 130px 20px;
@@ -152,7 +151,6 @@ section {
     margin: 0 auto 35px auto;
 }
 
-/* ABOUT CONTAINER DENGAN KESAN GRADIENT BORDER */
 .about-container {
     display: flex;
     align-items: center;
@@ -194,7 +192,6 @@ section {
     color: var(--primary-color);
 }
 
-/* BLOG CARDS KREATIF */
 .blog-container {
     display: flex;
     flex-direction: column;
@@ -242,7 +239,6 @@ section {
     margin-bottom: 15px;
 }
 
-/* CONTACT CARD */
 .contact-card {
     background: var(--card-bg);
     padding: 45px;
@@ -280,7 +276,6 @@ input:focus, textarea:focus {
     background-color: #ffffff;
 }
 
-/* GLOWING BUTTONS */
 .btn {
     display: inline-block;
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
@@ -306,7 +301,6 @@ input:focus, textarea:focus {
     box-sizing: border-box;
 }
 
-/* THEME TOGGLE BUTTON SWAG */
 #theme-toggle {
     background: rgba(124, 58, 237, 0.08);
     color: var(--primary-color);
@@ -333,7 +327,6 @@ footer {
     border-top: 1px solid rgba(124, 58, 237, 0.1);
 }
 
-/* RESPONSIVE LAYOUT */
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
@@ -350,16 +343,16 @@ footer {
 }
 
 /* ==========================================================================
-   GAYA MOD GELAP CYBERPUNK OBSIDIAN (PREMIUM MEDIA STUDENT THEME)
+   MOD GELAP CYBERPUNK OBSIDIAN
    ========================================================================== */
 body.dark-mode {
-    --bg-light: #06040d;       /* Hitam Angkasa Pekat */
-    --text-main: #f3f4f6;      /* Putih Neon Halus */
+    --bg-light: #06040d;       
+    --text-main: #f3f4f6;      
     --text-muted: #9ca3af;     
-    --card-bg: #0f0a1c;        /* Ungu Gelap Obsidian */
-    --primary-color: #a78bfa;  /* Ungu Neon Sg */
-    --accent-color: #f472b6;   /* Pink Cyber Neon */
-    --grid-color: rgba(167, 139, 250, 0.05); /* Grid menyala lembut */
+    --card-bg: #0f0a1c;        
+    --primary-color: #a78bfa;  
+    --accent-color: #f472b6;   
+    --grid-color: rgba(167, 139, 250, 0.05); 
 }
 
 body.dark-mode header {
