@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio & Blog Saya</title>
-    <!-- Menghubungkan fail HTML dengan fail CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Bahagian Menu Navigasi -->
+    <!-- NAVIGASI (Menggunakan # untuk skrol, bukan fail asing) -->
     <header>
         <nav>
             <div class="logo">MyPortfolio</div>
@@ -23,20 +22,20 @@
         </nav>
     </header>
 
-    <!-- Bahagian Utama (Home) -->
+    <!-- SECTION 1: HOME -->
     <section id="home" class="hero-section">
         <h1>Selamat Datang ke Portfolio & Blog Saya</h1>
         <p>Saya pelajar Fakulti Informatika dan Komputer (FIK), UniSZA.</p>
         <a href="#blog" class="btn">Lihat Artikel Blog</a>
     </section>
 
-    <!-- Bahagian Mengenai Saya (About) -->
+    <!-- SECTION 2: ABOUT -->
     <section id="about">
         <h2>Mengenai Saya</h2>
-        <p>Hai! Saya seorang pelajar reka bentuk digital dan pembangunan perisian. Di sini saya kongsikan projek-projek serta pemikiran saya sepanjang pengajian.</p>
+        <p>Hai! Saya seorang pelajar reka bentuk digital dan pembangunan perisian. Di sini saya kongsikan projek-projek serta pemikiran saya sepanjang pengajian di UniSZA.</p>
     </section>
 
-    <!-- Bahagian Artikel Blog (Dikehendaki ada 2-3 contoh post) -->
+    <!-- SECTION 3: BLOG (Mengandungi 2-3 contoh post mengikut kriteria) -->
     <section id="blog">
         <h2>Blog Artikel</h2>
         <div class="blog-container">
@@ -54,10 +53,10 @@
         </div>
     </section>
 
-    <!-- Bahagian Borang Hubungi (Contact) -->
+    <!-- SECTION 4: CONTACT -->
     <section id="contact">
         <h2>Hubungi Saya</h2>
-        <form id="contact-form" onsubmit="event.preventDefault(); alert('Mesej berjaya dihantar! (Ini adalah simulasi)');">
+        <form id="contact-form" onsubmit="event.preventDefault(); alert('Mesej berjaya dihantar!');">
             <input type="text" placeholder="Nama Anda" required>
             <input type="email" placeholder="Email Anda" required>
             <textarea placeholder="Mesej Anda" required></textarea>
@@ -69,7 +68,6 @@
         <p>&copy; 2026 Hak Cipta Terpelihara | Dibina untuk CSD34203.</p>
     </footer>
 
-    <!-- Menghubungkan fail HTML dengan fail JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
