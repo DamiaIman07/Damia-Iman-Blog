@@ -1,6 +1,5 @@
 const darkModeToggle = document.getElementById('dark-mode-toggle');
 
-// Muat tetapan tema lama daripada simpanan browser
 if (localStorage.getItem('theme') === 'dark') {
     document.body.classList.add('dark-mode');
     if (darkModeToggle) darkModeToggle.textContent = '☀️ Light Mode';
@@ -14,7 +13,7 @@ if (darkModeToggle) {
             darkModeToggle.textContent = '☀️ Light Mode';
             localStorage.setItem('theme', 'dark');
         } else {
-            darkModeToggle.textContent = '🌙 Change Theme';
+            darkModeToggle.textContent = '🌙 Toggle Aesthetic';
             localStorage.setItem('theme', 'light');
         }
     });

@@ -3,29 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get In Touch | Damia Iman</title>
+    <title>Contact Me | Damia Iman</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <span class="nav-logo">Damia.</span>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="blog.html">Blog</a>
-                <a href="contact.html" class="active">Contact</a>
-            </div>
+    <nav class="clean-nav">
+        <div class="nav-brand">DAMIA IMAN.</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html" class="active">Contact</a>
         </div>
     </nav>
 
-    <main class="main-content">
-        <section class="content-section">
-            <div class="contact-card">
-                <h2>Let's Collaborate ✉️</h2>
-                <p>Mempunyai sebarang idea projek reka bentuk, kolaborasi kreatif, atau pertanyaan akademik? Hubungi saya melalui borang di bawah:</p>
-                
+    <div class="studio-wrapper">
+        <header class="studio-intro">
+            <p class="tagline">// GET IN TOUCH</p>
+            <h1 class="main-title">Let's Connect & Collaborate.</h1>
+        </header>
+
+        <main class="asymmetric-grid">
+            <div class="studio-card card-wide">
+                <h3>Send a Message ✉️</h3>
                 <form action="#" class="styled-form">
                     <div class="form-group">
                         <label for="name">Your Name</label>
@@ -37,17 +38,22 @@
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" rows="5" placeholder="Write your message here..." required></textarea>
+                        <textarea id="message" rows="4" placeholder="Write your message here..." required></textarea>
                     </div>
                     <button type="submit" class="submit-btn">Send Message</button>
                 </form>
             </div>
-        </section>
-    </main>
 
-    <footer class="site-footer">
+            <div class="studio-card card-small">
+                <h3>Inquiries</h3>
+                <p>Untuk sebarang kolaborasi reka bentuk digital, perbincangan projek akademik, atau maklum balas, sila isi borang digital atau hubungi melalui emel universiti saya.</p>
+            </div>
+        </main>
+    </div>
+
+    <footer class="minimal-footer">
         <p>&copy; 2026 Damia Iman. All Rights Reserved.</p>
-        <button id="dark-mode-toggle" class="toggle-btn">🌙 Change Theme</button>
+        <button id="dark-mode-toggle" class="theme-switcher">🌙 Toggle Aesthetic</button>
     </footer>
 
     <script src="script.js"></script>
