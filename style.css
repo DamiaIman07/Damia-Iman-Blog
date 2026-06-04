@@ -1,310 +1,266 @@
 /* ==========================================================================
-   PREMIUM MINIMALIST PORTFOLIO THEME (Inspired by Modern Card UI Layouts)
+   AESTHETIC STUDIO THEME (NEUMORPHISM & ASYMMETRIC GRID)
    ========================================================================== */
 
 :root {
-    --bg-primary: #f8fafc;
-    --bg-card: #ffffff;
-    --text-main: #0f172a;
-    --text-muted: #64748b;
-    --primary-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-    --border-color: #e2e8f0;
-    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+    --bg-main: #f0f2f5;
+    --bg-card: #f0f2f5;
+    --text-color: #2d3748;
+    --accent-color: #4a5568;
+    --text-muted: #718096;
+    /* Kesan Bayang Neumorphism */
+    --shadow-out: 6px 6px 16px #d1d9e6, -6px -6px 16px #ffffff;
+    --shadow-in: inset 4px 4px 8px #d1d9e6, inset -4px -4px 8px #ffffff;
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: var(--bg-primary);
-    color: var(--text-main);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-color);
     margin: 0;
     padding: 0;
-    line-height: 1.6;
-    transition: background-color 0.3s, color 0.3s;
+    transition: all 0.4s ease;
 }
 
-/* 1. STYLED NAVIGATION BAR */
-.navbar {
-    background-color: var(--bg-card);
-    border-bottom: 1px solid var(--border-color);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    padding: 15px 0;
-    box-shadow: var(--shadow-sm);
-}
-
-.nav-container {
-    max-width: 1100px;
-    margin: 0 auto;
+/* NAVIGATION BAR MINIMALIS */
+.clean-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 20px;
 }
 
-.nav-logo {
-    font-size: 1.5rem;
+.nav-brand {
     font-weight: 800;
-    background: var(--primary-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
 }
 
 .nav-links a {
-    color: var(--text-muted);
     text-decoration: none;
-    font-weight: 500;
-    margin-left: 20px;
-    padding: 8px 16px;
-    border-radius: 20px;
-    transition: all 0.2s ease;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-left: 25px;
+    transition: color 0.3s;
 }
 
 .nav-links a:hover, .nav-links a.active {
-    color: #3b82f6;
-    background-color: rgba(59, 130, 246, 0.08);
+    color: var(--text-color);
+    border-bottom: 2px solid var(--text-color);
 }
 
-/* 2. HERO PROFILE SECTION */
-.hero-section {
-    background: var(--bg-card);
-    padding: 60px 20px;
-    text-align: center;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.hero-container {
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.hero-image-wrapper {
-    margin-bottom: 20px;
-}
-
-.hero-avatar {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #ffffff;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-.hero-title {
-    font-size: 2.6rem;
-    font-weight: 800;
-    margin: 10px 0;
-    letter-spacing: -0.03em;
-}
-
-.hero-subtitle {
-    font-size: 1.1rem;
-    color: #3b82f6;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-
-.hero-tagline {
-    font-size: 1.05rem;
-    color: var(--text-muted);
-    margin: 0 auto;
-}
-
-/* 3. MAIN CONTENT AND GRID SPACING */
-.main-content {
+/* WRAPPER KANDUNGAN */
+.studio-wrapper {
     max-width: 1100px;
     margin: 40px auto;
     padding: 0 20px;
 }
 
-.content-section {
-    margin-bottom: 50px;
-}
-
-.section-title {
-    font-size: 1.6rem;
-    font-weight: 700;
-    margin-bottom: 25px;
-}
-
-/* SKILLS TAGS DESIGN */
-.skills-grid {
+/* GAMBAR PROFIL BULAT NEUMORPHISM */
+.profile-frame {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 30px auto;
+    border-radius: 50%;
+    background: var(--bg-card);
+    box-shadow: var(--shadow-out);
     display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
-.skill-tag {
-    background-color: var(--bg-card);
-    border: 1px solid var(--border-color);
-    padding: 10px 20px;
-    border-radius: 30px;
-    font-weight: 500;
-    font-size: 0.95rem;
-    box-shadow: var(--shadow-sm);
-}
-
-/* 4. PREMIUM CARDS GRID (SAMA SEPERTI LINK CONTOH) */
-.cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-}
-
-.portfolio-card {
-    background-color: var(--bg-card);
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: var(--shadow-md);
-    border: 1px solid var(--border-color);
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
-}
-
-/* KESAN INTERAKTIF TERAPUNG (HOVER EFFECT) */
-.portfolio-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.12);
-}
-
-.card-image-area {
-    width: 100%;
-    height: 210px;
-    background-color: #f1f5f9;
-    overflow: hidden;
-}
-
-.card-image-area img {
-    width: 100%;
-    height: 100%;
+.avatar-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
     object-fit: cover;
 }
 
-.card-body {
-    padding: 25px;
-}
-
-.card-badge {
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
+.profile-badge {
+    position: absolute;
+    bottom: -5px;
+    background-color: #2d3748;
+    color: white;
+    font-size: 0.7rem;
     padding: 4px 10px;
-    border-radius: 12px;
-    letter-spacing: 0.05em;
-    display: inline-block;
-    margin-bottom: 12px;
+    border-radius: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
-.badge-blue { background-color: rgba(59, 130, 246, 0.1); color: #3b82f6; }
-.badge-green { background-color: rgba(16, 185, 129, 0.1); color: #10b981; }
-.badge-orange { background-color: rgba(245, 158, 11, 0.1); color: #f59e0b; }
-
-.card-body h3 {
-    margin: 0 0 10px 0;
-    font-size: 1.3rem;
-    color: var(--text-main);
+/* BAHAGIAN INTRO */
+.studio-intro {
+    text-align: center;
+    margin-bottom: 60px;
 }
 
-.card-body p {
+.tagline {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 3px;
+}
+
+.main-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    max-width: 800px;
+    margin: 10px auto;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+/* SUSUNAN GRID ASIMETRI (INI YANG BUAT LAWA!) */
+.asymmetric-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Jenis Saiz Kad */
+.card-wide {
+    grid-column: span 2;
+}
+
+.card-small {
+    grid-column: span 1;
+}
+
+/* Gaya Asas Kad Neumorphism */
+.studio-card {
+    background: var(--bg-card);
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: var(--shadow-out);
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.studio-card:hover {
+    transform: translateY(-4px);
+}
+
+.studio-card h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.clean-list {
+    list-style: none;
+    padding: 0;
     margin: 0;
+}
+
+.clean-list li {
+    margin-bottom: 10px;
+    font-weight: 500;
     font-size: 0.95rem;
+}
+
+/* GAYA KAD PROJEK/GAMBAR */
+.project-card {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.img-container {
+    width: 100%;
+    height: 200px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-in); /* Gambar nampak tenggelam ke dalam kad */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.video-style {
+    height: 250px;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.project-details {
+    margin-top: 15px;
+    padding: 0 5px;
+}
+
+.project-tag {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+}
+
+.project-details h4 {
+    margin: 5px 0 0 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* FOOTER & BUTTON SWITCHER */
+.minimal-footer {
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 40px;
+    font-size: 0.9rem;
     color: var(--text-muted);
 }
 
-/* OTHER CARD COMPONENTS */
-.profile-card-full, .contact-card, .blog-item-card {
-    background-color: var(--bg-card);
-    padding: 35px;
-    border-radius: 16px;
-    box-shadow: var(--shadow-md);
-    border: 1px solid var(--border-color);
-    margin-bottom: 25px;
-}
-
-.blog-date {
-    font-size: 0.85rem;
-    color: #3b82f6;
-    font-weight: 600;
-}
-
-/* FORM STYLING */
-.styled-form {
-    margin-top: 25px;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 8px;
-    font-size: 0.95rem;
-}
-
-.form-group input, .form-group textarea {
-    width: 100%;
-    padding: 12px 16px;
-    border: 1px solid var(--border-color);
-    background-color: var(--bg-primary);
-    color: var(--text-main);
-    border-radius: 8px;
-    box-sizing: border-box;
-    font-family: inherit;
-}
-
-.submit-btn {
-    background: var(--primary-gradient);
-    color: white;
+.theme-switcher {
+    background: var(--bg-card);
+    color: var(--text-color);
     border: none;
-    padding: 14px 28px;
-    font-weight: 600;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-}
-
-/* FOOTER AND TOGGLE BUTTON */
-.site-footer {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: var(--bg-card);
-    border-top: 1px solid var(--border-color);
-    margin-top: 60px;
-}
-
-.toggle-btn {
-    background-color: var(--bg-primary);
-    color: var(--text-main);
-    border: 1px solid var(--border-color);
-    padding: 10px 24px;
-    border-radius: 30px;
+    padding: 12px 28px;
+    border-radius: 16px;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s ease;
+    box-shadow: var(--shadow-out);
+    margin-top: 15px;
+    transition: background 0.3s;
+}
+
+.theme-switcher:active {
+    box-shadow: var(--shadow-in);
 }
 
 /* ==========================================================================
-   5. COMPREHENSIVE DARK MODE CONFIGURATION (VARIABLES RESET)
+   AESTHETIC DARK MODE RESET
    ========================================================================== */
 body.dark-mode {
-    --bg-primary: #0f172a;
-    --bg-card: #1e293b;
-    --text-main: #f8fafc;
-    --text-muted: #94a3b8;
-    --border-color: #334155;
+    --bg-main: #1e222b;
+    --bg-card: #1e222b;
+    --text-color: #f3f4f6;
+    --text-muted: #9ca3af;
+    --shadow-out: 6px 6px 16px #12151a, -6px -6px 16px #2a2f3c;
+    --shadow-in: inset 4px 4px 8px #12151a, inset -4px -4px 8px #2a2f3c;
 }
 
-body.dark-mode .nav-links a:hover, body.dark-mode .nav-links a.active {
-    background-color: rgba(59, 130, 246, 0.2);
-    color: #60a5fa;
+body.dark-mode .profile-badge {
+    background-color: #f3f4f6;
+    color: #1e222b;
 }
 
-/* RESPONSIVE DESIGN */
-@media (max-width: 650px) {
-    .nav-container { flex-direction: column; gap: 15px; }
-    .nav-links a { margin: 0 5px; padding: 6px 12px; }
-    .hero-title { font-size: 2rem; }
+/* RESPONSIVE DESIGN UNTUK TELEFON */
+@media (max-width: 800px) {
+    .asymmetric-grid {
+        grid-template-columns: 1fr;
+    }
+    .card-wide, .card-small {
+        grid-column: span 1;
+    }
+    .main-title {
+        font-size: 1.8rem;
+    }
 }

@@ -3,100 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Damia Iman | Personal Portfolio</title>
+    <title>Damia Iman | Creative Space</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- 1. BAHAGIAN NAVIGATION BAR (MENU ATAS) -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <span class="nav-logo">Damia.</span>
-            <div class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="about.html">About</a>
-                <a href="blog.html">Blog</a>
-                <a href="contact.html">Contact</a>
-            </div>
+    <!-- NAV BAR KECIL MINIMALIS -->
+    <nav class="clean-nav">
+        <div class="nav-brand">DAMIA IMAN.</div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
         </div>
     </nav>
 
-    <!-- 2. BAHAGIAN HERO PROFILE (MENIRU PAUTAN CONTOH) -->
-    <header class="hero-section">
-        <div class="hero-container">
-            <div class="hero-image-wrapper">
-                <img src="profile.jpg" alt="Damia Iman Profile" class="hero-avatar" onerror="this.src='https://via.placeholder.com/150'">
-            </div>
-            <h1 class="hero-title">Damia Iman</h1>
-            <p class="hero-subtitle">Student at Faculty of Informatics and Computer (FIK), UniSZA</p>
-            <p class="hero-tagline">Digital Designer & 3D Artist specializing in Creative Media & Software Development.</p>
-        </div>
-    </header>
-
-    <!-- 3. KANDUNGAN UTAMA (SUSUNAN KAD PORTFOLIO) -->
-    <main class="main-content">
+    <!-- CONTAINER UTAMA GAYA MAJALAH DIGITAL -->
+    <div class="studio-wrapper">
         
-        <!-- SEKSYEN KEMAHIRAN (SKILLS TAGS) -->
-        <section class="content-section">
-            <h2 class="section-title">🎨 What I Do (Core Skills)</h2>
-            <div class="skills-grid">
-                <div class="skill-tag">3D Modeling & Animation</div>
-                <div class="skill-tag">Brand Identity & Logo Design</div>
-                <div class="skill-tag">UI/UX Layout Design</div>
-                <div class="skill-tag">Environmental Graphic Advocacy</div>
+        <!-- KOTAK BULAT GAMBAR PROFIL -->
+        <div class="profile-frame">
+            <img src="profile.jpg" alt="Damia" class="avatar-img" onerror="this.src='https://via.placeholder.com/150'">
+            <div class="profile-badge">FIK UniSZA</div>
+        </div>
+
+        <!-- TEKS PENGENALAN UTAMA -->
+        <header class="studio-intro">
+            <p class="tagline">// CREATIVE PORTFOLIO & STUDIO</p>
+            <h1 class="main-title">Digital Designer & 3D Artist based in Malaysia.</h1>
+        </header>
+
+        <!-- GRID ASIMETRI (SAIZ KOTAK TAK SAMA) -->
+        <main class="asymmetric-grid">
+            
+            <!-- Kad 1: Pengenalan (Lebar) -->
+            <div class="studio-card card-wide intro-box">
+                <h3>About My Space</h3>
+                <p>Hi, saya Damia. Laman peribadi ini direka khas untuk mendokumentasikan projek individu kursus CSD 34203. Di sini saya satukan minat saya dalam sains komputer dan seni reka visual digital.</p>
             </div>
-        </section>
 
-        <!-- SEKSYEN GALERI PROJEK (CARDS GRID) -->
-        <section class="content-section">
-            <h2 class="section-title">📁 Portfolio & Project Evidence</h2>
-            <div class="cards-grid">
-                
-                <!-- Kad Projek 1 -->
-                <div class="portfolio-card">
-                    <div class="card-image-area">
-                        <img src="projek-paragliding.jpg" alt="Paragliding Mascot" onerror="this.src='https://via.placeholder.com/400x220/3b82f6/ffffff?text=3D+Paragliding+Mascot'">
-                    </div>
-                    <div class="card-body">
-                        <span class="card-badge badge-blue">3D Modeling</span>
-                        <h3>3D Paragliding Mascot</h3>
-                        <p>Pembangunan karakter maskot dalam format T-pose khas untuk acara sukan paragliding.</p>
-                    </div>
-                </div>
-
-                <!-- Kad Projek 2 -->
-                <div class="portfolio-card">
-                    <div class="card-image-area">
-                        <img src="projek-animasi.jpg" alt="Room Cleaning Animation" onerror="this.src='https://via.placeholder.com/400x220/10b981/ffffff?text=3D+Room+Animation'">
-                    </div>
-                    <div class="card-body">
-                        <span class="card-badge badge-green">Animation</span>
-                        <h3>3D Room Cleaning Animation</h3>
-                        <p>Simulasi animasi pendek bertemakan pengurusan kekemasan bilik menggunakan Unity dan Blender.</p>
-                    </div>
-                </div>
-
-                <!-- Kad Projek 3 -->
-                <div class="portfolio-card">
-                    <div class="card-image-area">
-                        <img src="projek-poster.jpg" alt="Water Awareness Poster" onerror="this.src='https://via.placeholder.com/400x220/f59e0b/ffffff?text=Environmental+Poster'">
-                    </div>
-                    <div class="card-body">
-                        <span class="card-badge badge-orange">Graphic Design</span>
-                        <h3>Water Conservation Campaign</h3>
-                        <p>Siri reka bentuk poster kesedaran alam sekitar bagi menentang pembaziran air melalui gaya ilustrasi minimalis.</p>
-                    </div>
-                </div>
-
+            <!-- Kad 2: Kepakaran (Kecil) -->
+            <div class="studio-card card-small skill-box">
+                <h3>Core Stack</h3>
+                <ul class="clean-list">
+                    <li>✦ 3D Modeling & Animation</li>
+                    <li>✦ Brand Identity & Logos</li>
+                    <li>✦ UI/UX Layout Design</li>
+                    <li>✦ Visual Advocacy Art</li>
+                </ul>
             </div>
-        </section>
 
-    </main>
+            <!-- PROJEK 1: PARAGLIDING (Kecil) -->
+            <div class="studio-card card-small project-card">
+                <div class="img-container">
+                    <img src="projek-paragliding.jpg" alt="Mascot" onerror="this.src='https://via.placeholder.com/400x300/e2e8f0/64748b?text=3D+Mascot'">
+                </div>
+                <div class="project-details">
+                    <span class="project-tag">3D MODEL</span>
+                    <h4>Paragliding Mascot</h4>
+                </div>
+            </div>
 
-    <!-- 4. FOOTER DENGAN TOGGLE DARK MODE -->
-    <footer class="site-footer">
-        <p>&copy; 2026 Damia Iman. Built for CSD 34203 Project.</p>
-        <button id="dark-mode-toggle" class="toggle-btn">🌙 Change Theme</button>
+            <!-- PROJEK 2: ANIMASI BILIK (Lebar) -->
+            <div class="studio-card card-wide project-card">
+                <div class="img-container video-style">
+                    <img src="projek-animasi.jpg" alt="Animation" onerror="this.src='https://via.placeholder.com/800x400/cbd5e1/475569?text=3D+Room+Animation+Simulation'">
+                </div>
+                <div class="project-details">
+                    <span class="project-tag">ANIMATION</span>
+                    <h4>3D Room Cleaning Simulation Project</h4>
+                </div>
+            </div>
+
+            <!-- PROJEK 3: POSTER AIR (Kecil) -->
+            <div class="studio-card card-small project-card">
+                <div class="img-container">
+                    <img src="projek-poster.jpg" alt="Poster" onerror="this.src='https://via.placeholder.com/400x300/e2e8f0/64748b?text=Water+Campaign+Poster'">
+                </div>
+                <div class="project-details">
+                    <span class="project-tag">ADVOCACY</span>
+                    <h4>Water Conservation Campaign Art</h4>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- FOOTER MINIMALIS -->
+    <footer class="minimal-footer">
+        <p>&copy; 2026 Damia Iman. All Rights Reserved.</p>
+        <button id="dark-mode-toggle" class="theme-switcher">🌙 Toggle Aesthetic</button>
     </footer>
 
     <script src="script.js"></script>
