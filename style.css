@@ -1,14 +1,23 @@
 /* ==========================================================================
-   TEMA MEDIA INFORMATIKA - LIGHT MODE (KREATIF & PASTEL CYBER)
+   TEMA UTAMA (CSS VARIABLES & GLOBAL SETTINGS)
    ========================================================================== */
 :root {
+    /* Palet Warna Kreatif & Pastel Cyber */
     --primary-color: #7c3aed;      /* Ungu Kreatif */
     --accent-color: #db2777;       /* Cyber Pink */
     --bg-light: #f5f3ff;           /* Latar Belakang Lavender Lembut */
-    --text-main: #1f2937;          
-    --text-muted: #6b7280;         
-    --card-bg: #ffffff;            
-    --grid-color: rgba(124, 58, 237, 0.04); /* Corak grid halus */
+    --card-bg: #ffffff;            /* Latar Belakang Kad */
+    
+    /* Palet Warna Tipografi */
+    --text-main: #1f2937;          /* Tulisan Utama */
+    --text-muted: #6b7280;         /* Tulisan Pudar */
+    
+    /* Corak Grid Digital Halus */
+    --grid-color: rgba(124, 58, 237, 0.04); 
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
@@ -17,22 +26,24 @@ body {
     padding: 0;
     color: var(--text-main);
     background-color: var(--bg-light);
-    /* Corak Grid Digital */
     background-image: linear-gradient(var(--grid-color) 1px, transparent 1px),
                       linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
     background-size: 24px 24px;
     line-height: 1.7;
-    transition: background 0.4s, color 0.4s;
     scroll-behavior: smooth;
+    transition: background 0.4s, color 0.4s;
 }
 
+/* ==========================================================================
+   ELEMEN TIPOGRAFI / REKA BENTUK SEMULA (RESETS)
+   ========================================================================== */
 h2 {
     font-size: 2.2rem;
+    font-weight: 800;
     text-align: center;
+    letter-spacing: -0.5px;
     margin-bottom: 40px;
     position: relative;
-    font-weight: 800;
-    letter-spacing: -0.5px;
 }
 
 h2::after {
@@ -45,14 +56,23 @@ h2::after {
     border-radius: 10px;
 }
 
+section {
+    max-width: 950px;
+    margin: auto;
+    padding: 100px 20px;
+}
+
+/* ==========================================================================
+   NAVIGASI UTAMA (HEADER & NAVIGATION)
+   ========================================================================== */
 header {
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(12px); 
     box-shadow: 0 4px 20px rgba(124, 58, 237, 0.05);
+    border-bottom: 1px solid rgba(124, 58, 237, 0.1);
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 1px solid rgba(124, 58, 237, 0.1);
     transition: background 0.4s;
 }
 
@@ -66,11 +86,12 @@ nav {
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.25rem; /* Saiz minimalis & kemas */
     font-weight: 900;
-    letter-spacing: -1px;
+    letter-spacing: -0.5px;
     text-transform: uppercase;
 }
+
 .logo span {
     background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
     -webkit-background-clip: text;
@@ -78,18 +99,18 @@ nav {
 }
 
 .nav-links {
-    list-style: none;
     display: flex;
     gap: 30px;
     margin: 0;
     padding: 0;
+    list-style: none;
 }
 
 .nav-links a {
+    font-size: 0.95rem;
+    font-weight: 700;
     text-decoration: none;
     color: inherit;
-    font-weight: 700;
-    font-size: 0.95rem;
     position: relative;
     transition: color 0.2s;
 }
@@ -109,43 +130,35 @@ nav {
     background-color: var(--primary-color);
     transition: width 0.3s ease;
 }
+
 .nav-links a:hover::after,
 .nav-links a.active::after {
     width: 100%;
 }
 
-section {
-    padding: 100px 20px;
-    max-width: 950px;
-    margin: auto;
-}
-
 /* ==========================================================================
-   HERO SECTION 
+   HERO SECTION (KONTRAST TINGGI & DIKEMAS KINI)
    ========================================================================== */
 .hero-section {
     text-align: center;
     padding: 160px 20px; 
-    
     background: linear-gradient(rgba(15, 10, 28, 0.82), rgba(15, 10, 28, 0.9)), 
                 url('background.png') no-repeat center center;
-    
     background-size: cover;
     background-attachment: scroll;
-    
     border-radius: 30px;
-    margin-top: 20px;
     border: 1px solid rgba(124, 58, 237, 0.2);
     box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.6); 
+    margin-top: 20px;
 }
 
 .hero-section h1 {
     font-size: 3.2rem;
-    line-height: 1.15;
     font-weight: 900;
+    line-height: 1.15;
     letter-spacing: -1px;
-    margin-bottom: 25px;
     color: #ffffff; 
+    margin-bottom: 25px;
 }
 
 .hero-section h1 span {
@@ -157,12 +170,12 @@ section {
 .hero-section p {
     font-size: 1.2rem;
     max-width: 650px;
-    margin: 0 auto 35px auto;
     color: #cbd5e1 !important; 
+    margin: 0 auto 35px auto;
 }
 
 /* ==========================================================================
-   BAHAGIAN KANDUNGAN (ABOUT, BLOG)
+   BAHAGIAN KANDUNGAN: ABOUT PAGE
    ========================================================================== */
 .about-container {
     display: flex;
@@ -171,8 +184,8 @@ section {
     background: var(--card-bg);
     padding: 45px;
     border-radius: 24px;
-    box-shadow: 0 10px 40px rgba(124, 58, 237, 0.04);
     border: 1px solid rgba(124, 58, 237, 0.08);
+    box-shadow: 0 10px 40px rgba(124, 58, 237, 0.04);
 }
 
 .profile-frame {
@@ -199,12 +212,15 @@ section {
 }
 
 .about-text h3 {
-    margin-top: 0;
     font-size: 1.6rem;
     font-weight: 800;
     color: var(--primary-color);
+    margin-top: 0;
 }
 
+/* ==========================================================================
+   BAHAGIAN KANDUNGAN: BLOG PAGE
+   ========================================================================== */
 .blog-container {
     display: flex;
     flex-direction: column;
@@ -215,35 +231,35 @@ section {
     background: var(--card-bg);
     padding: 35px;
     border-radius: 20px;
-    box-shadow: 0 4px 25px rgba(0,0,0,0.01);
     border: 1px solid rgba(124, 58, 237, 0.06);
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.01);
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s;
 }
 
 .blog-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 20px 40px rgba(124, 58, 237, 0.1);
     border-color: var(--primary-color);
+    box-shadow: 0 20px 40px rgba(124, 58, 237, 0.1);
 }
 
 .blog-tag {
     display: inline-block;
     background: linear-gradient(90deg, rgba(124, 58, 237, 0.1), rgba(219, 39, 119, 0.1));
     color: var(--primary-color);
-    padding: 5px 14px;
-    border-radius: 30px;
     font-size: 0.75rem;
     font-weight: 800;
     text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 30px;
     margin-bottom: 15px;
 }
 
 .blog-card h3 {
-    margin: 5px 0 10px 0;
     font-size: 1.4rem;
     font-weight: 800;
+    margin: 5px 0 10px 0;
 }
 
 .date {
@@ -253,141 +269,113 @@ section {
 }
 
 /* ==========================================================================
-   BAHAGIAN CONTACT PAGE YANG TELAH DIBAIKI (PREMIUM & MODEN)
+   BAHAGIAN KANDUNGAN: CONTACT PAGE (SERAGAM & MINIMALIS)
    ========================================================================== */
 .contact-card {
     background: var(--card-bg);
-    padding: 40px;
-    border-radius: 28px;
-    box-shadow: 0 15px 50px rgba(124, 58, 237, 0.05);
+    max-width: 650px; 
+    margin: 0 auto;
+    padding: 45px;
+    border-radius: 24px;
     border: 1px solid rgba(124, 58, 237, 0.08);
-    
-    /* Guna CSS Grid supaya pecah 2 bahagian kiri & kanan */
-    display: grid;
-    grid-template-columns: 1fr 1.3fr;
-    gap: 50px;
-    align-items: start;
+    box-shadow: 0 10px 40px rgba(124, 58, 237, 0.04);
 }
 
-/* Kolom Kiri: Info Hubungi & Media Sosial */
-.contact-info-side {
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-info-side h3 {
-    margin-top: 0;
-    font-size: 1.8rem;
+.contact-card h3 {
+    font-size: 1.6rem;
     font-weight: 800;
-    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 15px;
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
-.contact-info-side p {
+.contact-card p {
     color: var(--text-muted);
-    font-size: 1rem;
-    margin-bottom: 35px;
+    font-size: 0.95rem;
+    margin-bottom: 30px;
 }
 
+/* Pautan Media Sosial */
 .social-links {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
+    margin-bottom: 30px;
 }
 
 .social-links a {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
     text-decoration: none;
     color: var(--text-main);
-    font-weight: 600;
-    font-size: 1rem;
-    padding: 12px 16px;
-    border-radius: 14px;
-    background: rgba(124, 58, 237, 0.03);
-    border: 1px solid rgba(124, 58, 237, 0.05);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: 0.3s;
 }
 
 .social-links a:hover {
-    transform: translateX(8px);
-    color: white;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.25);
-    border-color: transparent;
+    transform: translateX(6px);
+    color: var(--primary-color);
 }
 
 .social-links img {
-    width: 26px;
-    height: 26px;
-    transition: filter 0.3s;
+    width: 24px;
+    height: 24px;
 }
 
-.social-links a:hover img {
-    filter: brightness(0) invert(1); /* Tukar ikon jadi putih masa hover */
-}
-
-/* Kolom Kanan: Borang Mesej */
-.contact-form-side {
-    background: rgba(124, 58, 237, 0.02);
-    padding: 30px;
-    border-radius: 20px;
-    border: 1px solid rgba(124, 58, 237, 0.05);
-}
-
+/* Elemen Borang / Form Input */
 .form-group {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 .form-group label {
-    font-weight: 700;
     font-size: 0.9rem;
+    font-weight: 700;
     color: var(--text-main);
-    letter-spacing: 0.3px;
 }
 
 input, textarea {
-    padding: 14px 16px;
-    border: 1px solid rgba(124, 58, 237, 0.15);
-    border-radius: 12px;
-    font-size: 0.95rem;
-    background-color: var(--card-bg);
-    color: var(--text-main);
     font-family: inherit;
-    transition: all 0.25s ease;
+    font-size: 0.95rem;
+    padding: 14px;
+    background-color: #f9fafb;
+    color: var(--text-main);
+    border: 1px solid rgba(124, 58, 237, 0.12);
+    border-radius: 12px;
+    transition: all 0.2s;
 }
 
 input:focus, textarea:focus {
     outline: none;
+    background-color: #ffffff;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.12);
-    background-color: var(--card-bg);
+    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.15);
 }
 
 textarea {
+    min-height: 130px;
     resize: vertical;
-    min-height: 120px;
 }
 
-/* Butang Hantar */
+/* ==========================================================================
+   BUTANG ELEMEN & KONTROL (BUTTONS & INTERACTION)
+   ========================================================================== */
 .btn {
     display: inline-block;
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
     padding: 15px 35px;
     border: none;
     border-radius: 12px;
-    text-decoration: none;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 1rem;
     box-shadow: 0 6px 20px rgba(124, 58, 237, 0.35);
+    cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
@@ -398,23 +386,20 @@ textarea {
 
 .btn-full {
     width: 100%;
-    box-sizing: border-box;
 }
 
-/* ==========================================================================
-   BUTANG TEMA & FOOTER
-   ========================================================================== */
 #theme-toggle {
     background: rgba(124, 58, 237, 0.08);
     color: var(--primary-color);
     border: 1px solid rgba(124, 58, 237, 0.15);
+    font-size: 0.85rem;
+    font-weight: 700;
     padding: 10px 22px;
     border-radius: 30px;
     cursor: pointer;
-    font-weight: 700;
-    font-size: 0.85rem;
     transition: all 0.3s;
 }
+
 #theme-toggle:hover {
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     color: #ffffff;
@@ -422,16 +407,16 @@ textarea {
 
 footer {
     text-align: center;
-    padding: 45px 20px;
     background: #090514;
     color: #9ca3af;
-    margin-top: 90px;
     font-size: 0.9rem;
+    padding: 45px 20px;
+    margin-top: 90px;
     border-top: 1px solid rgba(124, 58, 237, 0.1);
 }
 
 /* ==========================================================================
-   MOD GELAP CYBERPUNK OBSIDIAN
+   MOD GELAP TEMA (DARK MODE CYBERPUNK OBSIDIAN)
    ========================================================================== */
 body.dark-mode {
     --bg-light: #06040d;       
@@ -456,7 +441,8 @@ body.dark-mode .hero-section {
     background-size: cover;
 }
 
-body.dark-mode .about-container {
+body.dark-mode .about-container, 
+body.dark-mode .contact-card {
     border-color: rgba(167, 139, 250, 0.1);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
 }
@@ -474,29 +460,16 @@ body.dark-mode .blog-tag {
     background: linear-gradient(90deg, rgba(167, 139, 250, 0.15), rgba(244, 114, 182, 0.15));
 }
 
-/* Penyesuaian Contact di Mod Gelap */
-body.dark-mode .contact-card {
-    border-color: rgba(167, 139, 250, 0.1);
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
-}
-
-body.dark-mode .contact-form-side {
-    background: rgba(167, 139, 250, 0.02);
-    border-color: rgba(167, 139, 250, 0.05);
-}
-
-body.dark-mode .social-links a {
-    background: rgba(167, 139, 250, 0.03);
-    border-color: rgba(167, 139, 250, 0.05);
-}
-
-body.dark-mode input, body.dark-mode textarea {
+body.dark-mode input, 
+body.dark-mode textarea {
+    background-color: #06040d;
     border-color: rgba(167, 139, 250, 0.2);
 }
 
-body.dark-mode input:focus, body.dark-mode textarea:focus {
+body.dark-mode input:focus, 
+body.dark-mode textarea:focus {
     border-color: var(--accent-color);
-    box-shadow: 0 0 0 4px rgba(244, 114, 182, 0.2);
+    box-shadow: 0 0 0 4px rgba(244, 114, 182, 0.25);
 }
 
 body.dark-mode #theme-toggle {
@@ -506,7 +479,7 @@ body.dark-mode #theme-toggle {
 }
 
 /* ==========================================================================
-   KAWALAN RESPONSIF MOBILE (TERMASUK KEMAS KINI CONTACT CARD)
+   SISTEM RESPONSIF MOBILE (RESPONSIVE MEDIA QUERIES)
    ========================================================================== */
 @media (max-width: 768px) {
     nav {
@@ -533,15 +506,8 @@ body.dark-mode #theme-toggle {
     body.dark-mode .hero-section {
         background-size: 100% 100%;
     }
-
-    /* Diubah dari 2 kolom desktop kepada 1 kolom menegak penuh untuk skrin telefon */
+    
     .contact-card {
-        grid-template-columns: 1fr;
-        gap: 35px;
-        padding: 30px 20px;
-    }
-
-    .contact-info-side p {
-        margin-bottom: 25px;
+        padding: 35px 20px;
     }
 }
