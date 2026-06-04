@@ -1,103 +1,99 @@
 /* ==========================================
-   CSS UNTUK PORTFOLIO & BLOG DAMIA IMAN 
+   CSS REKA BENTUK KAD TERAPUNG PREMIUM
    ========================================== */
 
-/* 1. Pemilihan Font & Warna Asas + CORAK GRID LINED (Light Mode) */
 body {
-    font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
     line-height: 1.7;
     margin: 0;
     padding: 0;
-    
-    /* Warna latar belakang cerah */
-    background-color: #f1f5f9; 
-    
-    /* KOD CORAK BARU: Grid garisan halus yang dijamin keluar */
-    background-image: 
-        linear-gradient(to right, rgba(148, 163, 184, 0.1) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(148, 163, 184, 0.1) 1px, transparent 1px);
-    background-size: 30px 30px;
-    
+    background-color: #edeef2; /* Warna latar belakang luar kelabu lembut bersih */
     color: #1e293b;
-    transition: background-color 0.4s ease, color 0.4s ease;
+    transition: background-color 0.4s, color 0.4s;
 }
 
-/* 2. Rekaan Header / Banner Atas Gradasi Biru Moden */
 header {
     background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
     color: #ffffff;
     padding: 40px 20px;
     text-align: center;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 header h1 {
     margin: 0 0 15px 0;
     font-size: 2.2rem;
     font-weight: 700;
-    letter-spacing: -0.025em;
 }
 
-/* 3. Menu Navigasi Moden */
 nav a {
     color: #e2e8f0;
     text-decoration: none;
     font-weight: 500;
-    margin: 0 15px;
-    padding: 6px 12px;
-    border-radius: 6px;
-    transition: all 0.3s ease;
+    margin: 0 10px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: all 0.3s;
 }
 
-nav a:hover {
+nav a:hover, nav a.active {
     color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* 4. Rekaan Kotak Kandungan Utama (Kesan Kad Terapung) */
-main {
-    max-width: 850px;
-    margin: 40px auto;
-    padding: 35px;
+/* Susunan Grid untuk Kad Portfolio (Meniru Gaya Pautan Contoh) */
+.portfolio-container {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Susun kad bersebelahan */
+    gap: 30px; /* Jarak antara kad */
+    box-sizing: border-box;
+}
+
+/* Khas untuk komponen halaman penuh (About & Contact) */
+.full-width-card {
+    grid-column: 1 / -1;
+}
+
+/* Gaya Asas Setiap Kad */
+.card {
     background: #ffffff;
+    padding: 30px;
     border-radius: 16px;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06); /* Kesan bayang tebal moden */
+    transition: all 0.3s ease;
+    border-top: 5px solid #3b82f6; /* Jalur warna atas kad */
 }
 
-main h2 {
+/* KESAN INTERAKTIF: Kad terangkat ke atas apabila diletakkan tetikus (Hover) */
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.12);
+}
+
+.card h2 {
     color: #1e3a8a;
-    font-size: 1.6rem;
-    border-left: 4px solid #3b82f6;
-    padding-left: 12px;
     margin-top: 0;
+    font-size: 1.4rem;
 }
 
-/* 5. Gaya Pembahagi Garis */
-hr {
-    border: 0;
-    height: 1px;
-    background-color: #e2e8f0;
-    margin: 25px 0;
+.card ul {
+    padding-left: 20px;
 }
 
-/* 6. Rekaan Artikel di Halaman Blog */
-article {
-    padding: 10px 0;
+.card li {
+    margin-bottom: 8px;
 }
 
-article h2 {
-    border-left: none;
-    padding-left: 0;
-    margin-bottom: 5px;
-}
+/* Variasi Warna Jalur Atas Kad */
+.intro-card { border-top-color: #3b82f6; }
+.skill-card { border-top-color: #10b981; }
+.goal-card  { border-top-color: #f59e0b; }
+.blog-card  { border-top-color: #8b5cf6; }
 
-article small {
-    color: #64748b;
-    font-weight: 500;
-}
-
-/* 7. Rekaan Borang Hubungi */
+/* Gaya Borang */
 input[type="text"], input[type="email"], textarea {
     width: 100%;
     padding: 12px 16px;
@@ -108,14 +104,6 @@ input[type="text"], input[type="email"], textarea {
     box-sizing: border-box;
     font-family: inherit;
     background-color: #f8fafc;
-    transition: all 0.3s ease;
-}
-
-input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
-    outline: none;
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
-    background-color: #ffffff;
 }
 
 button[type="submit"] {
@@ -125,17 +113,10 @@ button[type="submit"] {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
     font-weight: 600;
-    transition: all 0.2s ease;
 }
 
-button[type="submit"]:hover {
-    background-color: #1d4ed8;
-    transform: translateY(-1px);
-}
-
-/* 8. Rekaan Kaki Laman Web (Footer) */
+/* Kaki Laman Web */
 footer {
     text-align: center;
     padding: 35px 20px;
@@ -148,59 +129,41 @@ footer p {
     margin: 0 0 15px 0;
 }
 
-/* 9. Gaya Butang Dark Mode Berbentuk Pill */
 #dark-mode-toggle {
     background-color: #334155;
     color: #f8fafc;
     border: 1px solid #475569;
-    padding: 10px 20px;
+    padding: 10px 24px;
     border-radius: 30px;
     cursor: pointer;
     font-weight: 600;
-    font-size: 14px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-}
-
-#dark-mode-toggle:hover {
-    background-color: #475569;
-    transform: scale(1.05);
+    transition: all 0.3s;
 }
 
 /* ==========================================
-   10. GAYA WARNA & CORAK UNTUK DARK MODE ACTIVE 
+   GAYA UNTUK DARK MODE ACTIVE 
    ========================================== */
 body.dark-mode {
     background-color: #0f172a;
-    
-    /* KOD CORAK BARU: Grid garisan halus versi gelap (biru neon gelap) */
-    background-image: 
-        linear-gradient(to right, rgba(59, 130, 246, 0.05) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
-    background-size: 30px 30px;
-    
     color: #cbd5e1;
 }
 
-body.dark-mode main {
+body.dark-mode .card {
     background-color: #1e293b;
     color: #f1f5f9;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-body.dark-mode main h2 {
+body.dark-mode .card h2 {
     color: #3b82f6;
-    border-left-color: #3b82f6;
 }
 
 body.dark-mode header {
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    border-bottom: 1px solid #334155;
 }
 
 body.dark-mode footer {
     background-color: #020617;
-    border-top: 1px solid #1e293b;
 }
 
 body.dark-mode input, body.dark-mode textarea {
@@ -209,38 +172,13 @@ body.dark-mode input, body.dark-mode textarea {
     color: #ffffff;
 }
 
-body.dark-mode input:focus, body.dark-mode textarea:focus {
-    background-color: #0f172a;
-    border-color: #3b82f6;
-}
-
 body.dark-mode #dark-mode-toggle {
     background-color: #f1f5f9;
     color: #0f172a;
-    border-color: #ffffff;
 }
 
-body.dark-mode hr {
-    background-color: #334155;
-}
-
-/* ==========================================
-   11. REKA BENTUK RESPONSIF MOBIL
-   ========================================== */
+/* Reka Bentuk Responsif Mudah Alih */
 @media (max-width: 600px) {
-    header h1 {
-        font-size: 1.6rem;
-    }
-    
-    nav a {
-        display: inline-block;
-        margin: 5px;
-        font-size: 14px;
-        padding: 4px 8px;
-    }
-    
-    main {
-        margin: 20px 15px;
-        padding: 20px;
-    }
+    header h1 { font-size: 1.6rem; }
+    .portfolio-container { margin: 20px auto; gap: 20px; }
 }
