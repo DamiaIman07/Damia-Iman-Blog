@@ -8,42 +8,49 @@
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <span class="nav-logo">Damia.</span>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="blog.html" class="active">Blog</a>
-                <a href="contact.html">Contact</a>
-            </div>
+    <!-- NAV BAR KECIL MINIMALIS -->
+    <nav class="clean-nav">
+        <div class="nav-brand">DAMIA IMAN.</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="blog.html" class="active">Blog</a>
+            <a href="contact.html">Contact</a>
         </div>
     </nav>
 
-    <main class="main-content">
-        <section class="content-section">
-            <h2 class="section-title">📝 My Articles & Updates</h2>
-            <div class="blog-list">
-                
-                <article class="blog-item-card">
-                    <h3>Exploring 3D Spaces with Unity & Blender</h3>
-                    <p class="blog-date">June 2026</p>
-                    <p>Membina aset digital memerlukan kesabaran yang tinggi. Dari peringkat lakaran asas geometri hinggalah proses memasukkan tekstur bahan, kepuasan utama adalah apabila model tersebut berjaya dianimasikan tanpa ralat.</p>
-                </article>
+    <!-- CONTAINER UTAMA GAYA MAJALAH DIGITAL -->
+    <div class="studio-wrapper">
+        
+        <header class="studio-intro">
+            <p class="tagline">// MY ARTICLES & WRITING</p>
+            <h1 class="main-title">Perkongsian Nota & Jurnal Kreatif.</h1>
+        </header>
 
-                <article class="blog-item-card">
-                    <h3>Design as a Tool for Environmental Awareness</h3>
-                    <p class="blog-date">May 2026</p>
-                    <p>Bagaimana poster digital mampu mengubah pemikiran masyarakat? Melalui penggunaan visual berimpak tinggi, mesej penjimatan air dan pemuliharaan alam sekitar dapat disampaikan dengan lebih efektif dan ringkas.</p>
-                </article>
-
+        <!-- KANDUNGAN BLOG MENGGUNAKAN GRID ASIMETRI -->
+        <main class="asymmetric-grid">
+            
+            <!-- Artikel 1 (Kad Lebar) -->
+            <div class="studio-card card-wide">
+                <p class="project-tag">JUNE 2026</p>
+                <h3 style="margin: 5px 0 15px 0; font-size: 1.4rem;">Exploring 3D Spaces with Unity & Blender</h3>
+                <p>Membina aset digital memerlukan kesabaran yang tinggi. Dari peringkat lakaran asas geometri hinggalah proses memasukkan tekstur bahan, kepuasan utama sebagai seorang *3D artist* adalah apabila model tersebut berjaya dianimasikan tanpa sebarang ralat di dalam *game engine*.</p>
             </div>
-        </section>
-    </main>
 
-    <footer class="site-footer">
+            <!-- Artikel 2 (Kad Kecil) -->
+            <div class="studio-card card-small">
+                <p class="project-tag">MAY 2026</p>
+                <h3 style="margin: 5px 0 15px 0; font-size: 1.4rem;">Design & Advocacy</h3>
+                <p>Bagaimana poster digital mampu mengubah pemikiran masyarakat? Melalui penggunaan visual berimpak tinggi, mesej penting seperti pemuliharaan alam sekitar dapat disampaikan dengan lebih berkesan.</p>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- FOOTER MINIMALIS -->
+    <footer class="minimal-footer">
         <p>&copy; 2026 Damia Iman. All Rights Reserved.</p>
-        <button id="dark-mode-toggle" class="toggle-btn">🌙 Change Theme</button>
+        <button id="dark-mode-toggle" class="theme-switcher">🌙 Toggle Aesthetic</button>
     </footer>
 
     <script src="script.js"></script>
