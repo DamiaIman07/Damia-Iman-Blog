@@ -226,6 +226,27 @@ section h2::after {
     margin-right: auto;
 }
 
+/* HIASAN KOTAK BUTANG UTAMA (VIEW MY BLOG) DI HOME PAGE */
+.cta-btn {
+    display: inline-block;
+    background-color: var(--primary-color); /* Warna ungu utama */
+    color: #ffffff !important;               /* Tulisan warna putih */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 12px 28px;
+    border-radius: 30px;                     /* Bucu bujur bulat */
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.25);
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.cta-btn:hover {
+    background-color: var(--secondary-color); /* Ungu lembut sewaktu hover */
+    transform: translateY(-3px);              /* Efek terapung sikit */
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+}
+
 /* GAMBAR PROFILE (ABOUT PAGE) - CENTER DAN ATAS */
 .profile-wrapper {
     width: 100%;
@@ -462,6 +483,11 @@ footer {
     .hero-text p {
         font-size: 1rem;
         margin-bottom: 20px;
+    }
+
+    .cta-btn {
+        padding: 10px 22px;
+        font-size: 0.95rem; /* Saiz butang mengecil sedikit pada screen phone */
     }
 
     .profile-img {
