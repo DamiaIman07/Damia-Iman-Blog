@@ -3,19 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Home - My Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <!-- LINK UNTUK MASUKKAN LOGO ONLINE (BOXICONS) -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <script>
-        if (localStorage.getItem('theme') === 'dark') {
-            document.body.classList.add('dark-mode');
-        }
+        if (localStorage.getItem('theme') === 'dark') { document.body.classList.add('dark-mode'); }
     </script>
 
-    <!-- NAVIGASI -->
     <header>
         <nav>
             <div class="logo">My<span>Portfolio</span></div>
@@ -29,15 +25,21 @@
         </nav>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero-section">
-        <h1>Welcome to  <span>My Blog & Portfolio</span></h1>
-        <p>Hi! I'm Damia, a Media Informatics student.</p>
-        <a href="blog.html" class="btn">My Blog</a>
+    <section>
+        <div class="hero-container">
+            <div class="hero-text">
+                <h1>Hi, I'm <span>Creative Designer</span></h1>
+                <p>Selamat datang ke portfolio digital saya. Di sini saya kongsikan pelbagai tugasan akademik, eksperimen reka bentuk grafik, model 3D, serta pembangunan web interaktif.</p>
+                <a href="blog.html" class="cta-btn">View My Blog</a>
+            </div>
+            <div class="profile-wrapper">
+                <img src="profile.png" alt="Profile Image" class="profile-img">
+            </div>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Copyright | Built for CSD34203</p>
+        <p>&copy; 2026 Hak Cipta Terpelihara | Dibina untuk CSD34203.</p>
     </footer>
 
     <script src="script.js"></script>
