@@ -37,7 +37,7 @@ body {
 }
 
 /* ==========================================================================
-   2. MENU NAVIGASI (HEADER) - RESPONSIVE
+   2. MENU NAVIGASI (HEADER)
    ========================================================================== */
 header {
     background-color: var(--card-bg);
@@ -99,7 +99,7 @@ nav {
 }
 
 /* ==========================================================================
-   3. STRUKTUR SEKSYEN UTAMA (KANDUNGAN)
+   3. STRUKTUR SEKSYEN UTAMA
    ========================================================================== */
 section {
     max-width: 1200px;
@@ -128,25 +128,51 @@ section h2::after {
 }
 
 /* ==========================================================================
-   4. TATA GAYA HALAMAN UTAMA & ABOUT (HERO FLEXBOX)
+   4. LATAR BELAKANG CORAK PINK/UNGU (HERO BACKGROUND & PATTERN)
    ========================================================================== */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Rekaan Corak Mesh Gradient Abstrak Merah Jambu, Ungu & Biru */
+    background-color: var(--bg-color);
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(244, 63, 94, 0.15) 0px, transparent 50%), 
+        radial-gradient(at 100% 100%, rgba(124, 58, 237, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(232, 121, 249, 0.15) 0px, transparent 50%);
+    border-radius: 24px;
+    padding: 60px 40px;
+    margin-top: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.dark-mode .hero-section {
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(244, 63, 94, 0.08) 0px, transparent 50%), 
+        radial-gradient(at 100% 100%, rgba(124, 58, 237, 0.08) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(232, 121, 249, 0.08) 0px, transparent 50%);
+}
+
 .hero-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 40px;
-    margin-top: 20px;
     width: 100%;
 }
 
-.hero-text {
-    flex: 1;
+.full-width-hero {
+    justify-content: center;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .hero-text h1 {
-    font-size: 2.8rem;
+    font-size: 3.2rem;
     margin-bottom: 15px;
     line-height: 1.2;
+    color: var(--text-color);
 }
 
 .hero-text h1 span {
@@ -155,8 +181,8 @@ section h2::after {
 
 .hero-text p {
     color: var(--text-muted);
-    font-size: 1.1rem;
-    margin-bottom: 25px;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
 }
 
 .cta-btn {
@@ -164,33 +190,39 @@ section h2::after {
     background-color: var(--primary-color);
     color: #ffffff;
     text-decoration: none;
-    padding: 12px 28px;
+    padding: 14px 36px;
     border-radius: 30px;
     font-weight: 600;
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3);
+    transition: all 0.2s ease;
 }
 
 .cta-btn:hover {
     background-color: var(--secondary-color);
     transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
 }
 
-/* Zon Mengunci Gambar Profile (Mengelakkan Profile Jadi Besar Gergasi) */
+/* KAWALAN SAIZ & KEDUDUKAN GAMBAR PROFILE (LEBIH KECIL & CENTER) */
 .profile-wrapper {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .profile-img {
-    width: 280px;
-    height: 280px;
-    border-radius: 50%;
-    object-fit: cover;
+    width: 200px;             /* Diperkecilkan supaya lebih kemas */
+    height: 200px;            /* Mengekalkan nisbah satu sama satu */
+    border-radius: 50%;       /* Bentuk bulat sempurna */
+    object-fit: cover;        
     border: 5px solid var(--card-bg);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    max-width: 100%; /* Elak melimpah keluar skrin fon */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;           /* Memastikan sentiasa berada di tengah (Center) */
 }
 
 /* ==========================================================================
@@ -242,7 +274,6 @@ section h2::after {
     font-size: 0.95rem;
 }
 
-/* Logik Sembunyi/Papar Kandungan Penuh Blog */
 .blog-full-content {
     max-height: 0;
     overflow: hidden;
@@ -288,7 +319,7 @@ section h2::after {
 }
 
 /* ==========================================================================
-   6. TATA GAYA HALAMAN CONTACT (SOSIAL MEDIA ONLINE)
+   6. TATA GAYA HALAMAN CONTACT
    ========================================================================== */
 .contact-container {
     background-color: var(--card-bg);
@@ -311,7 +342,7 @@ section h2::after {
     justify-content: center;
     gap: 25px;
     margin-top: 20px;
-    flex-wrap: wrap; /* Elak logo terkeluar kalau skrin fon terlalu kecil */
+    flex-wrap: wrap;
 }
 
 .social-icon {
@@ -358,38 +389,38 @@ footer {
 
     section {
         margin: 20px auto;
+        padding: 0 15px;
     }
 
-    section h2 {
-        font-size: 1.6rem;
-        margin-bottom: 20px;
+    .hero-section {
+        padding: 40px 20px;
+        border-radius: 16px;
     }
 
-    /* Tukar susunan layout mendatar kepada menegak ke bawah pada telefon */
     .hero-container {
-        flex-direction: column-reverse; /* Gambar duduk atas, teks duduk bawah */
-        gap: 30px;
+        flex-direction: column;
+        gap: 25px;
         text-align: center;
     }
 
     .hero-text h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
+    }
+
+    .hero-text p {
+        font-size: 1.05rem;
     }
 
     .profile-img {
-        width: 200px;
-        height: 200px; /* Kecilkan saiz bulatan profile pada fon supaya seimbang */
+        width: 160px;
+        height: 160px; /* Diperkecilkan sedikit lagi khusus untuk paparan telefon */
     }
 
     .blog-container {
-        grid-template-columns: 1fr; /* Kad blog menjadi 1 lajur penuh kebawah */
+        grid-template-columns: 1fr;
     }
 
     .contact-container {
         padding: 30px 15px;
-    }
-
-    .social-icon {
-        font-size: 2.2rem;
     }
 }
