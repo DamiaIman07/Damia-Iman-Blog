@@ -533,6 +533,21 @@ section h2::after {
 }
 
 /* ==========================================================================
+   PEMBETULAN KHAS: PAKSA BOXICONS KELUAR SEMULA
+   ========================================================================== */
+.social-links i, .submit-btn i {
+    font-family: 'boxicons' !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1 !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
    7. FOOTER BAR
    ========================================================================== */
 footer {
