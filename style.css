@@ -175,7 +175,7 @@ section h2::after {
 
 /* KOTAK UNTUK HOME PAGE - DAH DIBESARKAN & SIAP TAPAK BACKGROUND IMAGE */
 .home-box {
-    background-image: linear-gradient(rgb(255, 240, 243), rgba(255, 240, 243, 0.85)), url('background.png'); 
+    background-image: url('background.png'); 
     background-size: cover;         /* Paksa gambar muat penuh kotak */
     background-position: center;    /* Gambar duduk tengah-tengah */
     background-repeat: no-repeat;
