@@ -217,13 +217,12 @@ section h2::after {
     transform: translateY(-2px);
 }
 
-/* GAMBAR PROFILE (ABOUT PAGE) */
+/* GAMBAR PROFILE (ABOUT PAGE) - DIKUTUK DI TENGAH-TENGAH */
 .profile-wrapper {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
+    display: flex;         /* Aktifkan sistem flexbox */
+    justify-content: center; /* Tolak gambar betul-betul ke tengah secara melintang */
+    align-items: center;
     margin: 25px auto 0 auto;
 }
 
@@ -234,11 +233,8 @@ section h2::after {
     object-fit: cover;        
     border: 5px solid var(--card-bg);
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    max-width: 100%;
     display: block;
-    margin: 0 auto;           
 }
-
 /* ==========================================================================
    5. TATA GAYA HALAMAN BLOG (GRID & BUTANG READ MORE UNGU)
    ========================================================================== */
