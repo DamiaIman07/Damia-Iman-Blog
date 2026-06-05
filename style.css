@@ -2,17 +2,12 @@
    TEMA UTAMA (CSS VARIABLES & GLOBAL SETTINGS)
    ========================================================================== */
 :root {
-    /* Palet Warna Kreatif & Pastel Cyber */
-    --primary-color: #7c3aed;      /* Ungu Kreatif */
-    --accent-color: #db2777;       /* Cyber Pink */
-    --bg-light: #f5f3ff;           /* Latar Belakang Lavender Lembut */
-    --card-bg: #ffffff;            /* Latar Belakang Kad */
-    
-    /* Palet Warna Tipografi */
-    --text-main: #1f2937;          /* Tulisan Utama */
-    --text-muted: #6b7280;         /* Tulisan Pudar */
-    
-    /* Corak Grid Digital Halus */
+    --primary-color: #7c3aed;      
+    --accent-color: #db2777;       
+    --bg-light: #f5f3ff;           
+    --card-bg: #ffffff;            
+    --text-main: #1f2937;          
+    --text-muted: #6b7280;         
     --grid-color: rgba(124, 58, 237, 0.04); 
 }
 
@@ -219,7 +214,7 @@ nav {
 }
 
 /* ==========================================================================
-   BAHAGIAN KANDUNGAN: BLOG PAGE
+   BAHAGIAN KANDUNGAN: BLOG PAGE (DENGAN KESAN ACCODRION / READ MORE)
    ========================================================================== */
 .blog-container {
     display: flex;
@@ -235,13 +230,13 @@ nav {
     position: relative;
     overflow: hidden;
     box-shadow: 0 4px 25px rgba(0,0,0,0.01);
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
 }
 
 .blog-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-3px);
     border-color: var(--primary-color);
-    box-shadow: 0 20px 40px rgba(124, 58, 237, 0.1);
+    box-shadow: 0 15px 35px rgba(124, 58, 237, 0.06);
 }
 
 .blog-tag {
@@ -266,6 +261,60 @@ nav {
     color: var(--text-muted);
     font-size: 0.85rem;
     margin-bottom: 15px;
+}
+
+/* SISTEM SEMBUNYI DATA DAN ANIMASI BUKAAN BLOG */
+.blog-full-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease-out, opacity 0.4s ease-out, margin-top 0.3s ease;
+}
+
+/* Bila aktif (dibuka), ia akan mengembang ke bawah */
+.blog-card.active-blog .blog-full-content {
+    max-height: 800px; /* Nilai selamat untuk tampung teks artikel */
+    opacity: 1;
+    margin-top: 20px;
+    border-top: 1px dashed rgba(124, 58, 237, 0.15);
+    padding-top: 15px;
+}
+
+/* BUTANG READ MORE */
+.read-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 8px 18px;
+    border-radius: 30px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.read-more-btn i {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.read-more-btn:hover {
+    background: var(--primary-color);
+    color: #ffffff;
+}
+
+/* Pusing ikon anak panah bila kad dibuka */
+.blog-card.active-blog .read-more-btn i {
+    transform: rotate(180deg);
+}
+
+.blog-card.active-blog .read-more-btn {
+    background: rgba(124, 58, 237, 0.1);
+    border-color: transparent;
 }
 
 /* ==========================================================================
@@ -416,6 +465,24 @@ body.dark-mode .blog-tag {
     background: linear-gradient(90deg, rgba(167, 139, 250, 0.15), rgba(244, 114, 182, 0.15));
 }
 
+body.dark-mode .blog-card.active-blog .blog-full-content {
+    border-top-color: rgba(167, 139, 250, 0.2);
+}
+
+body.dark-mode .read-more-btn {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+body.dark-mode .read-more-btn:hover {
+    background: var(--primary-color);
+    color: #06040d;
+}
+
+body.dark-mode .blog-card.active-blog .read-more-btn {
+    background: rgba(167, 139, 250, 0.15);
+}
+
 body.dark-mode input, 
 body.dark-mode textarea {
     background-color: #06040d;
@@ -469,7 +536,7 @@ body.dark-mode #theme-toggle {
 }
 
 /* ==========================================================================
-   TAMBAHAN KHAS: SUSUNAN MEDIA SOSIAL (ANTI-LOGO GERGASI)
+   TAMBAHAN KHAS: SUSUNAN MEDIA SOSIAL
    ========================================================================== */
 .social-grid {
     display: flex;
@@ -503,7 +570,6 @@ body.dark-mode #theme-toggle {
 .social-item.linkedin:hover { background: #0077b5; border-color: #0077b5; }
 .social-item.instagram:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); border-color: #dc2743; }
 
-/* KAWALAN ICONS BOXICONS: SENTIASA KECIL & KEMAS (20px) */
 .social-grid .social-icon,
 .social-item .social-icon {
     font-size: 20px !important;
