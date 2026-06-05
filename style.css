@@ -261,8 +261,8 @@ section h2::after {
     display: block;
 }
 
-/* ==========================================================================
-   5. TATA GAYA HALAMAN BLOG (GRID & BUTANG READ MORE UNGU)
+./* ==========================================================================
+   5. TATA GAYA HALAMAN BLOG (GRID, GAMBAR, & BUTANG READ MORE UNGU)
    ========================================================================== */
 .blog-container {
     display: grid;
@@ -282,6 +282,30 @@ section h2::after {
     align-items: flex-start;
     width: 100%;
 }
+
+/* === KOD BARU: PENATAAN GAYA GAMBAR UNTUK SETIAP KAD BLOG === */
+.blog-img-wrapper {
+    width: 100%;
+    height: 180px;          /* Ketinggian kotak gambar */
+    overflow: hidden;
+    border-radius: 8px;     /* Lekukan bucu gambar supaya tak tajam */
+    margin-bottom: 15px;    /* Jarak antara gambar dengan tag/tulisan di bawahnya */
+    border: 1px solid var(--border-color);
+}
+
+.blog-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      /* Memastikan gambar dipotong kemas & tak penyek */
+    transition: transform 0.3s ease;
+}
+
+/* Efek hiasan: Gambar akan zoom sikit dengan lembut bila cursor lalu atas kad */
+.blog-card:hover .blog-card-img {
+    transform: scale(1.04);
+}
+
+/* ============================================================ */
 
 .blog-tag {
     background-color: rgba(124, 58, 237, 0.1);
@@ -328,41 +352,6 @@ section h2::after {
     opacity: 1;
     transition: max-height 0.8s cubic-bezier(1, 0, 1, 0); 
 }
-
-/* BUTANG READ MORE UNGU SOLID DENGAN ANAK PANAH */
-.read-more-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background-color: var(--primary-color); 
-    color: #ffffff;                                                 
-    border: none;                                                   
-    font-size: 0.85rem;
-    font-weight: 700;
-    padding: 10px 22px;
-    border-radius: 30px;
-    margin-top: 20px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: 0 4px 10px rgba(124, 58, 237, 0.2); 
-}
-
-.read-more-btn:hover {
-    background-color: var(--secondary-color); 
-    transform: translateY(-2px);              
-    box-shadow: 0 6px 14px rgba(124, 58, 237, 0.3);
-}
-
-.read-more-btn::after {
-    content: '\25BC';        
-    font-size: 0.7rem;       
-    transition: transform 0.3s ease;
-}
-
-.blog-card.active-blog .read-more-btn::after {
-    transform: rotate(180deg);
-}
-
 /* ==========================================================================
    6. TATA GAYA HALAMAN CONTACT (IKON UNGU TERANG)
    ========================================================================== */
