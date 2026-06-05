@@ -37,7 +37,7 @@ body {
 }
 
 /* ==========================================================================
-   2. BAHAGIAN NAVIGASI (HEADER & NAV)
+   2. BAHAGIAN NAVIGASI (HEADER & NAV) - UNTUK SEMUA PAGE
    ========================================================================== */
 header {
     background-color: var(--card-bg);
@@ -129,6 +129,24 @@ section h2::after {
     border-radius: 2px;
 }
 
+/* ==========================================================================
+   4. PENATAAN GAYA FAIL GAMBAR ASAL (GAMBAR PROFILE / HERO) - DI SINI KUNCI DIA!
+   ========================================================================== */
+/* Mengawal gambar profile/hero asal di Homepage & About supaya tak jadi gergasi */
+.hero-image, .profile-image, .about-image, nav img {
+    max-width: 300px;         /* Mengunci saiz kelebaran maksimum gambar profile */
+    height: auto;             /* Mengekalkan nisbah asal gambar supaya tak kemek */
+    border-radius: 50%;       /* Kekalkan bentuk bulat (jika reka bentuk asal bulat) */
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+/* Jika gambar profile awak bentuk petak bulat, tukar border-radius ke 15px */
+
+/* ==========================================================================
+   5. LAYOUT & GAYA HALAMAN BLOG (BLOG PAGE ONLY)
+   ========================================================================== */
 .blog-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -136,9 +154,6 @@ section h2::after {
     margin-top: 20px;
 }
 
-/* ==========================================================================
-   4. PENATAAN GAYA KAD BLOG & GAMBAR LANDSCAPE
-   ========================================================================== */
 .blog-card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
@@ -167,8 +182,8 @@ section h2::after {
     margin-bottom: 12px;
 }
 
-/* Gaya Gambar Landscape */
-.blog-image {
+/* Gaya Gambar Landscape KHAS UNTUK HALAMAN BLOG SAHAJA */
+.blog-card .blog-image {
     width: 100%;
     height: 180px;         
     object-fit: cover;     
@@ -195,7 +210,7 @@ section h2::after {
 }
 
 /* ==========================================================================
-   5. LOGIK SISTEM TERSEMBUNYI (READ MORE LOGIC)
+   6. LOGIK SISTEM READ MORE (BLOG CARDS)
    ========================================================================== */
 .blog-full-content {
     max-height: 0;
@@ -254,7 +269,7 @@ section h2::after {
 }
 
 /* ==========================================================================
-   6. BAHAGIAN BAWAH (FOOTER)
+   7. BAHAGIAN BAWAH (FOOTER)
    ========================================================================== */
 footer {
     background-color: var(--card-bg);
@@ -268,7 +283,7 @@ footer {
 }
 
 /* ==========================================================================
-   7. RESPONSIVE DESIGN (MEDIA QUERIES)
+   8. RESPONSIVE DESIGN (MEDIA QUERIES)
    ========================================================================== */
 @media (max-width: 768px) {
     nav {
