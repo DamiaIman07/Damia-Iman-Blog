@@ -8,8 +8,11 @@
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Skrip semakan tema dipindahkan ke bawah skikit selepas tag body dibuka untuk elakkan glitch -->
     <script>
-        if (localStorage.getItem('theme') === 'dark') { document.body.classList.add('dark-mode'); }
+        if (localStorage.getItem('theme') === 'dark') { 
+            document.body.classList.add('dark-mode'); 
+        }
     </script>
 
     <header>
@@ -30,6 +33,7 @@
             <div class="hero-text home-box">
                 <h1>Hi, I'm <span>Damia Iman</span></h1>
                 <p>Welcome to my digital portfolio and blog.</p>
+                <!-- Butang ini akan automatik panggil .cta-btn daripada style.css yang baru -->
                 <a href="blog.html" class="cta-btn">View My Blog</a>
             </div>
         </div>
