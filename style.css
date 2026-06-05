@@ -165,7 +165,7 @@ section h2::after {
 .full-width-hero {
     justify-content: center;
     text-align: center;
-    max-width: 1000px; /* Dibesarkan supaya kotak Home nampak luas */
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -173,16 +173,51 @@ section h2::after {
     width: 100%;
 }
 
-/* KOTAK UNTUK HOME PAGE - DAH DIBESARKAN & BACKGROUND IMAGE */
+/* KOTAK WARNA PINK SLOW UNTUK HOME & ABOUT PAGE */
+/* ==========================================================================
+   4. TATA GAYA KOTAK HERO KANDUNGAN (BOX HOME DIBESARKAN & BACKGROUND IMAGE)
+   ========================================================================== */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    width: 100%;
+}
+
+.full-width-hero {
+    justify-content: center;
+    text-align: center;
+    max-width: 1000px; /* Dibesarkan daripada 800px supaya kotak Home nampak luas */
+    margin: 0 auto;
+}
+
+.hero-text {
+    width: 100%;
+}
+
+/* KOTAK UNTUK HOME PAGE - DAH DIBESARKAN & SIAP TAPAK BACKGROUND IMAGE */
 .home-box {
+    /* 1. KOD UNTUK MASUKKAN GAMBAR LATAR BELAKANG */
     background-image: linear-gradient(rgba(255, 240, 243, 0.85), rgba(255, 240, 243, 0.85)), url('background.png'); 
-    background-size: cover;         
-    background-position: center;    
+    /* Nota: Tukar 'nama-gambar-kamu.jpg' kepada nama fail gambar awak. 
+       linear-gradient kat atas tu bertindak sebagai 'overlay' pink lembut supaya tulisan awak tak tenggelam dengan gambar background. */
+    
+    background-size: cover;         /* Paksa gambar muat penuh kotak */
+    background-position: center;    /* Gambar duduk tengah-tengah */
     background-repeat: no-repeat;
     
     border: 2px solid var(--border-color); 
-    padding: 65px 45px;             /* Padding dinaikkan ke 65px supaya kotak jadi besar */
-    border-radius: 24px;            
+    padding: 65px 45px;             /* Padding atas-bawah dinaikkan ke 65px supaya kotak jadi lebih besar dan tinggi */
+    border-radius: 24px;            /* Lekukan bucu dibesarkan sikit bagi nampak moden */
     box-shadow: 0 15px 35px rgba(244, 63, 94, 0.12); 
     width: 100%;
     transition: all 0.3s ease;
@@ -201,11 +236,11 @@ section h2::after {
 
 /* Pembetulan mod gelap untuk background imej Home Box */
 .dark-mode .home-box {
-    background-image: linear-gradient(rgba(45, 27, 40, 0.9), rgba(45, 27, 40, 0.9)), url('background.png');
+    background-image: linear-gradient(rgba(45, 27, 40, 0.9), rgba(45, 27, 40, 0.9)), url('nama-gambar-kamu.jpg');
 }
 
 .hero-text h1 {
-    font-size: 3.2rem; 
+    font-size: 3.2rem; /* Tulisan dibesarkan sikit */
     margin-bottom: 20px;
     line-height: 1.2;
 }
@@ -216,39 +251,19 @@ section h2::after {
 
 .hero-text p {
     color: var(--text-color); 
-    font-size: 1.2rem; 
+    font-size: 1.2rem; /* Saiz teks perenggan dibesarkan sikit */
     margin-bottom: 35px;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
 }
-
-/* BUTANG VIEW MY BLOG (YANG KITA MASUKKAN BALIK) */
-.cta-btn {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: #ffffff !important; 
-    text-decoration: none;
-    padding: 14px 36px;
-    border-radius: 30px;
-    font-weight: 600;
-    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3);
-    transition: all 0.2s ease;
-}
-
-.cta-btn:hover {
-    background-color: var(--secondary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
-}
-
 /* GAMBAR PROFILE (ABOUT PAGE) - CENTER DAN ATAS */
 .profile-wrapper {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto 25px auto; 
+    margin: 0 auto 25px auto; /* 25px margin bawah untuk jarakkan dari nama */
 }
 
 .profile-img {
@@ -260,9 +275,8 @@ section h2::after {
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     display: block;
 }
-
-./* ==========================================================================
-   5. TATA GAYA HALAMAN BLOG (GRID, GAMBAR, & BUTANG READ MORE UNGU)
+/* ==========================================================================
+   5. TATA GAYA HALAMAN BLOG (GRID & BUTANG READ MORE UNGU)
    ========================================================================== */
 .blog-container {
     display: grid;
@@ -282,30 +296,6 @@ section h2::after {
     align-items: flex-start;
     width: 100%;
 }
-
-/* === KOD BARU: PENATAAN GAYA GAMBAR UNTUK SETIAP KAD BLOG === */
-.blog-img-wrapper {
-    width: 100%;
-    height: 180px;          /* Ketinggian kotak gambar */
-    overflow: hidden;
-    border-radius: 8px;     /* Lekukan bucu gambar supaya tak tajam */
-    margin-bottom: 15px;    /* Jarak antara gambar dengan tag/tulisan di bawahnya */
-    border: 1px solid var(--border-color);
-}
-
-.blog-card-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;      /* Memastikan gambar dipotong kemas & tak penyek */
-    transition: transform 0.3s ease;
-}
-
-/* Efek hiasan: Gambar akan zoom sikit dengan lembut bila cursor lalu atas kad */
-.blog-card:hover .blog-card-img {
-    transform: scale(1.04);
-}
-
-/* ============================================================ */
 
 .blog-tag {
     background-color: rgba(124, 58, 237, 0.1);
@@ -352,6 +342,41 @@ section h2::after {
     opacity: 1;
     transition: max-height 0.8s cubic-bezier(1, 0, 1, 0); 
 }
+
+/* BUTANG READ MORE UNGU SOLID DENGAN ANAK PANAH */
+.read-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--primary-color); 
+    color: #ffffff;                         
+    border: none;                           
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 10px 22px;
+    border-radius: 30px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(124, 58, 237, 0.2); 
+}
+
+.read-more-btn:hover {
+    background-color: var(--secondary-color); 
+    transform: translateY(-2px);               
+    box-shadow: 0 6px 14px rgba(124, 58, 237, 0.3);
+}
+
+.read-more-btn::after {
+    content: '\25BC';        
+    font-size: 0.7rem;       
+    transition: transform 0.3s ease;
+}
+
+.blog-card.active-blog .read-more-btn::after {
+    transform: rotate(180deg);
+}
+
 /* ==========================================================================
    6. TATA GAYA HALAMAN CONTACT (IKON UNGU TERANG)
    ========================================================================== */
