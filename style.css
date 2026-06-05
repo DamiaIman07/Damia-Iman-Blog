@@ -295,44 +295,6 @@ nav {
     margin-bottom: 30px;
 }
 
-/* Mengawal Susunan Ikon Media Sosial Supaya Sebaris & Cantik */
-.social-links {
-    display: flex;
-    flex-direction: row;      /* Menyusun secara melintang */
-    gap: 16px;
-    margin-bottom: 30px;
-    flex-wrap: wrap;          /* Supaya tak pecah kalau skrin terlalu kecil */
-}
-
-.social-links a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    text-decoration: none;
-    color: var(--text-main);
-    padding: 8px 16px;
-    border-radius: 10px;
-    background: rgba(124, 58, 237, 0.03);
-    border: 1px solid rgba(124, 58, 237, 0.08);
-    transition: all 0.2s ease;
-}
-
-.social-links a:hover {
-    transform: translateY(-3px);
-    color: var(--primary-color);
-    border-color: var(--primary-color);
-    background: rgba(124, 58, 237, 0.06);
-}
-
-/* KAWALAN IKON GERGASI: Dipaksa bersaiz kecil (24px) */
-.social-links img {
-    width: 24px !important;
-    height: 24px !important;
-    object-fit: contain;
-}
-
 /* Elemen Kumpulan Borang (Form Input) */
 .form-group {
     display: flex;
@@ -469,17 +431,6 @@ body.dark-mode .blog-tag {
     background: linear-gradient(90deg, rgba(167, 139, 250, 0.15), rgba(244, 114, 182, 0.15));
 }
 
-body.dark-mode .social-links a {
-    background: rgba(167, 139, 250, 0.03);
-    border-color: rgba(167, 139, 250, 0.1);
-}
-
-body.dark-mode .social-links a:hover {
-    background: rgba(167, 139, 250, 0.08);
-    color: var(--primary-color);
-    border-color: var(--primary-color);
-}
-
 body.dark-mode input, 
 body.dark-mode textarea {
     background-color: #06040d;
@@ -530,8 +481,80 @@ body.dark-mode #theme-toggle {
     .contact-card {
         padding: 35px 20px;
     }
+}
 
-    .social-links {
-        justify-content: center; /* Menyusun ikon di tengah skrin telefon */
+/* ==========================================================================
+   TAMBAHAN KHAS: SUSUNAN MEDIA SOSIAL ESTETIK (ANTI-LOGO GERGASI)
+   ========================================================================== */
+.social-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 35px;
+    flex-wrap: wrap; 
+}
+
+.social-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--text-main);
+    background: rgba(124, 58, 237, 0.03);
+    border: 1px solid rgba(124, 58, 237, 0.08);
+    transition: all 0.2s ease;
+}
+
+/* EFEK WARNA BILA KURSOR LALU (HOVER) SEMASA LIGHT MODE */
+.social-item:hover {
+    transform: translateY(-2px);
+    color: #ffffff !important;
+}
+.social-item.github:hover { background: #24292e; border-color: #24292e; }
+.social-item.linkedin:hover { background: #0077b5; border-color: #0077b5; }
+.social-item.instagram:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); border-color: #dc2743; }
+
+/* KAWALAN KETAT LOGO: DIKUNCI MATI PADA 20px SAHAJA */
+.social-grid img,
+.social-item img {
+    width: 20px !important;
+    height: 20px !important;
+    max-width: 20px !important;
+    max-height: 20px !important;
+    object-fit: contain !important;
+    display: inline-block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Garisan pemisah halus antara media sosial dengan form */
+#contact-form {
+    border-top: 1px solid rgba(124, 58, 237, 0.1);
+    padding-top: 25px;
+}
+
+/* PENYELARASAN BILA BORANG & BUTANG BERADA DALAM MOD GELAP (DARK MODE) */
+body.dark-mode .social-item {
+    background: #0f0a1c;
+    border-color: rgba(167, 139, 250, 0.15);
+    color: #d1d5db;
+}
+
+body.dark-mode .social-item:hover {
+    color: #ffffff !important;
+}
+
+body.dark-mode #contact-form {
+    border-top-color: rgba(167, 139, 250, 0.15);
+}
+
+@media (max-width: 768px) {
+    .social-grid {
+        justify-content: center; 
     }
 }
