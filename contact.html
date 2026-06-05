@@ -3,66 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Me - Media Informatika</title>
+    <title>Contact - MyPortfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <script>
+        // Semak dark mode sebelum page render untuk elak screen berkelip putih
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
 
+    <!-- HEADER & NAVIGASI (Sebiji macam page Blog) -->
     <header>
         <nav>
-            <div class="logo">Media <span>Informatika</span></div>
+            <div class="logo">MY<span>PORTFOLIO</span></div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html" class="active">Contact</a></li>
-                <li><button id="theme-toggle">Toggle Mode</button></li>
+                <li><button id="theme-toggle">🌙 Dark Mode</button></li>
             </ul>
         </nav>
     </header>
 
+    <!-- KANDUNGAN HALAMAN CONTACT -->
     <main>
-        <section id="contact">
-            <h2>Contact Me</h2>
+        <section id="contact-page">
+            <h2 class="page-title">Contact</h2>
             
-            <div class="contact-card">
-                <h3>Let's Connect!</h3>
-                <p>Ada sebarang projek atau soalan? Jom borak atau hubungi saya terus melalui media sosial di bawah.</p>
-                
-                <div class="social-links">
-                    <a href="https://instagram.com" target="_blank">
-                        <img src="instagram.png" alt="Instagram">
-                        <span>Instagram</span>
-                    </a>
-                    <a href="https://github.com" target="_blank">
+            <div class="contact-box">
+                <!-- SOSIAL MEDIA DI SUSUN LAWA & SEBARIS -->
+                <div class="social-grid">
+                    <a href="https://github.com/DamiaIman07" target="_blank" class="social-item github">
                         <img src="github.png" alt="GitHub">
                         <span>GitHub</span>
                     </a>
+                    <a href="https://www.linkedin.com/in/damia-iman" target="_blank" class="social-item linkedin">
+                        <img src="linkedin.png" alt="LinkedIn">
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://instagram.com/miayusriii" target="_blank" class="social-item instagram">
+                        <img src="instagram.png" alt="Instagram">
+                        <span>Instagram</span>
+                    </a>
                 </div>
 
-                <form>
+                <!-- FORM UTK MESEJ (KEMAS & MINIMALIS) -->
+                <form class="contact-form">
                     <div class="form-group">
                         <label for="name">Nama</label>
-                        <input type="text" id="name" placeholder="Masukkan nama awak" required>
+                        <input type="text" id="name" placeholder="Masukkan nama anda" required>
                     </div>
                     <div class="form-group">
                         <label for="message">Mesej</label>
-                        <textarea id="message" placeholder="Tulis mesej di sini..." required></textarea>
+                        <textarea id="message" placeholder="Tulis mesej anda di sini..." required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-full">Hantar Mesej</button>
+                    <button type="submit" class="btn-submit">Hantar Mesej</button>
                 </form>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Media Informatika. Hak Cipta Terpelihara.</p>
-    </footer>
-
+    <!-- SCRIPT UTK SYNC DARK MODE -->
     <script>
         const themeToggle = document.getElementById('theme-toggle');
+
+        // Tukar teks butang berdasarkan tema semasa load
+        if (document.body.classList.contains('dark-mode')) {
+            themeToggle.textContent = '☀️ Light Mode';
+        }
+
         themeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
+            
+            let theme = 'light';
+            if (document.body.classList.contains('dark-mode')) {
+                theme = 'dark';
+                themeToggle.textContent = '☀️ Light Mode';
+            } else {
+                themeToggle.textContent = '🌙 Dark Mode';
+            }
+            
+            localStorage.setItem('theme', theme);
         });
     </script>
 </body>

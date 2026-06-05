@@ -1,537 +1,155 @@
 /* ==========================================================================
-   TEMA UTAMA (CSS VARIABLES & GLOBAL SETTINGS)
+   STYLE KHAS UNTUK HALAMAN CONTACT (ANTI-LOGO GERGASI)
    ========================================================================== */
-:root {
-    /* Palet Warna Kreatif & Pastel Cyber */
-    --primary-color: #7c3aed;      /* Ungu Kreatif */
-    --accent-color: #db2777;       /* Cyber Pink */
-    --bg-light: #f5f3ff;           /* Latar Belakang Lavender Lembut */
-    --card-bg: #ffffff;            /* Latar Belakang Kad */
-    
-    /* Palet Warna Tipografi */
-    --text-main: #1f2937;          /* Tulisan Utama */
-    --text-muted: #6b7280;         /* Tulisan Pudar */
-    
-    /* Corak Grid Digital Halus */
-    --grid-color: rgba(124, 58, 237, 0.04); 
+#contact-page {
+    max-width: 800px;
+    margin: auto;
+    padding: 60px 20px;
 }
 
-* {
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: var(--text-main);
-    background-color: var(--bg-light);
-    background-image: linear-gradient(var(--grid-color) 1px, transparent 1px),
-                      linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-    background-size: 24px 24px;
-    line-height: 1.7;
-    scroll-behavior: smooth;
-    transition: background 0.4s, color 0.4s;
-}
-
-/* ==========================================================================
-   ELEMEN TIPOGRAFI / REKA BENTUK SEMULA (RESETS)
-   ========================================================================== */
-h2 {
-    font-size: 2.2rem;
+.page-title {
+    font-size: 2.5rem;
     font-weight: 800;
     text-align: center;
-    letter-spacing: -0.5px;
-    margin-bottom: 40px;
-    position: relative;
+    margin-bottom: 30px;
+    color: #1f2937;
 }
 
-h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 5px;
-    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-    margin: 12px auto 0 auto;
-    border-radius: 10px;
+body.dark-mode .page-title {
+    color: #f3f4f6;
 }
 
-section {
-    max-width: 950px;
-    margin: auto;
-    padding: 100px 20px;
-}
-
-/* ==========================================================================
-   NAVIGASI UTAMA (HEADER & NAVIGATION)
-   ========================================================================== */
-header {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(12px); 
-    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.05);
-    border-bottom: 1px solid rgba(124, 58, 237, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    transition: background 0.4s;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1050px;
-    margin: auto;
-    padding: 18px 20px;
-}
-
-.logo {
-    font-size: 1.25rem; /* Saiz minimalis & kemas */
-    font-weight: 900;
-    letter-spacing: -0.5px;
-    text-transform: uppercase;
-}
-
-.logo span {
-    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.nav-links {
-    display: flex;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.nav-links a {
-    font-size: 0.95rem;
-    font-weight: 700;
-    text-decoration: none;
-    color: inherit;
-    position: relative;
-    transition: color 0.2s;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-    color: var(--primary-color);
-}
-
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
-    background-color: var(--primary-color);
-    transition: width 0.3s ease;
-}
-
-.nav-links a:hover::after,
-.nav-links a.active::after {
-    width: 100%;
-}
-
-/* ==========================================================================
-   HERO SECTION (KONTRAST TINGGI & DIKEMAS KINI)
-   ========================================================================== */
-.hero-section {
-    text-align: center;
-    padding: 160px 20px; 
-    background: linear-gradient(rgba(15, 10, 28, 0.82), rgba(15, 10, 28, 0.9)), 
-                url('background.png') no-repeat center center;
-    background-size: cover;
-    background-attachment: scroll;
-    border-radius: 30px;
-    border: 1px solid rgba(124, 58, 237, 0.2);
-    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.6); 
-    margin-top: 20px;
-}
-
-.hero-section h1 {
-    font-size: 3.2rem;
-    font-weight: 900;
-    line-height: 1.15;
-    letter-spacing: -1px;
-    color: #ffffff; 
-    margin-bottom: 25px;
-}
-
-.hero-section h1 span {
-    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.hero-section p {
-    font-size: 1.2rem;
-    max-width: 650px;
-    color: #cbd5e1 !important; 
-    margin: 0 auto 35px auto;
-}
-
-/* ==========================================================================
-   BAHAGIAN KANDUNGAN: ABOUT PAGE
-   ========================================================================== */
-.about-container {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    background: var(--card-bg);
-    padding: 45px;
+/* Kad utama contact seakan kad blog */
+.contact-box {
+    background: var(--card-bg, #ffffff);
+    padding: 40px;
     border-radius: 24px;
     border: 1px solid rgba(124, 58, 237, 0.08);
-    box-shadow: 0 10px 40px rgba(124, 58, 237, 0.04);
+    box-shadow: 0 10px 40px rgba(124, 58, 237, 0.03);
 }
 
-.profile-frame {
-    flex-shrink: 0;
-    width: 190px;
-    height: 190px;
-    border-radius: 50%;
-    padding: 5px;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-    box-shadow: 0 10px 30px rgba(124, 58, 237, 0.25);
-}
-
-.profile-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    background-color: #e5e7eb;
-    display: block;
-}
-
-.about-text {
-    flex-grow: 1;
-}
-
-.about-text h3 {
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: var(--primary-color);
-    margin-top: 0;
-}
-
-/* ==========================================================================
-   BAHAGIAN KANDUNGAN: BLOG PAGE
-   ========================================================================== */
-.blog-container {
+/* SUSUNAN SOSIAL MEDIA (SEBARIS & COMPACT) */
+.social-grid {
     display: flex;
-    flex-direction: column;
-    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
 }
 
-.blog-card {
-    background: var(--card-bg);
-    padding: 35px;
-    border-radius: 20px;
-    border: 1px solid rgba(124, 58, 237, 0.06);
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 4px 25px rgba(0,0,0,0.01);
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s;
-}
-
-.blog-card:hover {
-    transform: translateY(-6px);
-    border-color: var(--primary-color);
-    box-shadow: 0 20px 40px rgba(124, 58, 237, 0.1);
-}
-
-.blog-tag {
-    display: inline-block;
-    background: linear-gradient(90deg, rgba(124, 58, 237, 0.1), rgba(219, 39, 119, 0.1));
-    color: var(--primary-color);
-    font-size: 0.75rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    padding: 5px 14px;
-    border-radius: 30px;
-    margin-bottom: 15px;
-}
-
-.blog-card h3 {
-    font-size: 1.4rem;
-    font-weight: 800;
-    margin: 5px 0 10px 0;
-}
-
-.date {
-    color: var(--text-muted);
-    font-size: 0.85rem;
-    margin-bottom: 15px;
-}
-
-/* ==========================================================================
-   BAHAGIAN KANDUNGAN: CONTACT PAGE (SERAGAM & MINIMALIS)
-   ========================================================================== */
-.contact-card {
-    background: var(--card-bg);
-    max-width: 650px; 
-    margin: 0 auto;
-    padding: 45px;
-    border-radius: 24px;
-    border: 1px solid rgba(124, 58, 237, 0.08);
-    box-shadow: 0 10px 40px rgba(124, 58, 237, 0.04);
-}
-
-.contact-card h3 {
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: var(--primary-color);
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-.contact-card p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    margin-bottom: 30px;
-}
-
-/* Mengawal Susunan Ikon Media Sosial Supaya Sebaris & Cantik */
-.social-links {
-    display: flex;
-    flex-direction: row;      /* Menyusun secara melintang */
-    gap: 16px;
-    margin-bottom: 30px;
-    flex-wrap: wrap;          /* Supaya tak pecah kalau skrin terlalu kecil */
-}
-
-.social-links a {
+.social-item {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 0.95rem;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 0.9rem;
     font-weight: 600;
     text-decoration: none;
-    color: var(--text-main);
-    padding: 8px 16px;
-    border-radius: 10px;
-    background: rgba(124, 58, 237, 0.03);
-    border: 1px solid rgba(124, 58, 237, 0.08);
+    color: #4b5563;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
     transition: all 0.2s ease;
 }
 
-.social-links a:hover {
-    transform: translateY(-3px);
-    color: var(--primary-color);
-    border-color: var(--primary-color);
-    background: rgba(124, 58, 237, 0.06);
+/* PENGALIRAN WARNA HOVER SOSIAL MEDIA YANG ESTETIK */
+.social-item:hover {
+    transform: translateY(-2px);
+    color: #ffffff;
+}
+.social-item.github:hover { background: #24292e; border-color: #24292e; }
+.social-item.linkedin:hover { background: #0077b5; border-color: #0077b5; }
+.social-item.instagram:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); border-color: #dc2743; }
+
+/* KAWALAN SAH LOGO: DIKUNCI PADA 20px SAHAJA */
+.social-grid img,
+.social-item img {
+    width: 20px !important;
+    height: 20px !important;
+    max-width: 20px !important;
+    max-height: 20px !important;
+    object-fit: contain !important;
+    display: inline-block !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
-/* KAWALAN IKON GERGASI: Dipaksa bersaiz kecil (24px) */
-.social-links img {
-    width: 24px !important;
-    height: 24px !important;
-    object-fit: contain;
+/* STYLE UNTUK FORM MESEJ */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-top: 1px solid rgba(124, 58, 237, 0.1);
+    padding-top: 30px;
 }
 
-/* Elemen Kumpulan Borang (Form Input) */
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    margin-bottom: 22px;
+    gap: 6px;
 }
 
 .form-group label {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 700;
-    color: var(--text-main);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted, #6b7280);
 }
 
-input, textarea {
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
     font-family: inherit;
     font-size: 0.95rem;
-    padding: 14px;
-    background-color: #f9fafb;
-    color: var(--text-main);
-    border: 1px solid rgba(124, 58, 237, 0.12);
-    border-radius: 12px;
+    color: inherit;
     transition: all 0.2s;
 }
 
-input:focus, textarea:focus {
+.contact-form input:focus,
+.contact-form textarea:focus {
     outline: none;
-    background-color: #ffffff;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.15);
+    border-color: #7c3aed;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.1);
 }
 
-textarea {
-    min-height: 130px;
-    resize: vertical;
-}
-
-/* ==========================================================================
-   BUTANG ELEMEN & KONTROL (BUTTONS & INTERACTION)
-   ========================================================================== */
-.btn {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+.btn-submit {
+    background: linear-gradient(135deg, #7c3aed, #db2777);
     color: white;
+    border: none;
+    padding: 14px;
     font-size: 1rem;
     font-weight: 700;
-    text-decoration: none;
-    padding: 15px 35px;
-    border: none;
     border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.35);
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.2);
+    transition: all 0.2s;
 }
 
-.btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(219, 39, 119, 0.45);
+.btn-submit:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(219, 39, 119, 0.3);
 }
 
-.btn-full {
-    width: 100%;
-}
-
-#theme-toggle {
-    background: rgba(124, 58, 237, 0.08);
-    color: var(--primary-color);
-    border: 1px solid rgba(124, 58, 237, 0.15);
-    font-size: 0.85rem;
-    font-weight: 700;
-    padding: 10px 22px;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-#theme-toggle:hover {
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-    color: #ffffff;
-}
-
-footer {
-    text-align: center;
-    background: #090514;
-    color: #9ca3af;
-    font-size: 0.9rem;
-    padding: 45px 20px;
-    margin-top: 90px;
-    border-top: 1px solid rgba(124, 58, 237, 0.1);
-}
-
-/* ==========================================================================
-   MOD GELAP TEMA (DARK MODE CYBERPUNK OBSIDIAN)
-   ========================================================================== */
-body.dark-mode {
-    --bg-light: #06040d;       
-    --text-main: #f3f4f6;      
-    --text-muted: #9ca3af;     
-    --card-bg: #0f0a1c;        
-    --primary-color: #a78bfa;  
-    --accent-color: #f472b6;   
-    --grid-color: rgba(167, 139, 250, 0.05); 
-}
-
-body.dark-mode header {
-    background: rgba(15, 10, 28, 0.85);
-    border-bottom: 1px solid rgba(167, 139, 250, 0.15);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-}
-
-body.dark-mode .hero-section {
+/* PENYELARASAN DARK MODE UNTUK INPUT FORM */
+body.dark-mode .social-item {
+    background: #110c24;
     border-color: rgba(167, 139, 250, 0.15);
-    background: linear-gradient(rgba(6, 4, 13, 0.83), rgba(6, 4, 13, 0.95)), 
-                url('background.png') no-repeat center center;
-    background-size: cover;
+    color: #d1d5db;
 }
-
-body.dark-mode .about-container, 
-body.dark-mode .contact-card {
-    border-color: rgba(167, 139, 250, 0.1);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+    background: #06040d;
+    border-color: rgba(167, 139, 250, 0.15);
 }
-
-body.dark-mode .blog-card {
-    border-color: rgba(167, 139, 250, 0.1);
-}
-
-body.dark-mode .blog-card:hover {
-    border-color: var(--accent-color);
-    box-shadow: 0 20px 40px rgba(244, 114, 182, 0.15);
-}
-
-body.dark-mode .blog-tag {
-    background: linear-gradient(90deg, rgba(167, 139, 250, 0.15), rgba(244, 114, 182, 0.15));
-}
-
-body.dark-mode .social-links a {
-    background: rgba(167, 139, 250, 0.03);
-    border-color: rgba(167, 139, 250, 0.1);
-}
-
-body.dark-mode .social-links a:hover {
-    background: rgba(167, 139, 250, 0.08);
-    color: var(--primary-color);
-    border-color: var(--primary-color);
-}
-
-body.dark-mode input, 
-body.dark-mode textarea {
-    background-color: #06040d;
-    border-color: rgba(167, 139, 250, 0.2);
-}
-
-body.dark-mode input:focus, 
-body.dark-mode textarea:focus {
-    border-color: var(--accent-color);
-    box-shadow: 0 0 0 4px rgba(244, 114, 182, 0.25);
-}
-
-body.dark-mode #theme-toggle {
-    background: rgba(167, 139, 250, 0.15);
-    color: var(--primary-color);
-    border-color: rgba(167, 139, 250, 0.2);
-}
-
-/* ==========================================================================
-   SISTEM RESPONSIF MOBILE (RESPONSIVE MEDIA QUERIES)
-   ========================================================================== */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        gap: 20px;
-    }
-    
-    .about-container {
-        flex-direction: column;
-        text-align: center;
-        padding: 30px 20px;
-    }
-    
-    .hero-section h1 {
-        font-size: 2.3rem;
-    }
-
-    .hero-section {
-        padding: 100px 15px; 
-        background-position: center center; 
-        background-size: 100% 100%; 
-    }
-
-    body.dark-mode .hero-section {
-        background-size: 100% 100%;
-    }
-    
-    .contact-card {
-        padding: 35px 20px;
-    }
-
-    .social-links {
-        justify-content: center; /* Menyusun ikon di tengah skrin telefon */
-    }
+body.dark-mode .contact-form input:focus,
+body.dark-mode .contact-form textarea:focus {
+    background: #110c24;
+    border-color: #f472b6;
 }
