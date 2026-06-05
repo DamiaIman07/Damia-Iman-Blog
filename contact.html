@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
     <link rel="stylesheet" href="style.css">
+    <!-- LINK UNTUK MASUKKAN LOGO ONLINE (BOXICONS) -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <script>
-        // Semak tema secepat mungkin sebelum page render untuk elak screen berkelip putih
         if (localStorage.getItem('theme') === 'dark') {
             document.body.classList.add('dark-mode');
         }
     </script>
 
+    <!-- NAVIGASI -->
     <header>
         <nav>
             <div class="logo">My<span>Portfolio</span></div>
@@ -28,10 +29,12 @@
         </nav>
     </header>
 
+    <!-- SECTION: CONTACT -->
     <section>
         <h2>Contact Me</h2>
         <div class="contact-card">
             
+            <!-- BAHAGIAN SOSIAL MEDIA (ONLINE LOGO AUTO KELUAR) -->
             <div class="social-grid">
                 <a href="https://github.com/DamiaIman07" target="_blank" class="social-item github">
                     <i class='bx bxl-github social-icon'></i>
@@ -42,11 +45,12 @@
                     <span>LinkedIn</span>
                 </a>
                 <a href="https://instagram.com/miayusriii" target="_blank" class="social-item instagram">
-                    <i class='bx bxl-instagram social-alt' ></i>
+                    <i class='bx bxl-instagram social-icon'></i>
                     <span>Instagram</span>
                 </a>
             </div>
 
+            <!-- BORANG MESEJ ASAL -->
             <form id="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
                 <div class="form-group">
                     <label>Name</label>

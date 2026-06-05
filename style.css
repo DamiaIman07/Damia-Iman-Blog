@@ -86,7 +86,7 @@ nav {
 }
 
 .logo {
-    font-size: 1.25rem; /* Saiz minimalis & kemas */
+    font-size: 1.25rem; 
     font-weight: 900;
     letter-spacing: -0.5px;
     text-transform: uppercase;
@@ -137,7 +137,7 @@ nav {
 }
 
 /* ==========================================================================
-   HERO SECTION (KONTRAST TINGGI & DIKEMAS KINI)
+   HERO SECTION
    ========================================================================== */
 .hero-section {
     text-align: center;
@@ -269,7 +269,7 @@ nav {
 }
 
 /* ==========================================================================
-   BAHAGIAN KANDUNGAN: CONTACT PAGE (SERAGAM & MINIMALIS)
+   BAHAGIAN KANDUNGAN: CONTACT PAGE
    ========================================================================== */
 .contact-card {
     background: var(--card-bg);
@@ -281,21 +281,6 @@ nav {
     box-shadow: 0 10px 40px rgba(124, 58, 237, 0.04);
 }
 
-.contact-card h3 {
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: var(--primary-color);
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-.contact-card p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    margin-bottom: 30px;
-}
-
-/* Elemen Kumpulan Borang (Form Input) */
 .form-group {
     display: flex;
     flex-direction: column;
@@ -333,7 +318,7 @@ textarea {
 }
 
 /* ==========================================================================
-   BUTANG ELEMEN & KONTROL (BUTTONS & INTERACTION)
+   BUTANG ELEMEN & KONTROL
    ========================================================================== */
 .btn {
     display: inline-block;
@@ -450,7 +435,7 @@ body.dark-mode #theme-toggle {
 }
 
 /* ==========================================================================
-   SISTEM RESPONSIF MOBILE (RESPONSIVE MEDIA QUERIES)
+   SISTEM RESPONSIF MOBILE
    ========================================================================== */
 @media (max-width: 768px) {
     nav {
@@ -484,7 +469,7 @@ body.dark-mode #theme-toggle {
 }
 
 /* ==========================================================================
-   TAMBAHAN KHAS: SUSUNAN MEDIA SOSIAL ESTETIK (ANTI-LOGO GERGASI)
+   TAMBAHAN KHAS: SUSUNAN MEDIA SOSIAL (ANTI-LOGO GERGASI)
    ========================================================================== */
 .social-grid {
     display: flex;
@@ -510,7 +495,6 @@ body.dark-mode #theme-toggle {
     transition: all 0.2s ease;
 }
 
-/* EFEK WARNA BILA KURSOR LALU (HOVER) SEMASA LIGHT MODE */
 .social-item:hover {
     transform: translateY(-2px);
     color: #ffffff !important;
@@ -519,26 +503,20 @@ body.dark-mode #theme-toggle {
 .social-item.linkedin:hover { background: #0077b5; border-color: #0077b5; }
 .social-item.instagram:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); border-color: #dc2743; }
 
-/* KAWALAN KETAT LOGO: DIKUNCI MATI PADA 20px SAHAJA */
-.social-grid img,
-.social-item img {
-    width: 20px !important;
-    height: 20px !important;
-    max-width: 20px !important;
-    max-height: 20px !important;
-    object-fit: contain !important;
+/* KAWALAN ICONS BOXICONS: SENTIASA KECIL & KEMAS (20px) */
+.social-grid .social-icon,
+.social-item .social-icon {
+    font-size: 20px !important;
     display: inline-block !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    line-height: 1 !important;
+    vertical-align: middle !important;
 }
 
-/* Garisan pemisah halus antara media sosial dengan form */
 #contact-form {
     border-top: 1px solid rgba(124, 58, 237, 0.1);
     padding-top: 25px;
 }
 
-/* PENYELARASAN BILA BORANG & BUTANG BERADA DALAM MOD GELAP (DARK MODE) */
 body.dark-mode .social-item {
     background: #0f0a1c;
     border-color: rgba(167, 139, 250, 0.15);

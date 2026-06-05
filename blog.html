@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Blog </title>
+    <title>Blog</title>
     <link rel="stylesheet" href="style.css">
+    <!-- LINK UNTUK MASUKKAN LOGO ONLINE (BOXICONS) -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
 
     <!-- NAVIGASI -->
     <header>
@@ -24,21 +31,20 @@
 
     <!-- SECTION: BLOG -->
     <section>
-        <h2>Blog</h2>
+        <h2>My Blog</h2>
         <div class="blog-container">
-            <article class="blog-card">
-                <div class="blog-tag">Web Dev</div>
-                <h3>Langkah Pertama Belajar Web Development</h3>
-                <p class="date">4 Jun 2026</p>
-                <p>Hari ini saya belajar cara menyambungkan HTML dengan CSS dan memahami struktur asas Git untuk tugasan universiti...</p>
-            </article>
-            
-            <article class="blog-card">
-                <div class="blog-tag">Student Life</div>
-                <h3>Cabaran Sebagai Pelajar Komputer</h3>
-                <p class="date">1 Jun 2026</p>
-                <p>Menguruskan masa antara tugasan coding dan projek grafik memerlukan disiplin yang tinggi. Ini teknik yang saya gunakan...</p>
-            </article>
+            <div class="blog-card">
+                <span class="blog-tag">Design</span>
+                <h3>Eksperimen 3D Modeling & Animasi Ruangan</h3>
+                <p class="date">Diterbitkan pada: Januari 2026</p>
+                <p>Kongsian mengenai proses menghasilkan tugasan animasi 3D bertemakan pembersihan bilik yang ringkas tetapi estetik.</p>
+            </div>
+            <div class="blog-card">
+                <span class="blog-tag">Web Dev</span>
+                <h3>Membina Re-design UI Portfolio Menggunakan CSS Grid</h3>
+                <p class="date">Diterbitkan pada: Jun 2026</p>
+                <p>Nota ringkas tentang bagaimana menyelaraskan reka bentuk layout grid digital halus serta integrasi fungsi tema mod gelap.</p>
+            </div>
         </div>
     </section>
 

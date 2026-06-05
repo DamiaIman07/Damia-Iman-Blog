@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio & Blog | Home</title>
+    <title>Home</title>
     <link rel="stylesheet" href="style.css">
+    <!-- LINK UNTUK MASUKKAN LOGO ONLINE (BOXICONS) -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
 
     <!-- NAVIGASI -->
     <header>
@@ -22,17 +29,15 @@
         </nav>
     </header>
 
-    <!-- SECTION: HOME -->
+    <!-- HERO SECTION -->
     <section class="hero-section">
-        <div class="hero-content">
-            <h1>Welcome to My <br><span>Portfolio & Blog </span></h1>
-            <p>Hi! I'm Damia Iman, a Media Informatics student.</p>
-            <a href="blog.html" class="btn">View Blog Posts</a>
-        </div>
+        <h1>Selamat Datang ke <span>Portfolio Saya</span></h1>
+        <p>Hai! Saya seorang pelajar reka bentuk digital yang meminati dunia animasi 3D dan pembangunan web.</p>
+        <a href="about.html" class="btn">Kenali Saya</a>
     </section>
 
     <footer>
-        <p>&copy; 2026 Copyright | Built for CSD34203.</p>
+        <p>&copy; 2026 Hak Cipta Terpelihara | Dibina untuk CSD34203.</p>
     </footer>
 
     <script src="script.js"></script>
