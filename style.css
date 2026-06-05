@@ -2,21 +2,22 @@
    1. TETAPAN ASAS & PEMILIH PEMBOLEH UBAH (VARIABLES)
    ========================================================================== */
 :root {
-    --primary-color: #7c3aed;       
-    --secondary-color: #a78bfa;     
-    --bg-color: #f9fafb;            
-    --card-bg: #ffffff;             
-    --text-color: #1f2937;          
-    --text-muted: #6b7280;          
-    --border-color: #e5e7eb;        
+    --primary-color: #7c3aed;       /* Warna ungu utama */
+    --secondary-color: #a78bfa;     /* Warna ungu lembut */
+    --bg-color: #f9fafb;            /* Latar belakang cerah */
+    --card-bg: #ffffff;             /* Latar belakang kad cerah */
+    --text-color: #1f2937;          /* Warna teks utama */
+    --text-muted: #6b7280;          /* Warna teks sekunder/tarikh */
+    --border-color: #e5e7eb;        /* Warna garisan sempadan */
 }
 
+/* Tetapan bertukar apabila kelas .dark-mode aktif pada body */
 .dark-mode {
-    --bg-color: #0f172a;            
-    --card-bg: #1e293b;             
-    --text-color: #f3f4f6;          
-    --text-muted: #9ca3af;          
-    --border-color: #334155;        
+    --bg-color: #0f172a;            /* Latar belakang gelap */
+    --card-bg: #1e293b;             /* Latar belakang kad gelap */
+    --text-color: #f3f4f6;          /* Warna teks utama mod gelap */
+    --text-muted: #9ca3af;          /* Warna teks sekunder mod gelap */
+    --border-color: #334155;        /* Warna garisan mod gelap */
 }
 
 * {
@@ -37,7 +38,7 @@ body {
 }
 
 /* ==========================================================================
-   2. BAHAGIAN NAVIGASI (HEADER & NAV) - UNTUK SEMUA PAGE
+   2. BAHAGIAN NAVIGASI (HEADER & NAV)
    ========================================================================== */
 header {
     background-color: var(--card-bg);
@@ -129,24 +130,7 @@ section h2::after {
     border-radius: 2px;
 }
 
-/* ==========================================================================
-   4. PENATAAN GAYA FAIL GAMBAR ASAL (GAMBAR PROFILE / HERO) - DI SINI KUNCI DIA!
-   ========================================================================== */
-/* Mengawal gambar profile/hero asal di Homepage & About supaya tak jadi gergasi */
-.hero-image, .profile-image, .about-image, nav img {
-    max-width: 300px;         /* Mengunci saiz kelebaran maksimum gambar profile */
-    height: auto;             /* Mengekalkan nisbah asal gambar supaya tak kemek */
-    border-radius: 50%;       /* Kekalkan bentuk bulat (jika reka bentuk asal bulat) */
-    object-fit: cover;
-    display: block;
-    margin: 0 auto 20px auto;
-}
-
-/* Jika gambar profile awak bentuk petak bulat, tukar border-radius ke 15px */
-
-/* ==========================================================================
-   5. LAYOUT & GAYA HALAMAN BLOG (BLOG PAGE ONLY)
-   ========================================================================== */
+/* Layout Grid bagi susunan Kad Blog */
 .blog-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -154,6 +138,9 @@ section h2::after {
     margin-top: 20px;
 }
 
+/* ==========================================================================
+   4. PENATAAN GAYA KAD BLOG (BLOG CARDS)
+   ========================================================================== */
 .blog-card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
@@ -182,13 +169,13 @@ section h2::after {
     margin-bottom: 12px;
 }
 
-/* Gaya Gambar Landscape KHAS UNTUK HALAMAN BLOG SAHAJA */
-.blog-card .blog-image {
+/* Gaya Gambar di Dalam Kad Blog */
+.blog-image {
     width: 100%;
-    height: 180px;         
-    object-fit: cover;     
-    border-radius: 8px;    
-    margin-bottom: 15px;   
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
     display: block;
 }
 
@@ -210,12 +197,12 @@ section h2::after {
 }
 
 /* ==========================================================================
-   6. LOGIK SISTEM READ MORE (BLOG CARDS)
+   5. LOGIK SISTEM TERSEMBUNYI (READ MORE LOGIC)
    ========================================================================== */
 .blog-full-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1); /* Animasi tutup lancar */
     opacity: 0;
     width: 100%;
 }
@@ -226,12 +213,14 @@ section h2::after {
     color: var(--text-color);
 }
 
+/* Keadaan Paparan Apabila Butang Read More Aktif (.active-blog) */
 .blog-card.active-blog .blog-full-content {
-    max-height: 1000px; 
+    max-height: 1000px; /* Nilai besar supaya ruang mencukupi untuk teks panjang */
     opacity: 1;
-    transition: max-height 0.8s cubic-bezier(1, 0, 1, 0); 
+    transition: max-height 0.8s cubic-bezier(1, 0, 1, 0); /* Animasi buka lancar */
 }
 
+/* Butang Read More */
 .read-more-btn {
     display: inline-flex;
     align-items: center;
@@ -259,6 +248,7 @@ section h2::after {
     color: #ffffff;
 }
 
+/* Ubah pusingan anak panah Boxicons apabila kad dibuka */
 .blog-card.active-blog .read-more-btn i {
     transform: rotate(180deg);
 }
@@ -269,7 +259,7 @@ section h2::after {
 }
 
 /* ==========================================================================
-   7. BAHAGIAN BAWAH (FOOTER)
+   6. BAHAGIAN BAWAH (FOOTER)
    ========================================================================== */
 footer {
     background-color: var(--card-bg);
@@ -283,7 +273,7 @@ footer {
 }
 
 /* ==========================================================================
-   8. RESPONSIVE DESIGN (MEDIA QUERIES)
+   7. RESPONSIVE DESIGN (MEDIA QUERIES)
    ========================================================================== */
 @media (max-width: 768px) {
     nav {
@@ -300,6 +290,6 @@ footer {
     }
     
     .blog-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Satu kolum penuh pada skrin telefon */
     }
 }
