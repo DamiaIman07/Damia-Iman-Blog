@@ -1,22 +1,23 @@
 /* ==========================================================================
-   1. VARIABLES & THEME (DARK / LIGHT)
+   1. TETAPAN ASAS & PEMILIH PEMBOLEH UBAH (VARIABLES)
    ========================================================================== */
 :root {
-    --primary-color: #7c3aed;       
-    --secondary-color: #a78bfa;     
-    --bg-color: #f9fafb;            
-    --card-bg: #ffffff;             
-    --text-color: #1f2937;          
-    --text-muted: #6b7280;          
-    --border-color: #e5e7eb;        
+    --primary-color: #7c3aed;       /* Warna ungu utama */
+    --secondary-color: #a78bfa;     /* Warna ungu lembut */
+    --bg-color: #f9fafb;            /* Latar belakang cerah */
+    --card-bg: #ffffff;             /* Latar belakang kad cerah */
+    --text-color: #1f2937;          /* Warna teks utama */
+    --text-muted: #6b7280;          /* Warna teks sekunder/tarikh */
+    --border-color: #e5e7eb;        /* Warna garisan sempadan */
 }
 
+/* Tetapan bertukar apabila kelas .dark-mode aktif pada body */
 .dark-mode {
-    --bg-color: #0f172a;            
-    --card-bg: #1e293b;             
-    --text-color: #f3f4f6;          
-    --text-muted: #9ca3af;          
-    --border-color: #334155;        
+    --bg-color: #0f172a;            /* Latar belakang gelap */
+    --card-bg: #1e293b;             /* Latar belakang kad gelap */
+    --text-color: #f3f4f6;          /* Warna teks utama mod gelap */
+    --text-muted: #9ca3af;          /* Warna teks sekunder mod gelap */
+    --border-color: #334155;        /* Warna garisan mod gelap */
 }
 
 * {
@@ -37,7 +38,7 @@ body {
 }
 
 /* ==========================================================================
-   2. NAVIGATION BAR (HEADER)
+   2. BAHAGIAN NAVIGASI (HEADER & NAV)
    ========================================================================== */
 header {
     background-color: var(--card-bg);
@@ -45,6 +46,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 nav {
@@ -59,6 +61,7 @@ nav {
 .logo {
     font-size: 1.5rem;
     font-weight: 800;
+    color: var(--text-color);
 }
 
 .logo span {
@@ -78,7 +81,8 @@ nav {
     transition: color 0.2s ease;
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover, 
+.nav-links a.active {
     color: var(--primary-color);
 }
 
@@ -90,22 +94,22 @@ nav {
     border-radius: 20px;
     cursor: pointer;
     font-weight: 600;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 #theme-toggle:hover {
     transform: scale(1.05);
+    background-color: var(--secondary-color);
 }
 
 /* ==========================================================================
-   3. GLOBAL SECTION STRUCTURING
+   3. STRUKTUR UTAMA UTK KANDUNGAN (SECTION & CONTAINER)
    ========================================================================== */
 section {
     max-width: 1200px;
     margin: 40px auto;
     padding: 0 20px;
     flex: 1;
-    width: 100%;
 }
 
 section h2 {
@@ -126,87 +130,32 @@ section h2::after {
     border-radius: 2px;
 }
 
-/* ==========================================================================
-   4. HOMEPAGE & ABOUT PAGE LAYOUT (HERO SECTION)
-   ========================================================================== */
-.hero-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    margin-top: 20px;
-}
-
-.hero-text {
-    flex: 1;
-}
-
-.hero-text h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-
-.hero-text h1 span {
-    color: var(--primary-color);
-}
-
-.hero-text p {
-    color: var(--text-muted);
-    font-size: 1.1rem;
-    margin-bottom: 25px;
-}
-
-/* BUTANG HOMEPAGE KE BLOG */
-.cta-btn {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: #ffffff;
-    text-decoration: none;
-    padding: 12px 28px;
-    border-radius: 30px;
-    font-weight: 600;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.cta-btn:hover {
-    background-color: var(--secondary-color);
-    transform: translateY(-2px);
-}
-
-/* KAWALAN SAIZ GAMBAR PROFILE (HOMEPAGE / ABOUT) */
-.profile-wrapper {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.profile-img {
-    width: 320px;
-    height: 320px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid var(--card-bg);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-/* ==========================================================================
-   5. BLOG PAGE LAYOUT (GRID & READ MORE) - TANPA GAMBAR KAD
-   ========================================================================== */
+/* Layout Grid bagi susunan Kad Blog */
 .blog-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
+    margin-top: 20px;
 }
 
+/* ==========================================================================
+   4. PENATAAN GAYA KAD BLOG (BLOG CARDS)
+   ========================================================================== */
 .blog-card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 25px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 .blog-tag {
@@ -220,9 +169,20 @@ section h2::after {
     margin-bottom: 12px;
 }
 
+/* Gaya Gambar di Dalam Kad Blog */
+.blog-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: block;
+}
+
 .blog-card h3 {
     font-size: 1.35rem;
     margin-bottom: 8px;
+    color: var(--text-color);
 }
 
 .blog-card .date {
@@ -236,10 +196,13 @@ section h2::after {
     font-size: 0.95rem;
 }
 
+/* ==========================================================================
+   5. LOGIK SISTEM TERSEMBUNYI (READ MORE LOGIC)
+   ========================================================================== */
 .blog-full-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1); /* Animasi tutup lancar */
     opacity: 0;
     width: 100%;
 }
@@ -247,14 +210,17 @@ section h2::after {
 .blog-full-content p {
     margin-top: 15px;
     font-size: 0.95rem;
+    color: var(--text-color);
 }
 
+/* Keadaan Paparan Apabila Butang Read More Aktif (.active-blog) */
 .blog-card.active-blog .blog-full-content {
-    max-height: 1200px; 
+    max-height: 1000px; /* Nilai besar supaya ruang mencukupi untuk teks panjang */
     opacity: 1;
-    transition: max-height 0.8s cubic-bezier(1, 0, 1, 0); 
+    transition: max-height 0.8s cubic-bezier(1, 0, 1, 0); /* Animasi buka lancar */
 }
 
+/* Butang Read More */
 .read-more-btn {
     display: inline-flex;
     align-items: center;
@@ -268,51 +234,32 @@ section h2::after {
     border-radius: 30px;
     margin-top: 20px;
     cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 .read-more-btn i {
     font-size: 18px;
     transition: transform 0.3s ease;
+    display: inline-block;
 }
 
+.read-more-btn:hover {
+    background: var(--primary-color);
+    color: #ffffff;
+}
+
+/* Ubah pusingan anak panah Boxicons apabila kad dibuka */
 .blog-card.active-blog .read-more-btn i {
     transform: rotate(180deg);
 }
 
-/* ==========================================================================
-   6. CONTACT PAGE LAYOUT (SOCIAL LOGO ONLINE)
-   ========================================================================== */
-.contact-container {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
-    padding: 40px;
-    border-radius: 12px;
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.social-icon {
-    font-size: 2.5rem;
-    color: var(--text-muted);
-    transition: color 0.2s ease, transform 0.2s ease;
-    text-decoration: none;
-}
-
-.social-icon:hover {
+.blog-card.active-blog .read-more-btn {
+    background: rgba(124, 58, 237, 0.1);
     color: var(--primary-color);
-    transform: translateY(-5px);
 }
 
 /* ==========================================================================
-   7. FOOTER & RESPONSIVE
+   6. BAHAGIAN BAWAH (FOOTER)
    ========================================================================== */
 footer {
     background-color: var(--card-bg);
@@ -322,12 +269,27 @@ footer {
     color: var(--text-muted);
     font-size: 0.9rem;
     margin-top: auto;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
+/* ==========================================================================
+   7. RESPONSIVE DESIGN (MEDIA QUERIES)
+   ========================================================================== */
 @media (max-width: 768px) {
-    nav { flex-direction: column; gap: 15px; }
-    .nav-links { gap: 15px; }
-    .hero-container { flex-direction: column; text-align: center; }
-    .profile-img { width: 240px; height: 240px; }
-    .blog-container { grid-template-columns: 1fr; }
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-links {
+        gap: 15px;
+    }
+    
+    section h2 {
+        font-size: 1.6rem;
+    }
+    
+    .blog-container {
+        grid-template-columns: 1fr; /* Satu kolum penuh pada skrin telefon */
+    }
 }
