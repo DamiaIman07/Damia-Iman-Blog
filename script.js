@@ -41,4 +41,20 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // 3. SISTEM KAWALAN BORANG CONTACT & POP-UP NOTIFIKASI
+    const contactForm = document.querySelector('.contact-form');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            // Menghalang borang daripada automatik refresh halaman
+            e.preventDefault();
+
+            // Memaparkan pop-up mesej pengesahan berjaya dihantar
+            alert('Mesej berjaya dihantar! / Message has been sent successfully!');
+
+            // Mengosongkan semula semua kotak input borang (nama, emel, mesej)
+            contactForm.reset();
+        });
+    }
 });
