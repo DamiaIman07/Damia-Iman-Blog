@@ -395,25 +395,128 @@ section h2::after {
 }
 
 /* ==========================================================================
-   6. TATA GAYA HALAMAN CONTACT (IKON UNGU TERANG)
+   6. TATA GAYA HALAMAN CONTACT (BORANG & IKON MEDIA SOSIAL)
    ========================================================================== */
 .contact-container {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
-    padding: 40px 20px;
-    border-radius: 12px;
-    max-width: 600px;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 650px;
     margin: 0 auto;
-    text-align: center;
     width: 100%;
+    box-shadow: 0 10px 30px rgba(244, 63, 94, 0.05);
 }
 
+.contact-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    font-size: 1rem;
+}
+
+/* GAYA LAYOUT BORANG */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left; /* Biar label nama/emel rapat ke kiri */
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+.input-group input, 
+.input-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+/* Kesan menyala ungu lembut bila user klik kotak input */
+.input-group input:focus, 
+.input-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+}
+
+/* BUTANG SEND MESSAGE UNGU SOLID */
+.submit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 14px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
+    width: 100%;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(124, 58, 237, 0.3);
+}
+
+/* GARISAN PEMISAH (OR CONNECT WITH ME) */
+.divider {
+    text-align: center;
+    position: relative;
+    margin: 35px 0 25px 0;
+}
+
+.divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--border-color);
+    z-index: 1;
+}
+
+.divider span {
+    background-color: var(--card-bg);
+    padding: 0 15px;
+    position: relative;
+    z-index: 2;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+}
+
+/* SUSUNAN IKON MEDIA SOSIAL (TERMASUK IG) */
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 25px;
-    margin-top: 20px;
+    gap: 30px;
     flex-wrap: wrap;
+    margin-top: 20px;
 }
 
 .social-icon {
@@ -426,7 +529,7 @@ section h2::after {
 
 .social-icon:hover {
     color: var(--secondary-color); 
-    transform: translateY(-4px);   
+    transform: translateY(-5px);   
 }
 
 /* ==========================================================================
@@ -487,7 +590,7 @@ footer {
 
     .cta-btn {
         padding: 10px 22px;
-        font-size: 0.95rem; /* Saiz butang mengecil sedikit pada screen phone */
+        font-size: 0.95rem; 
     }
 
     .profile-img {
@@ -497,12 +600,12 @@ footer {
 
     /* Penataan responsif blog untuk skrin telefon */
     .blog-container {
-        grid-template-columns: 1fr; /* Jadi satu lajur ke bawah pada phone */
+        grid-template-columns: 1fr; 
         gap: 15px;
     }
     
     .blog-card {
-        padding: 15px; /* Kecilkan sikit padding dalam kad blog di phone */
+        padding: 15px; 
     }
     
     .blog-img-wrapper {
