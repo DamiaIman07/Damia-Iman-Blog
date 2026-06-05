@@ -223,7 +223,7 @@ section h2::after {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto 25px auto; /* Tambah margin bawah supaya ada jarak dengan teks H1 */
+    margin: 0 auto 25px auto; /* 25px margin bawah untuk jarakkan dari nama */
 }
 
 .profile-img {
