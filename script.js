@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. SYSTEM DARK MODE
+    // 1. SISTEM DARK MODE (SINKRONISASI GLOBAL)
     const themeToggle = document.getElementById('theme-toggle');
     const currentTheme = localStorage.getItem('theme');
 
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. SYSTEM READ MORE
+    // 2. SISTEM BUTANG READ MORE / CLOSE ARTICLE
     const buttons = document.querySelectorAll('.read-more-btn');
 
     buttons.forEach(button => {
