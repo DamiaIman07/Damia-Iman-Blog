@@ -144,7 +144,7 @@ section h2::after {
 }
 
 /* ==========================================================================
-   4. TATA GAYA KOTAK HERO KANDUNGAN (HOME & ABOUT)
+   4. TATA GAYA KOTAK HERO KANDUNGAN (BOX HOME DIBESARKAN & BACKGROUND IMAGE)
    ========================================================================== */
 .hero-section {
     display: flex;
@@ -165,7 +165,7 @@ section h2::after {
 .full-width-hero {
     justify-content: center;
     text-align: center;
-    max-width: 1000px; /* Dibesarkan daripada 800px supaya kotak Home nampak luas */
+    max-width: 1000px; /* Dibesarkan supaya kotak Home nampak luas */
     margin: 0 auto;
 }
 
@@ -180,14 +180,14 @@ section h2::after {
     background-position: center;    /* Gambar duduk tengah-tengah */
     background-repeat: no-repeat;
     border: 2px solid var(--border-color); 
-    padding: 65px 45px;             /* Padding atas-bawah dinaikkan ke 65px supaya kotak jadi lebih besar dan tinggi */
-    border-radius: 24px;            /* Lekukan bucu dibesarkan sikit bagi nampak moden */
+    padding: 65px 45px;             /* Padding atas-bawah dinaikkan supaya kotak jadi lebih tinggi */
+    border-radius: 24px;            /* Lekukan bucu moden */
     box-shadow: 0 15px 35px rgba(244, 63, 94, 0.12); 
     width: 100%;
     transition: all 0.3s ease;
 }
 
-/* KOTAK UNTUK ABOUT PAGE - TULISAN SEKARANG CENTER JUSTIFY */
+/* KOTAK UNTUK ABOUT PAGE - TULISAN CENTER JUSTIFY */
 .about-box {
     background-color: var(--box-bg); 
     border: 2px solid var(--border-color); 
@@ -197,7 +197,7 @@ section h2::after {
     width: 100%;
     transition: background-color 0.3s ease, border-color 0.3s ease;
     
-    /* Kod baru untuk buat tulisan center-justify */
+    /* Buat tulisan rata kiri-kanan & baris akhir di tengah */
     text-align: justify;
     text-align-last: center;
 }
@@ -208,7 +208,7 @@ section h2::after {
 }
 
 .hero-text h1 {
-    font-size: 3.2rem; /* Tulisan dibesarkan sikit */
+    font-size: 3.2rem; 
     margin-bottom: 20px;
     line-height: 1.2;
 }
@@ -219,7 +219,7 @@ section h2::after {
 
 .hero-text p {
     color: var(--text-color); 
-    font-size: 1.2rem; /* Saiz teks perenggan dibesarkan sikit */
+    font-size: 1.2rem; 
     margin-bottom: 35px;
     max-width: 800px;
     margin-left: auto;
@@ -232,7 +232,7 @@ section h2::after {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto 25px auto; /* 25px margin bawah untuk jarakkan dari nama */
+    margin: 0 auto 25px auto; 
 }
 
 .profile-img {
@@ -246,7 +246,7 @@ section h2::after {
 }
 
 /* ==========================================================================
-   5. TATA GAYA HALAMAN BLOG (GRID, GAMBAR RESPONSIF & BUTANG READ MORE UNGU)
+   5. TATA GAYA HALAMAN BLOG (GRID, GAMBAR TERKUNCI KEMAS & READ MORE)
    ========================================================================== */
 .blog-container {
     display: grid;
@@ -265,30 +265,32 @@ section h2::after {
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
-    overflow: hidden; /* Mengelakkan komponen gambar terkeluar bucu */
+    overflow: hidden; /* Tambahan wajib: sekat apa-apa elemen terkeluar dari kad blog */
 }
 
-/* KOD RESPONSIVE GAMBAR BARU */
+/* KOD KOTAK GAMBAR KEMAS (GAMBAR KEKAL DALAM KOTAK SAHAJA) */
 .blog-img-wrapper {
     width: 100%;
     height: auto;
-    aspect-ratio: 16 / 9;   /* Kekalkan bentuk widescreen mantap pada phone/laptop */
-    overflow: hidden;
-    border-radius: 8px;     
+    aspect-ratio: 16 / 9;   /* Nisbah widescreen cantik untuk phone/laptop */
+    overflow: hidden;       /* Memotong bucu tajam gambar supaya ikut lekukan kotak */
+    border-radius: 8px;     /* Lekukan bucu kotak */
     margin-bottom: 15px;    
     border: 1px solid var(--border-color);
+    position: relative;     
 }
 
 .blog-card-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;      /* Fit cantik tanpa penyek */
+    object-fit: cover;      /* Paksa gambar fit penuh kotak tanpa jadi penyek */
+    object-position: center;/* Gambar auto-focus bahagian tengah */
     display: block;
     transition: transform 0.3s ease;
 }
 
 .blog-card:hover .blog-card-img {
-    transform: scale(1.04); /* Efek zoom sikit bila digerakkan cursor */
+    transform: scale(1.04); /* Efek zoom sikit bila cursor hover pada kad blog */
 }
 
 .blog-tag {
@@ -421,7 +423,7 @@ footer {
 }
 
 /* ==========================================================================
-   8. ATURAN RESPONSIVE TELEFON PINTAR
+   8. ATURAN RESPONSIVE TELEFON PINTAR (PHONE FRIENDLY OPTIMIZED)
    ========================================================================== */
 @media (max-width: 768px) {
     nav {
@@ -467,14 +469,14 @@ footer {
         height: 140px; 
     }
 
-    /* Penambahan kestabilan aturan responsif blog pada phone */
+    /* Penataan responsif blog untuk skrin telefon */
     .blog-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Jadi satu lajur ke bawah pada phone */
         gap: 15px;
     }
     
     .blog-card {
-        padding: 15px; /* Kurangkan sikit ruang kad dalam supaya tak makan ruang phone */
+        padding: 15px; /* Kecilkan sikit padding dalam kad blog di phone */
     }
     
     .blog-img-wrapper {
