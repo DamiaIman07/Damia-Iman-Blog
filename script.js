@@ -1,10 +1,12 @@
 // ==========================================================================
-// KAWALAN SYNC DARK MODE & TOGGLE BACA BLOG (LOCALSTORAGE)
+// KAWALAN UTAMA: SYNC DARK MODE & BUTTON READ MORE
 // ==========================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- BAHAGIAN 1: KAWALAN DARK MODE ---
+    // ----------------------------------------------------
+    // KAWALAN DARK MODE (SINKRONISASI SEMUA PAGE)
+    // ----------------------------------------------------
     const themeToggle = document.getElementById('theme-toggle');
     const currentTheme = localStorage.getItem('theme');
 
@@ -31,45 +33,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- BAHAGIAN 2: KAWALAN READ MORE ACCODRION (BLOG PAGE) ---
-    const blogCards = document.querySelectorAll('.blog-card');
+    // ----------------------------------------------------
+    // KAWALAN INTERAKSI BUTTON "READ MORE" (PAGE BLOG)
+    // ----------------------------------------------------
+    const buttons = document.querySelectorAll('.read-more-btn');
 
-    blogCards.forEach(card => {
-        const button = card.querySelector('.read-more-btn');
-        
-        // Sediakan fungsi buka bila klik butang "Read More" ATAU klik tajuk blog
-        if (button) {
-            button.addEventListener('click', (e) => {
-                e.stopPropagation(); // Elak konflik klik dua kali
-                toggleBlogSection(card, button);
-            });
-        }
-        
-        // Pengguna juga boleh klik terus pada kad/tajuk untuk buka kandungan
-        const heading = card.querySelector('h3');
-        if (heading) {
-            heading.style.cursor = 'pointer';
-            heading.addEventListener('click', () => {
-                toggleBlogSection(card, button);
-            });
-        }
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Cari kad blog terdekat bagi butang yang ditekan
+            const card = this.closest('.blog-card');
+            
+            // Toggle kelas 'active-blog' pada kad tersebut
+            card.classList.toggle('active-blog');
+            
+            // Tukar teks butang berdasarkan status buka/tutup
+            if (card.classList.contains('active-blog')) {
+                this.innerHTML = "Close Article <i class='bx bx-chevron-up'></i>";
+            } else {
+                this.innerHTML = "Read More <i class='bx bx-chevron-down'></i>";
+            }
+        });
     });
 
-    // Fungsi pembantu untuk menguruskan kelas bukaan teks
-    function toggleBlogSection(card, btn) {
-        const isActive = card.classList.contains('active-blog');
-        
-        // Tutup mana-mana blog section lain yang sedang terbuka (pilihan estetik)
-        blogCards.forEach(c => {
-            c.classList.remove('active-blog');
-            const b = c.querySelector('.read-more-btn');
-            if (b) b.innerHTML = "Read More <i class='bx bx-chevron-down'></i>";
-        });
-
-        // Jika section yang di-klik tadi asalnya tertutup, jom buka dia!
-        if (!isActive) {
-            card.classList.add('active-blog');
-            if (btn) btn.innerHTML = "Close Article <i class='bx bx-chevron-down'></i>";
-        }
-    }
 });
