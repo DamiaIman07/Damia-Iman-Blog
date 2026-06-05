@@ -217,13 +217,13 @@ section h2::after {
     transform: translateY(-2px);
 }
 
-/* GAMBAR PROFILE (ABOUT PAGE) - DIKUTUK DI TENGAH-TENGAH */
+/* GAMBAR PROFILE (ABOUT PAGE) - CENTER DAN ATAS */
 .profile-wrapper {
     width: 100%;
-    display: flex;         /* Aktifkan sistem flexbox */
-    justify-content: center; /* Tolak gambar betul-betul ke tengah secara melintang */
+    display: flex;
+    justify-content: center;
     align-items: center;
-    margin: 25px auto 0 auto;
+    margin: 0 auto 25px auto; /* Tambah margin bawah supaya ada jarak dengan teks H1 */
 }
 
 .profile-img {
