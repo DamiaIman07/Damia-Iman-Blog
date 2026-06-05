@@ -223,7 +223,7 @@ section h2::after {
     transition: all 0.3s ease;
 }
 
-/* KOTAK UNTUK ABOUT PAGE - KEKAL ASAL TIDAK TERGANGGU */
+/* KOTAK UNTUK ABOUT PAGE - TULISAN SEKARANG CENTER JUSTIFY */
 .about-box {
     background-color: var(--box-bg); 
     border: 2px solid var(--border-color); 
@@ -232,6 +232,10 @@ section h2::after {
     box-shadow: 0 10px 30px rgba(244, 63, 94, 0.08); 
     width: 100%;
     transition: background-color 0.3s ease, border-color 0.3s ease;
+    
+    /* Kod baru untuk buat tulisan center-justify */
+    text-align: justify;
+    text-align-last: center;
 }
 
 /* Pembetulan mod gelap untuk background imej Home Box */
