@@ -189,7 +189,7 @@ section h2::after {
 
 /* KOTAK UNTUK ABOUT PAGE - TULISAN CENTER JUSTIFY */
 .about-box {
-    background-color: var(--box-bg); 
+    background-color: #ffffff;; 
     border: 2px solid var(--border-color); 
     padding: 45px;
     border-radius: 20px;
