@@ -4,11 +4,13 @@
 :root {
     --primary-color: #7c3aed;       /* Ungu Utama */
     --secondary-color: #a78bfa;     /* Ungu Lembut */
-    --bg-color: #f9fafb;            
+    --bg-color: #fafafb;            
     --card-bg: #ffffff;             
     --text-color: #1f2937;          
     --text-muted: #6b7280;          
     --border-color: #e5e7eb;        
+    /* Warna garisan petak pink lembut */
+    --grid-color: rgba(244, 63, 94, 0.05); 
 }
 
 .dark-mode {
@@ -17,17 +19,30 @@
     --text-color: #f3f4f6;          
     --text-muted: #9ca3af;          
     --border-color: #334155;        
+    /* Warna garisan petak pink di mod gelap (dikurangkan kabur mata) */
+    --grid-color: rgba(244, 63, 94, 0.03); 
 }
 
-* {
+*, ::before, ::after {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* KESEMUA HALAMAN AKAN MEMPUNYAI LATAR BELAKANG CORAK PETAK PINK SLOW */
 body {
     background-color: var(--bg-color);
+    background-image: 
+        linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+    background-size: 24px 24px; /* Saiz petak kotak-kotak */
     color: var(--text-color);
     transition: background-color 0.3s ease, color 0.3s ease;
     line-height: 1.6;
@@ -45,6 +60,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
+    width: 100%;
 }
 
 nav {
@@ -128,29 +144,14 @@ section h2::after {
 }
 
 /* ==========================================================================
-   4. LATAR BELAKANG CORAK PINK/UNGU (HERO BACKGROUND & PATTERN)
+   4. TATA GAYA KOTAK HERO KANDUNGAN
    ========================================================================== */
 .hero-section {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Rekaan Corak Mesh Gradient Abstrak Merah Jambu, Ungu & Biru */
-    background-color: var(--bg-color);
-    background-image: 
-        radial-gradient(at 0% 0%, rgba(244, 63, 94, 0.15) 0px, transparent 50%), 
-        radial-gradient(at 100% 100%, rgba(124, 58, 237, 0.15) 0px, transparent 50%),
-        radial-gradient(at 100% 0%, rgba(232, 121, 249, 0.15) 0px, transparent 50%);
-    border-radius: 24px;
-    padding: 60px 40px;
+    width: 100%;
     margin-top: 20px;
-    border: 1px solid var(--border-color);
-}
-
-.dark-mode .hero-section {
-    background-image: 
-        radial-gradient(at 0% 0%, rgba(244, 63, 94, 0.08) 0px, transparent 50%), 
-        radial-gradient(at 100% 100%, rgba(124, 58, 237, 0.08) 0px, transparent 50%),
-        radial-gradient(at 100% 0%, rgba(232, 121, 249, 0.08) 0px, transparent 50%);
 }
 
 .hero-container {
@@ -161,6 +162,7 @@ section h2::after {
     width: 100%;
 }
 
+/* Kotak Khas di Halaman Utama (Index) */
 .full-width-hero {
     justify-content: center;
     text-align: center;
@@ -168,11 +170,24 @@ section h2::after {
     margin: 0 auto;
 }
 
+.hero-text {
+    width: 100%;
+}
+
+/* KOTAK KHAS TULISAN SEPERTI DI MINTA UNTUK PAGE ABOUT ME */
+.about-box {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    width: 100%;
+}
+
 .hero-text h1 {
-    font-size: 3.2rem;
+    font-size: 3rem;
     margin-bottom: 15px;
     line-height: 1.2;
-    color: var(--text-color);
 }
 
 .hero-text h1 span {
@@ -181,7 +196,7 @@ section h2::after {
 
 .hero-text p {
     color: var(--text-muted);
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     margin-bottom: 30px;
 }
 
@@ -200,10 +215,9 @@ section h2::after {
 .cta-btn:hover {
     background-color: var(--secondary-color);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
 }
 
-/* KAWALAN SAIZ & KEDUDUKAN GAMBAR PROFILE (LEBIH KECIL & CENTER) */
+/* GAMBAR PROFILE (ABOUT PAGE) - CENTER & KECIL */
 .profile-wrapper {
     flex: 1;
     display: flex;
@@ -214,19 +228,19 @@ section h2::after {
 }
 
 .profile-img {
-    width: 200px;             /* Diperkecilkan supaya lebih kemas */
-    height: 200px;            /* Mengekalkan nisbah satu sama satu */
-    border-radius: 50%;       /* Bentuk bulat sempurna */
+    width: 180px;             
+    height: 180px;            
+    border-radius: 50%;       
     object-fit: cover;        
     border: 5px solid var(--card-bg);
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     max-width: 100%;
     display: block;
-    margin: 0 auto;           /* Memastikan sentiasa berada di tengah (Center) */
+    margin: 0 auto;           
 }
 
 /* ==========================================================================
-   5. TATA GAYA RESPONSIVE GRID UNTUK HALAMAN BLOG (TANPA GAMBAR KAD)
+   5. TATA GAYA HALAMAN BLOG (GRID)
    ========================================================================== */
 .blog-container {
     display: grid;
@@ -306,16 +320,6 @@ section h2::after {
     border-radius: 30px;
     margin-top: 20px;
     cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.read-more-btn i {
-    font-size: 18px;
-    transition: transform 0.3s ease;
-}
-
-.blog-card.active-blog .read-more-btn i {
-    transform: rotate(180deg);
 }
 
 /* ==========================================================================
@@ -332,11 +336,6 @@ section h2::after {
     width: 100%;
 }
 
-.contact-container p {
-    color: var(--text-muted);
-    margin-bottom: 25px;
-}
-
 .social-links {
     display: flex;
     justify-content: center;
@@ -348,13 +347,7 @@ section h2::after {
 .social-icon {
     font-size: 2.5rem;
     color: var(--text-muted);
-    transition: color 0.2s ease, transform 0.2s ease;
     text-decoration: none;
-}
-
-.social-icon:hover {
-    color: var(--primary-color);
-    transform: translateY(-4px);
 }
 
 /* ==========================================================================
@@ -372,13 +365,14 @@ footer {
 }
 
 /* ==========================================================================
-   8. ATURAN RESPONSIF TELEFON PINTAR (MOBILE FRIENDLY RULES)
+   8. ATURAN RESPONSIVE TELEFON PINTAR (PHONE-FRIENDLY SMARTPHONE)
    ========================================================================== */
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
-        gap: 15px;
+        gap: 12px;
         text-align: center;
+        padding: 10px;
     }
 
     .nav-links {
@@ -388,32 +382,33 @@ footer {
     }
 
     section {
-        margin: 20px auto;
-        padding: 0 15px;
-    }
-
-    .hero-section {
-        padding: 40px 20px;
-        border-radius: 16px;
+        margin: 15px auto;
+        padding: 0 12px;
     }
 
     .hero-container {
         flex-direction: column;
-        gap: 25px;
+        gap: 20px;
         text-align: center;
     }
 
+    .about-box {
+        padding: 25px 15px; /* Kurangkan padding kotak teks di skrin phone */
+        border-radius: 12px;
+    }
+
     .hero-text h1 {
-        font-size: 2.2rem;
+        font-size: 2rem; 
     }
 
     .hero-text p {
-        font-size: 1.05rem;
+        font-size: 1rem;
+        margin-bottom: 20px;
     }
 
     .profile-img {
-        width: 160px;
-        height: 160px; /* Diperkecilkan sedikit lagi khusus untuk paparan telefon */
+        width: 140px;
+        height: 140px; 
     }
 
     .blog-container {
@@ -421,6 +416,6 @@ footer {
     }
 
     .contact-container {
-        padding: 30px 15px;
+        padding: 25px 15px;
     }
 }
