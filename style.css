@@ -188,45 +188,48 @@ section h2::after {
 }
 
 /* ==========================================================================
-   TATA GAYA KOTAK ABOUT ME (IKUT TEMA BLOG)
+   TATA GAYA KOTAK ABOUT ME (LIGHT MODE ASAL)
    ========================================================================== */
-.hero-container .about-box {
+.hero-text.about-box {
     display: block !important;
     visibility: visible !important;
-    background-color: #ffffff; /* Warna putih asal untuk Light Mode */
-    border: 2px solid var(--border-color); 
+    background: #ffffff !important; /* Waktu cerah, kotak wajib warna putih */
+    border: 2px solid var(--border-color) !important; 
     padding: 45px !important;
     border-radius: 20px !important;
-    box-shadow: 0 10px 30px rgba(244, 63, 94, 0.08); 
+    box-shadow: 0 10px 30px rgba(244, 63, 94, 0.08) !important; 
     width: 100% !important;
-    max-width: 800px;
+    max-width: 800px !important;
     margin: 0 auto !important;
-    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease-in-out !important;
     
-    /* SISTEM TULISAN CENTER JUSTIFY */
+    /* TULISAN CENTER JUSTIFY */
     text-align: justify !important;
     text-align-last: center !important;
-    color: #1f2937; /* Tulisan warna gelap untuk Light Mode */
 }
 
-/* APABILA DARK MODE: Kotak About bertukar ikut warna & efek page Blog */
-.dark-mode .hero-container .about-box {
-    background-color: #231521 !important; /* Warna kad plum pekat macam page blog */
-    border-color: #3d2038 !important;     /* Sempadan ungu gelap */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(124, 58, 237, 0.05) !important; /* Efek neon malap */
+/* WARNA TULISAN WAKTU LIGHT MODE */
+.hero-text.about-box h1,
+.hero-text.about-box p {
+    color: #1f2937 !important; /* Tulisan warna gelap */
 }
 
-/* PENGURUSAN WARNA TULISAN MENGIKUT MOD */
-.about-box h1, .about-box p {
-    color: #1f2937; /* Warna gelap waktu cerah */
+/* ==========================================================================
+   KAWALAN MUTLAK APABILA DARK MODE DIAKTIFKAN
+   ========================================================================== */
+body.dark-mode .hero-text.about-box {
+    background: #231521 !important; /* Tukar jadi warna plum pekat macam page blog */
+    border-color: #3d2038 !important;     /* Garisan sempadan ungu gelap */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(124, 58, 237, 0.05) !important;
 }
 
-.dark-mode .about-box h1 {
-    color: #ffffff !important; /* Nama penuh jadi putih bersih waktu Dark Mode */
+/* WARNA TULISAN WAKTU DARK MODE */
+body.dark-mode .hero-text.about-box h1 {
+    color: #ffffff !important; /* Nama bertukar jadi putih bersih */
 }
 
-.dark-mode .about-box p {
-    color: #f3f4f6 !important; /* Teks bio jadi putih cair waktu Dark Mode supaya sedap dibaca */
+body.dark-mode .hero-text.about-box p {
+    color: #f3f4f6 !important; /* Teks bio bertukar jadi cerah/kelabu cair */
 }
 /* Pembetulan mod gelap untuk background imej Home Box */
 .dark-mode .home-box {
