@@ -187,32 +187,34 @@ section h2::after {
     transition: all 0.3s ease;
 }
 
-/* KOTAK UNTUK ABOUT PAGE - TULISAN CENTER JUSTIFY (DAH SIAP TAMBAH) */
-.about-box {
-    background-color: #ffffff !important; /* Paksa kotak kekal putih bersih dalam light & dark mode */
-    border: 2px solid var(--border-color); 
-    padding: 45px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(244, 63, 94, 0.08); 
-    width: 100%;
+/* ==========================================================================
+   TATA GAYA KOTAK ABOUT ME (MUNCUL SEMULA & CENTER JUSTIFY)
+   ========================================================================== */
+.hero-container .about-box {
+    display: block !important;
+    visibility: visible !important;
+    background-color: #ffffff !important; /* Paksa kotak muncul warna putih bersih */
+    border: 2px solid var(--border-color) !important; 
+    padding: 45px !important;
+    border-radius: 20px !important;
+    box-shadow: 0 10px 30px rgba(244, 63, 94, 0.08) !important; 
+    width: 100% !important;
+    max-width: 800px; /* Hadkan kelebaran kotak supaya sedap mata memandang */
+    margin: 0 auto !important; /* Letakkan kotak betul-betul di tengah skrin */
     transition: background-color 0.3s ease, border-color 0.3s ease;
     
-    /* Buat tulisan rata kiri-kanan & baris akhir di tengah */
-    text-align: justify;
-    text-align-last: center;
-    color: #1f2937 !important; /* Kekalkan tulisan warna gelap dalam Light Mode */
+    /* SISTEM TULISAN CENTER JUSTIFY */
+    text-align: justify !important;
+    text-align-last: center !important;
 }
 
-/* KOD TAMBAHAN: Paksa tulisan dalam About Box kekal gelap masa Dark Mode supaya tak tenggelam */
-.dark-mode .about-box,
+/* KAWALAN WARNA TULISAN DALAM KOTAK ABOUT (LIGHT & DARK MODE) */
+.about-box h1,
+.about-box p,
 .dark-mode .about-box h1,
-.dark-mode .about-box h2,
-.dark-mode .about-box h3,
-.dark-mode .about-box p,
-.dark-mode .about-box span {
-    color: #1f2937 !important; /* Tulisan auto jadi charcoal/hitam lembut atas kotak putih */
+.dark-mode .about-box p {
+    color: #1f2937 !important; /* Paksa tulisan kekal gelap (charcoal) supaya nampak atas kotak putih */
 }
-
 /* Pembetulan mod gelap untuk background imej Home Box */
 .dark-mode .home-box {
     background-image: linear-gradient(rgba(45, 27, 40, 0.9), rgba(45, 27, 40, 0.9)), url('background.png');
