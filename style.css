@@ -188,32 +188,45 @@ section h2::after {
 }
 
 /* ==========================================================================
-   TATA GAYA KOTAK ABOUT ME (MUNCUL SEMULA & CENTER JUSTIFY)
+   TATA GAYA KOTAK ABOUT ME (IKUT TEMA BLOG)
    ========================================================================== */
 .hero-container .about-box {
     display: block !important;
     visibility: visible !important;
-    background-color: #ffffff !important; /* Paksa kotak muncul warna putih bersih */
-    border: 2px solid var(--border-color) !important; 
+    background-color: #ffffff; /* Warna putih asal untuk Light Mode */
+    border: 2px solid var(--border-color); 
     padding: 45px !important;
     border-radius: 20px !important;
-    box-shadow: 0 10px 30px rgba(244, 63, 94, 0.08) !important; 
+    box-shadow: 0 10px 30px rgba(244, 63, 94, 0.08); 
     width: 100% !important;
-    max-width: 800px; /* Hadkan kelebaran kotak supaya sedap mata memandang */
-    margin: 0 auto !important; /* Letakkan kotak betul-betul di tengah skrin */
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    max-width: 800px;
+    margin: 0 auto !important;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     
     /* SISTEM TULISAN CENTER JUSTIFY */
     text-align: justify !important;
     text-align-last: center !important;
+    color: #1f2937; /* Tulisan warna gelap untuk Light Mode */
 }
 
-/* KAWALAN WARNA TULISAN DALAM KOTAK ABOUT (LIGHT & DARK MODE) */
-.about-box h1,
-.about-box p,
-.dark-mode .about-box h1,
+/* APABILA DARK MODE: Kotak About bertukar ikut warna & efek page Blog */
+.dark-mode .hero-container .about-box {
+    background-color: #231521 !important; /* Warna kad plum pekat macam page blog */
+    border-color: #3d2038 !important;     /* Sempadan ungu gelap */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(124, 58, 237, 0.05) !important; /* Efek neon malap */
+}
+
+/* PENGURUSAN WARNA TULISAN MENGIKUT MOD */
+.about-box h1, .about-box p {
+    color: #1f2937; /* Warna gelap waktu cerah */
+}
+
+.dark-mode .about-box h1 {
+    color: #ffffff !important; /* Nama penuh jadi putih bersih waktu Dark Mode */
+}
+
 .dark-mode .about-box p {
-    color: #1f2937 !important; /* Paksa tulisan kekal gelap (charcoal) supaya nampak atas kotak putih */
+    color: #f3f4f6 !important; /* Teks bio jadi putih cair waktu Dark Mode supaya sedap dibaca */
 }
 /* Pembetulan mod gelap untuk background imej Home Box */
 .dark-mode .home-box {
