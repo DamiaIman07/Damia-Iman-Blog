@@ -187,9 +187,9 @@ section h2::after {
     transition: all 0.3s ease;
 }
 
-/* KOTAK UNTUK ABOUT PAGE - TULISAN CENTER JUSTIFY */
+/* KOTAK UNTUK ABOUT PAGE - 
 .about-box {
-    background-color: #ffffff; 
+    background-color: #ffffff !important; /* Paksa kotak tetap warna putih bersih walaupun tukar dark mode */
     border: 2px solid var(--border-color); 
     padding: 45px;
     border-radius: 20px;
@@ -200,6 +200,17 @@ section h2::after {
     /* Buat tulisan rata kiri-kanan & baris akhir di tengah */
     text-align: justify;
     text-align-last: center;
+    color: #1f2937 !important; /* Kekalkan warna tulisan gelap (charcoal) dalam mod biasa */
+}
+
+/* PEMBETULAN IMPAK DARK MODE: Paksa semua teks di dalam About Box kekal gelap */
+.dark-mode .about-box,
+.dark-mode .about-box h1,
+.dark-mode .about-box h2,
+.dark-mode .about-box h3,
+.dark-mode .about-box p,
+.dark-mode .about-box span {
+    color: #1f2937 !important; /* Menghalang tulisan daripada auto-tukar jadi putih masa dark mode */
 }
 
 /* Pembetulan mod gelap untuk background imej Home Box */
